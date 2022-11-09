@@ -2,7 +2,7 @@
 
 .NavContainer {
   background: black;
-  position: fixed;
+  /* position: fixed; */
   width: 100vw;
   height: 120px;
   display: inline-flex;
