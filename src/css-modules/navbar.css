@@ -1,0 +1,76 @@
+.Navbar{
+  position: absolute;
+  z-index: 2;
+}
+
+.NavContainer {
+    background: black;
+    position: fixed;
+    width: 100vw;
+    height: 120px;
+    display: inline-flex;
+    align-items: center;
+    opacity: 0.4;
+  }
+  
+  .NavLeft_menu {
+    display: flex;
+    margin-top: 15px;
+    margin-left: 15px;
+  
+    flex-direction: row;
+  }
+  
+  .NavLeft {
+    display: flex;
+    justify-content: flex-start;
+    color: white;
+    margin-left: 10%;
+  }
+  
+  .NavRight {
+    display: flex;
+    justify-content: flex-end;
+    color: white;
+    margin-left: auto;
+    margin-right: 10%;
+  }
+  
+  .NavRight_icon {
+    display: flex;
+    margin-top: 10px;
+  }
+    
+  .Hibit_logo {
+    margin-top: 15px;
+    margin-left: 15px;
+    cursor: pointer;
+  }
+  
+  .ShareIcon {
+    margin-right: 28px;
+    margin-top: 5px;
+    cursor: pointer;
+  }
+  
+  .ProfileIcon{
+    margin-top: 2px;
+    cursor: pointer;
+  }
+  
+  .NavItem {
+    margin: 10px;
+    cursor: pointer;
+  }
+  
+  .NavVerticalLine {
+    height: 40px;
+    margin: 10px;
+    margin-right: 32px;
+  }
+  
+  .NavMypage {
+    margin-top: 25px;
+    margin-right: 32px;
+    cursor: pointer;
+  }
