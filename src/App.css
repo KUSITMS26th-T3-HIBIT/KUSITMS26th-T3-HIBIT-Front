@@ -1,3 +1,9 @@
+@import url('./css-modules/main.css');
+
+@import url('./css-modules/navbar.css');
+
+@import url('./css-modules/match.css');
+
 body{
   padding:0;
   height:300vh;
@@ -10,92 +16,11 @@ h1,h2,h3,h4,h5,h6{
   margin:0;
 }
 
-@import url('./css-modules/main.css');
-
-
-
-/* Navbar.js 관련 css */
-
-.NavContainer {
-  background: black;
-  /* position: fixed; */
-  width: 100vw;
-  height: 120px;
-  display: inline-flex;
-  align-items: center;
-  opacity: 0.4;
-}
-
-.NavLeft_menu {
-  display: flex;
-  margin-top: 15px;
-  margin-left: 15px;
-
-  flex-direction: row;
-}
-
-.NavLeft {
-  display: flex;
-  justify-content: flex-start;
-  color: white;
-  margin-left: 10%;
-}
-
-.NavRight {
-  display: flex;
-  justify-content: flex-end;
-  color: white;
-  margin-left: auto;
-  margin-right: 10%;
-}
-
-.NavRight_icon {
-  display: flex;
-  margin-top: 10px;
-}
-  
-.Hibit_logo {
-  margin-top: 15px;
-  margin-left: 15px;
-  cursor: pointer;
-}
-
-.ShareIcon {
-  margin-right: 28px;
-  margin-top: 5px;
-  cursor: pointer;
-}
-
-.ProfileIcon{
-  margin-top: 2px;
-  cursor: pointer;
-}
-
-.NavItem {
-  margin: 10px;
-  cursor: pointer;
-}
-
-.NavVerticalLine {
-  height: 40px;
-  margin: 10px;
-  margin-right: 32px;
-}
-
-.NavMypage {
-  margin-top: 25px;
-  margin-right: 32px;
-  cursor: pointer;
-}
-/* Navbar.js 관련 css */
-
 .App{
-  height: 300vh;
+  height: 100vh;
 }
 
-
-/* Matching.js 관련 css*/
-.MatchMain {
-  width: 100%;
-  height: 55%;
+.tmpImg{
+  width: 1920px;
+  height: 1080px;
 }
