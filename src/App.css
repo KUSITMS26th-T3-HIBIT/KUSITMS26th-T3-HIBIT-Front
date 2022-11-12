@@ -4,6 +4,10 @@
 
 @import url('./css-modules/match.css');
 
+@import url('./css-modules/login.css');
+
+@import url('./css-modules/signup.css');
+
 body{
   padding:0;
   height:300vh;
@@ -23,4 +27,8 @@ h1,h2,h3,h4,h5,h6{
 .tmpImg{
   width: 1920px;
   height: 1080px;
+}
+
+.LoginIcon{
+  cursor: pointer;
 }

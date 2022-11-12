@@ -7,15 +7,20 @@ import MatchingMain from './Matching/MatchingMain';
 import ExhibitReview from './Community/ExhibitReview';
 import ExhibitInfo from './ExhibitInfo/ExhibitInfo';
 import Mypage from './Global/User/Mypage/Mypage';
+import { useState } from 'react';
+import Login from './Global/User/Login';
+import SignupAgreement from './Global/User/SignupAgreement';
+import SignupInfo from './Global/User/SignupInfo';
 
 function App() {
   let navigate = useNavigate();
+  let [isLogin, setIsLogin] = useState(false);
   return (
     <div className="App">
       <div className="Navbar">
         <div className='NavContainer'>
           <div className='NavLeft'>
-            <img className='Hibit_logo' width='156' height='34' src='/hibit_logo.png' onClick={() => { navigate('/') }} />
+            <img className='Hibit_logo' width='156' height='34' src='/hibit_logo_w.png' onClick={() => { navigate('/') }} />
             <div className='NavLeft_menu'>
               <div className='NavItem' onClick={() => { navigate('/service') }}>서비스 소개</div>
               <div className='NavItem' onClick={() => { navigate('/match') }}>매칭</div>
@@ -24,11 +29,25 @@ function App() {
             </div>
           </div>
           <div className='NavRight'>
-            <div className='NavMypage' onClick={() => { navigate('/mypage') }}>마이페이지</div>
+            {
+              isLogin && <div className='NavMypage' onClick={() => { navigate('/mypage') }}>마이페이지</div>
+            }
             <hr className='NavVerticalLine' />
             <div className='NavRight_icon'>
               <img className='ShareIcon' width='28' height='34' src='/share.png' onClick={() => { }} />
-              <img className='ProfileIcon' width='44' height='44' src='/profileImg.png' onClick={() => { }} />
+              {
+                isLogin && <img className='ProfileIcon' width='44' height='44' src='/profileImg.png' onClick={() => { }} />
+              }
+              {
+                !isLogin && 
+                  <img 
+                    className='LoginIcon' 
+                    src='/login.png' 
+                    onClick={() => { navigate('/login'); }} />
+              }
+              {
+
+              }
             </div>
           </div>
         </div>
@@ -42,12 +61,13 @@ function App() {
           <Route path='/exhibitinfo' element={<ExhibitInfo />} />
 
           <Route path='/mypage' element={<Mypage />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/signup_agree' element={ <SignupAgreement/>} />
+          <Route path='/signup_info' element={ <SignupInfo/>} />
       </Routes>
 
-
-      {/* <Main></Main> */}
     </div>
   );
 }
-// Github branch commit test !!
+
 export default App;
