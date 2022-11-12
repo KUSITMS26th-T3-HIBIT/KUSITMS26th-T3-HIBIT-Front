@@ -1,5 +1,48 @@
 /* Matching.js 관련 css*/
 .Slider {
-    width: 100%;
-    height: 55%;
-  }
+  width: 100%;
+  height: 55%;
+}
+
+.searchInput {
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-left: 25%;
+  margin-right: 25%;
+
+  
+}
+
+/* 검색 바탕 이미지 */
+.searchInput_ui {
+  /* display: flex; */
+  /* justify-content: center; */
+  position: absolute;
+}
+
+
+/* 검색 input box */
+.searchInput_input { 
+  /* display: flex; */
+  /* justify-content: center; */
+  width: 80%;
+  padding-left: 15%;
+  height: 32px;
+  border: none;
+  position: absolute;
+  outline: none;
+  background-color: transparent;
+
+}
+
+
+/* 돋보기 아이콘 */
+.searchInput_icon {
+  z-index: 2;
+  margin-right: 10%;
+  /* display: flex; */
+  margin-left: auto;
+}
