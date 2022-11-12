@@ -1,0 +1,32 @@
+.SignupAgreeSection {
+    display: flex;
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+}
+
+.SignupAgreeComponents{
+    display: flex;
+    width: 30vw;
+    height: 700px;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px;
+}
+
+.SignupHibitLogo {
+    width: 156px;
+    height: 34px;
+    padding-top: 10%;
+}
+
+.SignupTextarea {
+    width: 80%;
+    height: 100%;
+}
+
+.SignupAgreeAll, .SignupProvision, .SignupPrivacy, .SignupMarketing {
+    align-self: flex-start;
+    margin: 30px;
+} 
+
