@@ -30,3 +30,46 @@
     margin: 30px;
 } 
 
+.SignupInfoSection{
+    display: flex;
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+}
+
+.SignupRequireProfile, .SignupOptionalProfile {
+    display: f;
+}
+
+
+
+
+
+
+.SignupExhibitStyleList{
+    display: grid;
+    grid-template-columns: 400px 400px;
+}
+.SignupExhibitStlyeItem { 
+    border: solid;
+    border-width: 1px;
+    cursor: pointer;
+}
+
+.SignupExhibitStlyeItem active { 
+    border: solid;
+    border-width: 1px;
+    cursor: pointer;
+    background: red;
+
+}
+
+.SignupMyStyleList{
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px;
+}
+
+.SignupMyStyleItem{
+    border: solid;
+    border-width: 1px;
+}

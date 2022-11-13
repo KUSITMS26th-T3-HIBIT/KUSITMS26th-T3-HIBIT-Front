@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 
+let tmpdata = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.';
+
 let SignupAgreement = () => {
     let navigate = useNavigate();
     const [allCheck, setAllCheck] = useState(false); // 모두 체크
@@ -45,23 +47,23 @@ let SignupAgreement = () => {
             <div className="SignupAgreeComponents">
                 <div className="SignupAgreeAll">
                     <input type="checkbox" id="all" checked={allCheck} onChange={allCheckEvent} />
-                    <label for="all-check">전체동의</label>
+                    <label htmlFor="all-check">전체동의</label>
                 </div>
                 <div className="SignupProvision">
                     <input type="checkbox" id="provision" checked={provisionCheck} onChange={provisionCheckEvent} />
                     <label htmlFor="provision">히빗 이용약관 동의 <span>(필수)</span></label>
                 </div>
-                <textarea className="SignupTextarea">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</textarea>
+                <textarea className="SignupTextarea" defaultValue={tmpdata}></textarea>
                 <div className="SignupPrivacy">
                     <input type="checkbox" id="privacy" checked={privacyCheck} onChange={privacyCheckEvent} />
                     <label htmlFor="privacy">개인정보 수집 및 이용 동의 <span>(필수)</span></label>
                 </div>
-                <textarea className="SignupTextarea">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</textarea>
+                <textarea className="SignupTextarea" defaultValue={tmpdata}></textarea>
                 <div className="SignupMarketing">
                     <input type="checkbox" id="marketing" checked={marketingCheck} onChange={marketingCheckEvent} />
                     <label htmlFor="marketing">마케팅 이용 동의 <span>(선택)</span></label>
                 </div>
-                <textarea className="SignupTextarea">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</textarea>
+                <textarea className="SignupTextarea" defaultValue={tmpdata}></textarea>
             </div>
             <div className="SignupNextButtons">
                 <button onClick={() => navigate(-1)}>취소</button>
