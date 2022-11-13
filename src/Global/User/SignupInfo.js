@@ -298,15 +298,23 @@ let SignupInfo = () => {
 
             <button className="SignupButton"
                 onClick={() => {
-                    axios.post('http://54.248.93.203:8080/user/sign-up/', {
+                    axios.post('http://54.248.93.203:8080/user/sign-up', {
                         id: id,
                         password: pw,
                         nickname: nickname,
                         phone_number: phone,
                         age: 2022 - year,
-                        gender: gender,
+                        gender: "True",
                         home: home,
                         introduce: "자기소개"
+                        // "age":"25",
+                        // "gender":"True",
+                        // "home":"경기도",
+                        // "id":"arin1233",
+                        // "introduce":"안녕",
+                        // "nickname":"아린",
+                        // "password":"rin123",
+                        // "phone_number":"0107366"
                     })
                         .then((res) => {
                             console.log(res.data);
@@ -314,6 +322,7 @@ let SignupInfo = () => {
                             throw new Error('네트워크 문제?')
                         })
                         .catch((err) => {
+                            console.log('에러에러')
                             console.log(err);
                         })
                 }}
