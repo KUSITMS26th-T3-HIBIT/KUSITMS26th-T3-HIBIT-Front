@@ -4,13 +4,12 @@
 }
 
 .NavContainer {
-    background: black;
     position: fixed;
     width: 100vw;
     height: 120px;
     display: inline-flex;
     align-items: center;
-    opacity: 0.4;
+    opacity: 1;
   }
   
   .NavLeft_menu {
