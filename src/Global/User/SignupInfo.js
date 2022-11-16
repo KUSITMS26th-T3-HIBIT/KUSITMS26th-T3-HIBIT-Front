@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Form from 'react-bootstrap/Form';
 
 const exhibitStyleData = [
     {id: 0, value: "남는건 사진밖에 없지! 사진촬영파", selected: false},
