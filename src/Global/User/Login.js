@@ -1,6 +1,6 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 axios.defaults.baseURL = "http://54.248.93.203:8080";
 axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem('accessToken')}`
