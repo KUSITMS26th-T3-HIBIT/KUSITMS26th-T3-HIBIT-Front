@@ -1,0 +1,118 @@
+
+/*Signup Information*/
+.Signup-info-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Signup-info-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1520px;
+}
+
+.Signup-hibit-logo{
+    width: 365px;
+    height: 80px;
+    padding-top: 180px;
+    cursor: pointer;
+}
+
+.Signup-title{
+    display: flex;
+    justify-content: flex-start;
+    margin-right: auto;
+}
+
+.Signup-require-profile-container, .Signup-optional-profile-container {
+    width: 1520px;
+}
+
+.Signup-require-profile, .Signup-optional-profile{
+    display: flex;
+    border: 2px solid;
+    border-radius: 1em;
+    margin: 5px;
+    padding: 5px;
+    flex-direction: column;
+}
+
+
+
+
+.Signup-column{
+    width: 174px;
+    margin-left: 80px;
+}
+
+.Signup-input-form{
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Nickname */
+.Signup-nickname{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    margin-top: 40px;
+}
+.Signup-nickname-input, .Signup-id-input{
+    width: 740px;
+    height: 96px;
+    border-radius: 1em;
+    padding-left: 40px;
+}
+.Signup-nickname-check, .Signup-id-check{
+    width: 325px;
+    height: 96px;
+    margin-left: 40px;
+
+    cursor: pointer;
+
+}
+
+/* ID */
+.Signup-id{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 40px;
+}
+
+
+
+
+
+
+.SignupExhibitStyleList{
+    display: grid;
+    grid-template-columns: 400px 400px;
+}
+.SignupExhibitStlyeItem { 
+    border: solid;
+    border-width: 1px;
+    cursor: pointer;
+}
+
+.SignupExhibitStlyeItem active { 
+    border: solid;
+    border-width: 1px;
+    cursor: pointer;
+    background: red;
+
+}
+
+.SignupMyStyleList{
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px;
+}
+
+.SignupMyStyleItem{
+    border: solid;
+    border-width: 1px;
+}
