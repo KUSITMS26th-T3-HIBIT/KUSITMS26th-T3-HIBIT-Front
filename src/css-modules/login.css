@@ -3,46 +3,76 @@
     width: 100vw;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-end;
 }
 
 .LoginHibitIcon{
     width: 156px;
     height: 34px;
-    padding-top: 17%;
+    padding-top: 180px;
+    cursor: pointer;
 }
 
 .LoginInput {
-    width: 100%;
+    width: 750px;
     display: flex;
     align-items: center;
     flex-direction: column;
+
 }
 
 .LoginIdInput, .LoginPwInput {
-    width: 42%;
+    border-width: 4px;
+    width: 750px;
     height: 95px;
-    font-size: 40px;
+    font-size: 30px;
     margin: 40px;
+    border-radius: 1em;
+    padding-left: 36px;
+}
+
+.LoginIdInput:focus{
+    color: #7E5DEB;
+    border-color: #7E5DEB;
+    outline: none;
+}
+.LoginPwInput:focus{
+    color: #7E5DEB;
+    border-color: #7E5DEB;
+    outline: none;
+}
+
+.LoginHelper{
+    width: 750px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 50px;
 }
 
 .LoginCheckbox {
-    align-self: flex-start;
+    display: flex;
 }
 
-.LoginAuto {
-    font-size: 40px;
-    text-align: left;
-    margin-left: 750px;
+.LoginHelp{
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    color: #797979;
 }
 
 .LoginButton{
-    width: 42%;
-    height: 95px;
-    font-size: 40px;
+    cursor: pointer;
 }
 
-.toSignUp {
-    width: 42%;
-    height: 95px;
-    font-size: 40px;
+.Login-findId, .Login-findPw, .Login-to-signup{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.Login-tr{
+    border: 1px solid;
+    border-collapse: collapse;
+    width: 0px;
+    height: 20px;
 }
