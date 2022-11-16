@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Form from 'react-bootstrap/Form';
 
 const exhibitStyleData = [
     {id: 0, value: "남는건 사진밖에 없지! 사진촬영파", selected: false},
@@ -24,8 +25,9 @@ const myStyleData = [
 ];
 
 let SignupInfo = () => {
-
+    let date = new Date().getFullYear();
     let regExp_pw = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,20}$/; // 비밀번호 정규표현식 : 문자, 숫자, 특수 문자 포함 8~20자
+
 
     const [id, setId] = useState('');
     const [pw, setPw] = useState('');
@@ -34,6 +36,8 @@ let SignupInfo = () => {
     const [isRePw, setIsRePw] = useState(false); // 비밀번호 입력 - 재입력 일치 여부
     const [name, setName] = useState('');
     const [nickname, setNickname] = useState('');
+    const [homePrefix, setHomePrefix] = useState('');
+    const [homeSuffix, setHomeSuffix] = useState('');
     const [home, setHome] = useState('');
     const [year, setYear] = useState('');
     const [month, setMonth] = useState('');
@@ -72,8 +76,12 @@ let SignupInfo = () => {
     }, [pw, repw])
 
     useEffect(()=>{
-        setEmail(emailPrefix + emailSuffix);
+        setEmail(emailPrefix + '@' + emailSuffix); //  이메일 (prefix) + @ + (suffix)
     }, [emailPrefix, emailSuffix]);
+
+    useEffect(()=>{
+        setHome(homePrefix + " " + homeSuffix); // 주소 (시/도) + (구/군)
+    }, [homePrefix, homeSuffix])
 
     return (
         <div className="Signup-info-container">
@@ -199,81 +207,104 @@ let SignupInfo = () => {
                                 </div>
                             </div>
 
-                            <div className="SignupName">
-                                <div>이름</div>
-                                <input
-                                    className="SignupNameInput"
-                                    value={name}
-                                    onChange={(e) => setName(e.target.value)}
-                                />
+                            <div className="Signup-name-gender-row">
+                                <div className="Signup-name">
+                                    <div className="Signup-column">이름</div>
+                                    <input
+                                        className="Signup-name-input"
+                                        value={name}
+                                        placeholder="이름 입력"
+                                        onChange={(e) => setName(e.target.value)}
+                                    />
+                                </div>
+                                <div
+                                    className="Signup-gender"
+                                    onChange={(e) => setSelectedGender(e.target.value)}>
+                                    <div className="Signup-column">성별</div>
+                                    <select 
+                                        className="Signup-selected-gender"
+                                        onChange={(e) => {
+                                            if (e.target.value === 'male')
+                                                setGender(true);
+                                            else
+                                                setGender(false);
+                                        }}
+                                    >
+                                        <option key='male' value='male'>남자</option>
+                                        <option key='female' value='female'>여자</option>
+                                    </select>
+                                </div>
                             </div>
 
-                            <div
-                                className="SignupGender"
-                                onChange={(e) => setSelectedGender(e.target.value)}>
-                                <div>성별</div>
-                                <select
-                                    className="SignupSelectedGender"
-                                    onChange={(e) => {
-                                        if (e.target.value === 'male')
-                                            setGender(true);
-                                        else
-                                            setGender(false);
-                                    }}
-                                >
-                                    <option key='male' value='male'>남자</option>
-                                    <option key='female' value='female'>여자</option>
+                            <div className="Signup-birth">
+                                <div className="Signup-column">생년월일</div>
+                                <div className="Signup-birth-grid">
+                                    <input
+                                        className="Signup-birth-year"
+                                        type='number'
+                                        placeholder="연도(ex. 2022)"
+                                        onChange={(e) => setYear(e.target.value)}
+                                    />
+                                    <input
+                                        className="Signup-birth-month"
+                                        type='number'
+                                        placeholder="월"
+                                        onChange={(e) => setMonth(e.target.value)}
+                                    />
+                                    <input
+                                        className="Signup-birth-day"
+                                        type='number'
+                                        placeholder="일"
+                                        onChange={(e) => setDay(e.target.value)}
+                                    />
+                                </div>
+                            </div>
+
+                            <div className="Signup-home">
+                                <div className="Signup-column">주소</div>
+                                <select className="Signup-home-prefix" name='city' onChange={(e)=>{setHomePrefix(e.target.value)}}>
+                                    <option value='전체'>전체</option>
+                                    <option value='서울'>서울특별시</option>
+                                    <option value='부산'>부산광역시</option>
+                                    <option value='대구'>대구광역시</option>
+                                    <option value='인천'>인천광역시</option>
+                                    <option value='광주'>광주광역시</option>
+                                    <option value='대전'>대전광역시</option>
+                                    <option value='울산'>울산광역시</option>
+                                    <option value='경기'>경기도</option>
+                                    <option value='강원'>강원도</option>
+                                    <option value='충북'>충청북도</option>
+                                    <option value='충남'>충청남도</option>
+                                    <option value='전북'>전라북도</option>
+                                    <option value='전남'>전라남도</option>
+                                    <option value='경북'>경상북도</option>
+                                    <option value='경남'>경상남도</option>
+                                    <option value='제주'>제주도</option>
                                 </select>
+                                
+                                <input
+                                    className="Signup-home-suffix"
+                                    value={homeSuffix}
+                                    placeholder="구 / 군"
+                                    onChange={(e) => setHomeSuffix(e.target.value)}
+                                />
+                                
                             </div>
 
-                            <div className="SignupBirth">
-                                <div>생년월일</div>
-                                <input
-                                    className="SignupBirthYear"
-                                    type='number'
-                                    placeholder="연도(ex. 2022)"
-                                    onChange={(e) => setYear(e.target.value)}
-                                />
-                                <input
-                                    className="SignupBirthMonth"
-                                    type='number'
-                                    placeholder="월"
-                                    onChange={(e) => setMonth(e.target.value)}
-                                />
-                                <input
-                                    className="SignupBirthDay"
-                                    type='number'
-                                    placeholder="일"
-                                    onChange={(e) => setDay(e.target.value)}
-                                />
-                            </div>
-
-                            <div className="SignupHome">
-                                <div>주소</div>
-                                <input
-                                    className="SignupHomeInput"
-                                    value={home}
-                                    onChange={(e) => setHome(e.target.value)}
-                                />
-                            </div>
-
-                            <div className="SignupEmail">
-                                <div>이메일</div>
+                            <div className="Signup-email">
+                                <div className="Signup-column">이메일</div>
                                 <div>
                                     <input
-                                        className="SignupEmailInput"
+                                        className="Signup-email-input"
                                         placeholder="이메일 주소"
                                         value={emailPrefix}
-                                        onChange={(e) => { setEmailPrefix(e.target.value); console.log(emailPrefix) }}
+                                        onChange={(e) => setEmailPrefix(e.target.value)}
                                     />
-                                    <b> @ </b>
+                                    <b className="Signup-at-symbol"> @ </b>
                                     <select
-                                        className="SignupEmailAddrSelect"
+                                        className="Signup-email-addr-select"
                                         defaultValue='@gmail.com'
-                                        onChange={(e) => {
-                                            setEmailSuffix(e.target.value);
-                                            console.log(e.target.value);
-                                        }}
+                                        onChange={(e) => setEmailSuffix(e.target.value)}
                                     >
                                         <option key='gmail' value='@gmail.com'>gmail.com</option>
                                         <option key='naver' value='@naver.com'>naver.com</option>
@@ -281,28 +312,32 @@ let SignupInfo = () => {
                                 </div>
                             </div>
 
-                            <div className="SignupPhone">
-                                <div>휴대폰 번호</div>
-                                <div className="SignupPhoneRow">
+                            <div className="Signup-phone">
+                                <div className="Signup-column">휴대폰 번호</div>
                                     <input
-                                        className="SignupPhoneInput"
+                                        className="Signup-phone-input"
                                         placeholder="휴대폰 번호 입력('-'제외 11자리 입력)"
                                         value={phone}
                                         onChange={(e) => setPhone(e.target.value)}
                                     />
-                                    <button
-                                        className="SignupPhoneValidate"
+                            </div>
+                            <div className="Signup-phone-auth">
+                                <div className="Signup-column">{" "}</div>
+                                <div className="Signup-phone-auth-row">
+                                    <input
+                                        className="Signup-phone-auth-input"
+                                        placeholder="인증번호"
+                                        value={phoneAuth}
+                                        onChange={(e) => setPhoneAuth(e.target.value)}
+                                    />
+                                    <img
+                                        className="Signup-phone-validate"
+                                        src="/phoneAuth.png"
                                         onClick={() => {
                                             alert('인증 번호 전송 완료')
                                         }}
-                                    >인증번호 받기</button>
+                                    />
                                 </div>
-                                <input
-                                    className="SignupPhoneAuthInput"
-                                    placeholder="인증번호 입력"
-                                    value={phoneAuth}
-                                    onChange={(e) => setPhoneAuth(e.target.value)}
-                                />
                             </div>
                         </div>
                     </div>
@@ -311,7 +346,7 @@ let SignupInfo = () => {
 
 
                 <div className="Signup-optional-profile-container">
-                    <div>추가 프로필</div>
+                    <div className="Signup-optianal-title">추가 프로필</div>
                     <div className="Signup-optional-profile">
                         <div className="SignupExhibitStyle">
                             <div>본인의 전시 관람 스타일을 골라주세요</div>
@@ -374,7 +409,7 @@ let SignupInfo = () => {
                                 password: pw,
                                 nickname: nickname,
                                 phone_number: phone,
-                                age: 2022 - year,
+                                age: +date - year + 1,
                                 gender: "True",
                                 home: home,
                                 introduce: "자기소개"
@@ -390,10 +425,8 @@ let SignupInfo = () => {
                                 .then((res) => {
                                     console.log(res.data);
                                     console.log(res.status);
-                                    throw new Error('네트워크 문제?')
                                 })
                                 .catch((err) => {
-                                    console.log('에러에러')
                                     console.log(err);
                                 })
                         }}
