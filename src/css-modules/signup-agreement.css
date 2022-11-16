@@ -1,3 +1,4 @@
+/*Signup Agreement*/
 .SignupAgreeSection {
     display: flex;
     width: 100vw;
@@ -15,8 +16,8 @@
 }
 
 .SignupHibitLogo {
-    width: 156px;
-    height: 34px;
+    width: 365px;
+    height: 80px;
     padding-top: 180px;
 }
 
@@ -43,6 +44,7 @@
     height: 240px;
     align-self: flex-start;
     margin: 30px;
+
 } 
 
 .Signup-Buttons{
@@ -56,51 +58,4 @@
 
 .Signup-nextBtn{
     margin-left: 20px;
-}
-
-
-
-
-.SignupInfoSection{
-    display: flex;
-    width: 100vw;
-    flex-direction: column;
-    align-items: center;
-}
-
-.SignupRequireProfile, .SignupOptionalProfile {
-    display: flex;
-}
-
-
-
-
-
-
-.SignupExhibitStyleList{
-    display: grid;
-    grid-template-columns: 400px 400px;
-}
-.SignupExhibitStlyeItem { 
-    border: solid;
-    border-width: 1px;
-    cursor: pointer;
-}
-
-.SignupExhibitStlyeItem active { 
-    border: solid;
-    border-width: 1px;
-    cursor: pointer;
-    background: red;
-
-}
-
-.SignupMyStyleList{
-    display: grid;
-    grid-template-columns: 100px 100px 100px 100px;
-}
-
-.SignupMyStyleItem{
-    border: solid;
-    border-width: 1px;
 }
