@@ -49,8 +49,8 @@ let SignupAgreement = () => {
     }, [provisionCheck, privacyCheck])
 
     useEffect(() => {
-        if (provisionCheck === true && privacyCheck === true && marketingCheck === true && snsCheck == true && emailCheck == true) setAllCheck(true);
-        else setAllCheck(false);
+        if (provisionCheck === true && privacyCheck === true && marketingCheck === true && snsCheck === true && emailCheck === true) setAllCheck(true);
+        else setAllCheck(false); 
     }, [provisionCheck, privacyCheck, marketingCheck, snsCheck, emailCheck]);
 
     return (
