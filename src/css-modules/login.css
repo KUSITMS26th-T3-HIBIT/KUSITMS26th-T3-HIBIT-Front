@@ -7,8 +7,8 @@
 }
 
 .LoginHibitIcon{
-    width: 156px;
-    height: 34px;
+    width: 365px;
+    height: 80px;
     padding-top: 180px;
     cursor: pointer;
 }
@@ -68,6 +68,7 @@
 .Login-findId, .Login-findPw, .Login-to-signup{
     margin-left: 20px;
     margin-right: 20px;
+    cursor: pointer;
 }
 
 .Login-tr{

@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import {ReactComponent as GrinningFace} from '../../svg/GrinningFace.svg';
 import SliderImg from '../Slider/Slider';
 function Main(){
   let navigate = useNavigate();
@@ -35,7 +34,6 @@ function Main(){
                   transition={{ duration: 0.5 }}
                   whileHover={{ scale: 1.1 }}
                 >
-                  {/* <GrinningFace width="200" height="200"></GrinningFace> */}
                   <img src='https://emojipedia-us.s3.amazonaws.com/source/microsoft-teams/337/beaming-face-with-smiling-eyes_1f601.png'/>
                 </motion.div>
             </div>
@@ -64,7 +62,6 @@ function Main(){
                 transition={{ duration: 0.5 }}
                 whileHover={{ scale: 1.1 }}
               >
-                {/* <GrinningFace width="200" height="200"></GrinningFace> */}
                 <img src='https://emojipedia-us.s3.amazonaws.com/source/microsoft-teams/337/face-with-monocle_1f9d0.png'/>
               </motion.div>
             </div>
@@ -82,7 +79,7 @@ function Main(){
                 어떤 주제든 괜찮아요. 좋아하는 주제로 모임을 만들고, 취향이 맞는 사람들을 초대해보세요.
               </div>
             </div>
-            <img className='home-button-matching-btn' src='/main_matching_btn.png'/>
+            <img onClick={()=>navigate('/match')} className='home-button-matching-btn' src='/main_matching_btn.png'/>
           </div>
           <div className='home-bottom-section-review-down'>
             <div className='home-bottom-section-review-down-item'>
@@ -112,7 +109,7 @@ function Main(){
                 초대를 받고 놀러 온 이들과는 즐겁게 대화하며 취향을 나눠 보세요.
               </div>
             </div>
-            <img className='home-button-matching-btn' src='/main_community_btn.png'/>
+            <img onClick={() => { navigate('/community') }} className='home-button-community-btn' src='/main_community_btn.png'/>
           </div>
           <div className='home-bottom-section-community-down'>
             <div className='home-bottom-section-community-down-item'>
