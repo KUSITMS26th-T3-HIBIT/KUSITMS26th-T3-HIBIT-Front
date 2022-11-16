@@ -58,7 +58,6 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-
     margin-top: 40px;
 }
 .Signup-nickname-input, .Signup-id-input{
@@ -85,6 +84,23 @@
 }
 
 
+/* PassWord */
+.Signup-pw-row, .Signup-pw-re-row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 40px;
+}
+.Signup-pw-not-equal{
+    font-weight: bold;
+    color: #7E5DEB;
+}
+.Signup-pw-input, .Signup-pw-re-input{
+    width: 1000px;
+    height: 96px;
+    border-radius: 1em;
+    padding-left: 40px;
+}
 
 
 

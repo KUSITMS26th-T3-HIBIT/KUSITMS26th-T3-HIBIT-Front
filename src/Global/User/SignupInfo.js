@@ -24,10 +24,14 @@ const myStyleData = [
 ];
 
 let SignupInfo = () => {
+
+    let regExp_pw = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,20}$/; // 비밀번호 정규표현식 : 문자, 숫자, 특수 문자 포함 8~20자
+
     const [id, setId] = useState('');
     const [pw, setPw] = useState('');
     const [repw, setRepw] = useState('');
-    const [isValidPw, setIsValidPw] = useState(false); // 비밀번호 입력 - 재입력 일치 여부
+    const [isPw, setIsPw] = useState(false);
+    const [isRePw, setIsRePw] = useState(false); // 비밀번호 입력 - 재입력 일치 여부
     const [name, setName] = useState('');
     const [nickname, setNickname] = useState('');
     const [home, setHome] = useState('');
@@ -56,8 +60,16 @@ let SignupInfo = () => {
     }
 
     useEffect(()=>{
-        if(pw === repw) {setIsValidPw(true); console.log('true!!')};
-    }, [pw, repw]);
+        if(pw.match(regExp_pw) === null) // 정규표현식과 불일치
+            setIsPw(false);
+        else 
+            setIsPw(true);
+    }, [pw]);
+
+    useEffect(()=>{
+        if(pw===repw) setIsRePw(true); // 비밀번호 <-> 비밀번호 재입력 일치
+        else setIsRePw(false);
+    }, [pw, repw])
 
     useEffect(()=>{
         setEmail(emailPrefix + emailSuffix);
@@ -147,29 +159,44 @@ let SignupInfo = () => {
                                 />
                             </div>
 
-                            <div className="SignupPwRow">
-                                <div>비밀번호</div>
-                                <input
-                                    className="SignupPwInput"
-                                    type="password"
-                                    value={pw}
-                                    placeholder="비밀번호 입력 (문자, 숫자, 특수 문자 포함 8~20자)"
-                                    onChange={(e) => {
-                                        console.log('pw', e.target.value);
-                                        // e.target.value에 대한 정규표현식 : 문자, 숫자, 특수 문자 포함 8~20자
-                                        setPw(e.target.value);
-                                    }}
-                                />
-                                <input
-                                    className="SignupPwReInput"
-                                    type="password"
-                                    value={repw}
-                                    placeholder="비밀번호 재입력 (문자, 숫자, 특수 문자 포함 8~20자)"
-                                    onChange={(e) => {
-                                        console.log('repw', e.target.value);
-                                        setRepw(e.target.value);
-                                    }}
-                                />
+                            <div className="Signup-pw">
+                                <div className="Signup-pw-row">
+                                    <div className="Signup-column">비밀번호</div>
+                                    <div className="Signup-row-col">
+                                        <input
+                                            className="Signup-pw-input"
+                                            type="password"
+                                            value={pw}
+                                            placeholder="비밀번호 입력 (문자, 숫자, 특수 문자 포함 8~20자)"
+                                            onChange={(e) => {
+                                                console.log('pw', e.target.value);
+                                                setPw(e.target.value);
+                                            }}
+                                        />
+                                        {
+                                            !isPw && <div>비밀번호는 문자, 숫자, 특수문자를 포함 8~20자여야 합니다.</div>
+                                        }
+                                    </div>
+                                    
+                                </div>
+                                <div className="Signup-pw-re-row">
+                                    <div className="Signup-column">비밀번호 재입력</div>
+                                    <div className="Signup-row-col">
+                                        <input
+                                            className="Signup-pw-re-input"
+                                            type="password"
+                                            value={repw}
+                                            placeholder="비밀번호 재입력 (문자, 숫자, 특수 문자 포함 8~20자)"
+                                            onChange={(e) => {
+                                                console.log('repw', e.target.value);
+                                                setRepw(e.target.value);
+                                            }}
+                                        />
+                                        {
+                                            repw.length > 0 && !isRePw && <div className="Signup-pw-not-equal">비밀번호가 일치하지 않습니다.</div>
+                                        }
+                                    </div>
+                                </div>
                             </div>
 
                             <div className="SignupName">
