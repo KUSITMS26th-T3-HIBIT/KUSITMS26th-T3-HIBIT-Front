@@ -7,28 +7,59 @@
 
 .SignupAgreeComponents{
     display: flex;
-    width: 30vw;
-    height: 700px;
+    width: 1135px;
+    height: 100vh;
     flex-direction: column;
     align-items: center;
-    margin: 50px;
+    margin: 20px;
 }
 
 .SignupHibitLogo {
     width: 156px;
     height: 34px;
-    padding-top: 10%;
+    padding-top: 180px;
 }
 
-.SignupTextarea {
-    width: 80%;
+.Signup-contents {
+    width: 100%;
     height: 100%;
+    resize: none;
 }
 
-.SignupAgreeAll, .SignupProvision, .SignupPrivacy, .SignupMarketing {
+.SignupAgreeAll{
+    width: 1135px;
+    margin: 30px;
+    align-self: flex-start;
+}
+.SignupSNS, .SignupEmail{
+    width: 1135px;
+    margin-left: 30px;
+    margin-top: 10px;
+    align-self: flex-start;
+}
+
+.SignupProvision, .SignupPrivacy, .SignupMarketing {
+    width: 1135px;
+    height: 240px;
     align-self: flex-start;
     margin: 30px;
 } 
+
+.Signup-Buttons{
+    margin-top: 55px;
+}
+
+.Signup-prevBtn{
+    margin-right: 20px;
+    margin-left: 60px;
+}
+
+.Signup-nextBtn{
+    margin-left: 20px;
+}
+
+
+
 
 .SignupInfoSection{
     display: flex;
@@ -38,7 +69,7 @@
 }
 
 .SignupRequireProfile, .SignupOptionalProfile {
-    display: f;
+    display: flex;
 }
 
 
