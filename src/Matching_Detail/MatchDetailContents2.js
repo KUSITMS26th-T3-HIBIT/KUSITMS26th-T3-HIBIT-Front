@@ -15,7 +15,7 @@ const MatchDetailContents2 = ({ tapIdx }) => {
       className="matchDetail-contents2-box"
     >
       {/* 좌우 나눔/ */}
-      <img src="Group396.png" width="524" height="524" alt="usepics"></img>
+      <img src="/Group396.png" width="524" height="524" alt="usepics"></img>
 
       <div className="matchDetail-contents2-box-rightside">
         <div className="matchDetail-c2box-rsline1">

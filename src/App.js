@@ -12,6 +12,7 @@ import Login from './Global/User/Login';
 import SignupAgreement from './Global/User/SignupAgreement';
 import SignupInfo from './Global/User/SignupInfo';
 import CreateMatch from './Matching/Match/CreateMatch';
+import MatchDetail from './Matching_Detail/MatchDetail';
 
 function App() {
   let navigate = useNavigate();
@@ -87,6 +88,7 @@ function App() {
           <Route path='/match/publish' element={<CreateMatch />} />
           <Route path='/community' element={<ExhibitReview />} />
           <Route path='/exhibitinfo' element={<ExhibitInfo />} />
+          <Route path='/match/detail' element={<MatchDetail />} />
 
           <Route path='/mypage' element={<Mypage />} />
           <Route path='/login' element={<Login />} />
