@@ -12,6 +12,7 @@
 
 @import url('./css-modules/match_detail.css');
 
+
 body{
   padding:0;
   height: 100vh;
@@ -22,15 +23,6 @@ h1,h2,h3,h4,h5,h6{
   font-size:inherit;
   padding:0;
   margin:0;
-}
-
-.LoginIcon .LogoutIcon{
-  cursor: pointer;
-}
-
-.Hibit_logo{
-  width: 156px; 
-  height: 34px;
 }
 
 .Container{

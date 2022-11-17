@@ -1,10 +1,11 @@
-.Navbar {
+.nav-bar {
   position: absolute;
   z-index: 2;
   flex: 1
 }
 
-.NavContainer {
+/* Container : includes left & right section*/
+.nav-user-container, .nav-guest-container {
   background: #5E1EC7;
   position: fixed;
   width: 100vw;
@@ -14,69 +15,98 @@
   opacity: 0.5;
 }
 
-.NavLeft_menu {
-  display: flex;
-  margin-top: 15px;
-  margin-left: 15px;
-
-  flex-direction: row;
-}
-
-.NavLeft {
+/* left section */
+.nav-user-left-section, .nav-guest-left-section {
   display: flex;
   justify-content: flex-start;
   color: white;
   margin-left: 10%;
 }
+.nav-user-hibit-logo, .nav-guest-hibit-logo{
+  margin-top: 15px;
+  margin-left: 15px;
+  width: 156px; 
+  height: 34px;
+  cursor: pointer;
+}
+.nav-user-left-menus, .nav-guest-left-menus {
+  display: flex;
+  margin-top: 15px;
+  margin-left: 15px;
+  flex-direction: row;
+}
+.nav-user-item, .nav-guest-item {
+  margin: 10px;
+  cursor: pointer;
+}
 
-.NavRight {
+
+/* right section */
+.nav-user-right-section {
   display: flex;
   justify-content: flex-end;
   color: white;
   margin-left: auto;
   margin-right: 10%;
 }
-
-.NavRight_icon {
+.nav-guest-right-section {
   display: flex;
-  margin-top: 10px;
+  justify-content: flex-end;
+  margin-left: auto;
+  margin-right: 10%;
 }
 
-.Hibit_logo {
-  margin-top: 15px;
-  margin-left: 15px;
-  cursor: pointer;
-}
-
-.ShareIcon {
+/* right - Guest */
+.nav-guest-share-icon {
+  width: 28px;
+  height: 32px;
   margin-right: 28px;
   margin-top: 5px;
   cursor: pointer;
 }
-
-.ProfileIcon {
-  margin-top: 2px;
+.nav-guest-login-btn{
   cursor: pointer;
 }
 
-.NavItem {
-  margin: 10px;
+
+/* right - User */
+.nav-user-right-components{
+  display: inline-flex;
+  align-items: center;
+}
+.nav-user-mypage {
+  
+  margin-right: 32px;
   cursor: pointer;
 }
-
-.NavVerticalLine {
+.nav-user-vertical-line {
   height: 40px;
   margin: 10px;
   margin-right: 32px;
 }
-
-.NavMypage {
-  margin-top: 25px;
-  margin-right: 32px;
+.nav-user-profile-icon {
+  width: 44px;
+  height: 44px;
+  margin-top: 2px;
+  cursor: pointer;
+}
+.nav-user-logout-icon{
+  margin-left: 30px;
   cursor: pointer;
 }
 
-/* .Footer-container{
-  margin-bottom: 1%;
-  position: fixed;
+
+
+/* .NavRight_icon {
+  display: flex;
+  margin-top: 10px;
 } */
+
+
+
+
+
+
+
+
+
