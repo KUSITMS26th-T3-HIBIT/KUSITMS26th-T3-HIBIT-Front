@@ -1,6 +1,6 @@
 import './App.css';
 import Main from './Global/Main/Main';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import ServiceInfo from './ServiceInfo/ServiceInfo';
 import MatchingMain from './Matching/MatchingMain';
 import ExhibitReview from './Community/ExhibitReview';
@@ -23,8 +23,8 @@ function App() {
     <div className="App">
       <div className='Container'>
         <div className="nav-bar">
-          {isNull(token) && <GuestGreeting/>}
-          {!isNull(token) && <UserGreeting/>}
+          {isNull(token) && <GuestGreeting hasToken={!isNull(token)}/>}
+          {!isNull(token) && <UserGreeting hasToken={!isNull(token)}/>}
         </div>
 
         {/* <div className='Footer-container'>

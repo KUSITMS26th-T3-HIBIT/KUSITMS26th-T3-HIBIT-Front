@@ -16,25 +16,30 @@
   
 }
 
-/* 검색 바탕 이미지 */
-.searchInput_ui {
-  /* display: flex; */
-  /* justify-content: center; */
-  position: absolute;
-}
-
-
 /* 검색 input box */
-.searchInput_input { 
-  /* display: flex; */
-  /* justify-content: center; */
-  width: 80%;
-  padding-left: 15%;
-  height: 32px;
-  border: none;
+.match-main-search-container{
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.match-main-search{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  margin-left: 25%;
+  margin-right: 25%;
+  
+}
+.match-main-search-input { 
   position: absolute;
-  outline: none;
-  background-color: transparent;
+  width: 400px;
+  height: 40px;
+  padding-left: 30px;
+  border-radius: 3em;
+  border-color: #5E1EC7;
+  color: #5E1EC7;
+  font-size: 15px;
 
 }
 
@@ -42,8 +47,8 @@
 /* 돋보기 아이콘 */
 .searchInput_icon {
   z-index: 2;
-  margin-right: 10%;
-  /* display: flex; */
+
+
   margin-left: auto;
 }
 

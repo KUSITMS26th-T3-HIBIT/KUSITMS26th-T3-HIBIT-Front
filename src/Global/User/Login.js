@@ -11,7 +11,6 @@ let Login = () => {
     let navigate = useNavigate();
     let [id, setId] = useState('');
     let [pw, setPw] = useState('');
-    let [accessToken, setAccessToken] = useState('');
 
     const dispatch = useDispatch();
 
@@ -52,16 +51,12 @@ let Login = () => {
                 className="LoginButton"
                 src="/LoginBtn.png"
                 onClick={() => {
-                    console.log(id, pw);
-                    console.log(id.length, pw.length)
                     axios.post('/user/login', {
                         id: id,
                         password: pw
                     })
                     .then((res)=>{
                         localStorage.setItem('accessToken', res.data);
-                        console.log(res)
-                        console.log(res.data);
                         console.log(res.status);
                         dispatch(login({token: res.data, isLogin: true}));
                         navigate('/');
