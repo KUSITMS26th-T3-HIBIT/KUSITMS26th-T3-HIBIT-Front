@@ -6,11 +6,13 @@
 
 @import url('./css-modules/login.css');
 
-@import url('./css-modules/signup.css');
+@import url('./css-modules/signup-agreement.css');
+
+@import url('./css-modules/signup-info.css');
 
 body{
   padding:0;
-  height:300vh;
+  height: 100vh;
   margin:0;
 }
 
@@ -20,15 +22,21 @@ h1,h2,h3,h4,h5,h6{
   margin:0;
 }
 
-.App{
-  height: 100vh;
-}
-
-.tmpImg{
-  width: 1920px;
-  height: 1080px;
-}
-
-.LoginIcon{
+.LoginIcon .LogoutIcon{
   cursor: pointer;
+}
+
+.Hibit_logo{
+  width: 156px; 
+  height: 34px;
+}
+
+.Container{
+  position: relative;
+  height: 300vh;
+}
+
+.Footer-container{
+  position: absolute;
+  bottom: 0px;
 }

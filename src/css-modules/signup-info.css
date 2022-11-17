@@ -1,0 +1,464 @@
+
+/*Signup Information*/
+
+/* Structure */
+.Signup-info-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #F8F9F4;
+}
+
+.Signup-info-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1520px;
+}
+
+.Signup-hibit-logo{
+    width: 365px;
+    height: 80px;
+    padding-top: 180px;
+    cursor: pointer;
+}
+
+.Signup-title{
+    display: flex;
+    justify-content: flex-start;
+    margin-right: auto;
+    font-weight: bold;
+    color: #7E5DEB;
+    font-size: 30px;
+}
+
+.Signup-require-profile-container, .Signup-optional-profile-container {
+    width: 1520px;
+    background: white;
+}
+
+.Signup-require-profile, .Signup-optional-profile{
+    display: flex;
+    border: 4px solid;
+    border-radius: 2em;
+    border-color: #797979;
+    margin: 5px;
+    padding: 5px;
+    flex-direction: column;
+}
+
+
+
+/* Common Component */
+.Signup-column{
+    width: 174px;
+    margin-left: 80px;
+    font-size: 20px;
+}
+
+.Signup-input-form{
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Nickname */
+.Signup-nickname{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 40px;
+}
+.Signup-nickname-input, .Signup-id-input{
+    width: 740px;
+    height: 96px;
+    border: 2px solid;
+    border-color: #797979;
+    border-radius: 1em;
+    padding-left: 40px;
+    font-size: 20px;
+}
+.Signup-nickname-check, .Signup-id-check{
+    width: 325px;
+    height: 96px;
+    margin-left: 40px;
+    cursor: pointer;
+}
+
+/* ID */
+.Signup-id{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 40px;
+}
+
+
+/* PassWord */
+.Signup-pw-row, .Signup-pw-re-row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 40px;
+}
+.Signup-pw-not-equal{
+    font-weight: bold;
+    color: #7E5DEB;
+}
+.Signup-pw-input, .Signup-pw-re-input{
+    width: 1000px;
+    height: 96px;
+    border: 2px solid;
+    border-color: #797979;
+    border-radius: 1em;
+    padding-left: 40px;
+    font-size: 20px;
+}
+
+
+/* Name-Gender Row */
+.Signup-name-gender-row{
+    display: inline-flex;
+    flex-direction: row;
+}
+
+/*  Name */
+.Signup-name{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 40px;
+}
+.Signup-name-input{
+    width: 500px;
+    height: 96px;
+    border: 2px solid;
+    border-color: #797979;
+    border-radius: 1em;
+    padding-left: 40px;
+    font-size: 20px;
+}
+
+
+/* Gender */
+.Signup-gender{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 40px;
+}
+.Signup-selected-gender{
+    width: 250px;
+    height: 96px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 1em;
+}
+
+/* Birth */
+.Signup-birth{
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 40px;
+}
+.Signup-birth-grid{
+    display: grid;
+    grid-template-columns: 350px 350px 350px;
+}
+.Signup-birth-year, .Signup-birth-month, .Signup-birth-day{
+    height: 96px;
+    border-radius: 1em;
+    border: 2px solid;
+    border-color: #797979;
+    padding-left: 40px;
+    margin-right: 40px;
+    font-size: 20px;
+}
+
+
+/* Home */
+.Signup-home{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 40px;
+}
+.Signup-home-prefix{
+    width: 500px;
+    height: 96px;
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid;
+    border-color: #797979;
+    border-radius: 1em;
+    font-size: 20px;
+}
+.Signup-home-suffix{
+    width: 500px;
+    height: 90px;
+    margin-left: 50px;
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid;
+    border-color: #797979;
+    border-radius: 1em;
+    font-size: 20px;
+}
+
+/* Email */
+.Signup-email{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 40px;
+}
+.Signup-email-input, .Signup-email-addr-select{
+    width: 500px;
+    height: 96px;
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid;
+    border-color: #797979;
+    border-radius: 1em;
+    font-size: 20px;
+}
+.Signup-at-symbol{
+    font-size: 30px;
+}
+
+
+/* Phone */
+
+.Signup-phone{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 40px;
+}
+.Signup-phone-input{
+    width: 1000px;
+    height: 96px;
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid;
+    border-color: #797979;
+    border-radius: 1em;
+    font-size: 20px;
+}
+
+.Signup-phone-auth-row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 80px;
+}
+.Signup-phone-auth-input{
+    margin-left: 254px;
+    cursor: pointer;
+    width: 700px;
+    height: 96px;
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid;
+    border-color: #797979;
+    border-radius: 1em;
+    font-size: 20px;
+}
+.Signup-phone-validate{
+    margin-left: 40px;
+}
+
+
+
+/**** Optional Information ****/
+.Signup-optianal-title{
+    margin-top: 80px;
+    font-weight: bold;
+    color: #7E5DEB;
+    font-size: 30px;
+}
+
+/* Common component */
+.Signup-optional-column{
+    margin-top: 40px;
+    margin-left: 110px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+/* Exhibit Style */
+.Signup-exhibit-style-list-container{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+.Signup-exhibit-style{
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+}
+.Signup-exhibit-style-list{
+    display: grid;
+    grid-template-columns: 660px 660px;
+    grid-template-rows: 114px 114px;
+}
+.Signup-exhibit-stlye-item { 
+    position: relative;
+    border: solid;
+    border-width: 1px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 120px;
+    border: 2px solid;
+    border-color: #797979;
+    border-radius: 0.5em;
+    font-size: 20px;
+    margin: 20px;
+}
+.Signup-exhibit-stlye-itemActive{
+    position: relative;
+    background-color: #7E5DEB;
+    color: white;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 120px;
+    border: 2px solid;
+    border-color: #797979;
+    border-radius: 0.5em;
+    font-size: 20px;
+    margin: 20px;
+    cursor: pointer;
+}
+.Signup-exhibit-style-img{
+    position: absolute;
+    top: 0px;
+    right: 70px;
+}
+
+
+/* My Style */
+.Signup-my-style-list-container{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+.Signup-my-style-list{
+    display: grid;
+    grid-template-columns: 310px 310px 310px 310px;
+    grid-template-rows: 114px 114px 114px;
+}
+.Signup-my-style-item{
+    border: solid;
+    border-width: 1px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid;
+    border-color: #797979;
+    border-radius: 0.5em;
+    font-size: 20px;
+    margin: 20px;
+}
+.Signup-my-style-itemActive{
+    background-color: #7E5DEB;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid;
+    border-color: #797979;
+    border-radius: 0.5em;
+    font-size: 20px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+
+/* My Interest */
+.Signup-interest-list-container{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+.Signup-interest-list{
+    display: grid;
+    grid-template-columns: 310px 310px 310px 310px;
+    grid-template-rows: 114px 114px 114px;
+}
+.Signup-interest-item{
+    border: solid;
+    border-width: 1px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid;
+    border-color: #797979;
+    border-radius: 0.5em;
+    font-size: 20px;
+    margin: 20px;
+}
+.Signup-interest-itemActive{
+    background-color: #7E5DEB;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid;
+    border-color: #797979;
+    border-radius: 0.5em;
+    font-size: 20px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+/* Introduce */
+.Signup-introduce-container{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+.Signup-introduce{
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+}
+.Signup-introduce-input {
+    width: 80%;
+    height: 160px;
+    resize: none;
+    border: 2px solid;
+    border-color: #797979;
+    border-radius: 0.5em;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+
+
+/* Signup Button*/
+.Signup-button-container{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+.Signup-button{
+    width: 1100px;
+    height: 100px;
+    background-color: #7E5DEB;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid;
+    border-color: #797979;
+    border-radius: 0.5em;
+    font-size: 20px;
+    margin: 20px;
+    cursor: pointer;
+}

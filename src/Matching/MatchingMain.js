@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Route, useNavigate } from 'react-router-dom';
-import Slider from '../Global/Slider/Slider';
+import SliderImg from '../Global/Slider/Slider';
 import MatchList from './Match/MatchList';
 import SearchMatching from './Match/SearchMatching'
 
@@ -11,7 +11,7 @@ let MatchingMain = () => {
 
     return (
         <div className='MatchMain'>
-            <Slider></Slider>
+            <SliderImg></SliderImg>
             <div className='searchInput'>
                 <img className='searchInput_ui' src='/searchInput.png'/>
                 <input 
