@@ -7,7 +7,7 @@ import MatchingMain from './Matching/MatchingMain';
 import ExhibitReview from './Community/ExhibitReview';
 import ExhibitInfo from './ExhibitInfo/ExhibitInfo';
 import Mypage from './Global/User/Mypage/Mypage';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Login from './Global/User/Login';
 import SignupAgreement from './Global/User/SignupAgreement';
 import SignupInfo from './Global/User/SignupInfo';
@@ -16,6 +16,16 @@ import CreateMatch from './Matching/Match/CreateMatch';
 function App() {
   let navigate = useNavigate();
   let [isLogin, setIsLogin] = useState(false);
+  let ACCESS_TOKEN = localStorage.getItem('accessToken');
+  console.log(ACCESS_TOKEN)
+  if(ACCESS_TOKEN === null) {setIsLogin(false);}
+  // else {setIsLogin(true);}
+
+  useEffect(()=>{
+    if(ACCESS_TOKEN===null) setIsLogin(false);
+    else setIsLogin(true);
+  }, [ACCESS_TOKEN])
+
   return (
     <div className="App">
       <div className='Container'>
@@ -34,7 +44,9 @@ function App() {
               {
                 isLogin && <div className='NavMypage' onClick={() => { navigate('/mypage') }}>마이페이지</div>
               }
-              <hr className='NavVerticalLine' />
+              {
+                isLogin && <hr className='NavVerticalLine' />
+              }
               <div className='NavRight_icon'>
                 <img className='ShareIcon' width='28' height='34' src='/share.png' onClick={() => { }} />
                 {

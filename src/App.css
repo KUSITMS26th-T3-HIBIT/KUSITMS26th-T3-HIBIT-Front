@@ -22,10 +22,6 @@ h1,h2,h3,h4,h5,h6{
   margin:0;
 }
 
-/* .App{
-  height: 100vh;
-} */
-
 .LoginIcon .LogoutIcon{
   cursor: pointer;
 }
@@ -37,7 +33,7 @@ h1,h2,h3,h4,h5,h6{
 
 .Container{
   position: relative;
-  height: 500vh;
+  height: 300vh;
 }
 
 .Footer-container{
