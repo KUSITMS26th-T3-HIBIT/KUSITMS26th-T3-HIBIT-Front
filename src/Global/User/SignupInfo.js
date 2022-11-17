@@ -2,32 +2,47 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 const exhibitStyleData = [
-    {id: 0, value: "남는건 사진밖에 없지! 사진촬영파", selected: false},
-    {id: 1, value: "현재가 중요해! 단순관람파", selected: false},
-    {id: 2, value: "나는 이렇게 생각해! 소통관람파", selected: false},
-    {id: 3, value: "관람 할 땐 관람만, 감상은 끝나고! 관람우선파", selected: false}
+    {id: 0, value: "남는건 사진밖에 없지! 사진촬영파"},
+    {id: 1, value: "현재가 중요해! 단순관람파"},
+    {id: 2, value: "나는 이렇게 생각해! 소통관람파"},
+    {id: 3, value: "관람 할 땐 관람만! 관람우선파"}
 ];
 
 const myStyleData = [
-    {id: 0, value: "지적인", selected: false},
-    {id: 1, value: "차분한", selected: false},
-    {id: 2, value: "유머있는", selected: false},
-    {id: 3, value: "낙천적인", selected: false},
-    {id: 4, value: "내향적인", selected: false},
-    {id: 5, value: "외향적인", selected: false},
-    {id: 6, value: "감상적인", selected: false},
-    {id: 7, value: "상냥한", selected: false},
-    {id: 8, value: "귀여운", selected: false},
-    {id: 9, value: "열정적인", selected: false},
-    {id: 10, value: "듬직한", selected: false},
-    {id: 11, value: "개성있는", selected: false}
+    {id: 0, value: "지적인"},
+    {id: 1, value: "차분한"},
+    {id: 2, value: "유머있는"},
+    {id: 3, value: "낙천적인"},
+    {id: 4, value: "내향적인"},
+    {id: 5, value: "외향적인"},
+    {id: 6, value: "감상적인"},
+    {id: 7, value: "상냥한"},
+    {id: 8, value: "귀여운"},
+    {id: 9, value: "열정적인"},
+    {id: 10, value: "듬직한"},
+    {id: 11, value: "개성있는"}
 ];
+
+const myInterestData = [
+    {id: 0, value: "드라마/영화 정주행"},
+    {id: 1, value: "여행"},
+    {id: 2, value: "맛집 탐방"},
+    {id: 3, value: "노래방 가기"},
+    {id: 4, value: "운동"},
+    {id: 5, value: "댄스"},
+    {id: 6, value: "자기계발"},
+    {id: 7, value: "환경"},
+    {id: 8, value: "독서"},
+    {id: 9, value: "쇼핑"},
+    {id: 10, value: "반려 동물/식물"},
+    {id: 11, value: "게임"},
+]
 
 let SignupInfo = () => {
     let date = new Date().getFullYear();
     let regExp_pw = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,20}$/; // 비밀번호 정규표현식 : 문자, 숫자, 특수 문자 포함 8~20자
 
-
+    /*기본 프로필*/
     const [id, setId] = useState('');
     const [pw, setPw] = useState('');
     const [repw, setRepw] = useState('');
@@ -50,17 +65,12 @@ let SignupInfo = () => {
     const [isPhoneValid, setIsPhoneValid] = useState(false);
     const [selectedGender, setSelectedGender] = useState('');
 
-    const [selectedExhibitStyle, setSelectedExhibitStyle] = useState(new Array(4).fill(false));
-    const [exButtonActive, setExButtonActive] = useState('');
-    const [selectedMyStyle, setSelectedMyStyle] = useState(new Array(12).fill(false));
+    /*추가 프로필*/
+    const [exhibitStyle, setExhibitStyle] = useState(-1); // 전시 관람 스타일
+    const [myStyle, setMyStyle] = useState([]);
+    const [myInterest, setMyInterest] = useState([]);
 
-    const onSelectExhibitStyle = (e) => {
-        setSelectedExhibitStyle(e.target.value);
-    }
 
-    const onSelectMyStyle = (e) => {
-        setSelectedMyStyle(e.target.value);
-    }
 
     useEffect(()=>{
         if(pw.match(regExp_pw) === null) // 정규표현식과 불일치
@@ -347,92 +357,150 @@ let SignupInfo = () => {
                 <div className="Signup-optional-profile-container">
                     <div className="Signup-optianal-title">추가 프로필</div>
                     <div className="Signup-optional-profile">
-                        <div className="SignupExhibitStyle">
-                            <div>본인의 전시 관람 스타일을 골라주세요</div>
-                            <div className="SignupExhibitStyleList">
-                                {
-                                    exhibitStyleData.map((d, i) => {
-                                        return (
-                                            <button
-                                                className={"SignupExhibitStlyeItem" + (d.selected ? " active" : "")}
-                                                onClick={() => {
-                                                    let copy = [...selectedExhibitStyle];
-                                                    copy[i] = !copy[i];
-                                                    setSelectedExhibitStyle(copy);
-                                                    console.log(selectedExhibitStyle);
 
-                                                }}
-                                            >{exhibitStyleData[i].value}</button>
-                                        )
-                                    })
-                                }
+                        <div className="Signup-exhibit-style">
+                            <div className="Signup-optional-column">본인의 전시 관람 스타일을 골라주세요.</div>
+                            <div className="Signup-exhibit-style-list-container">
+                                <div className="Signup-exhibit-style-list">
+                                    {
+                                        exhibitStyleData.map((d, i) => {
+                                            return (
+                                                <button
+                                                    className={`Signup-exhibit-stlye-item${(i === exhibitStyle ? "Active" : "")}`}
+                                                    onClick={() => {
+                                                        setExhibitStyle(i);
+                                                    }}
+                                                >{exhibitStyleData[i].value}
+                                                    <img 
+                                                        className="Signup-exhibit-style-img"
+                                                        src={`/exhibitStyle${i+1}.png`}
+                                                    />
+                                                </button>
+                                            )
+                                        })
+                                    }
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div className="Signup-my-style">
+                            <div className="Signup-optional-column">본인의 성격을 골라주세요. (최대 3개)</div>
+                            <div className="Signup-my-style-list-container">
+                                <div className="Signup-my-style-list">
+                                    {
+                                        myStyleData.map((d, i) => {
+                                            return (
+                                                <button
+                                                    className={`Signup-my-style-item${(myStyle.includes(i)) ? "Active" : ""}`}
+                                                    onClick={() => {
+                                                        let copy = [...myStyle];
+                                                        if(myStyle.length > 2){ 
+                                                            if(copy.includes(i)) {
+                                                                copy = myStyle.filter((element)=>{
+                                                                    console.log(element);
+                                                                    return element !== i;
+                                                                });
+                                                                setMyStyle(copy);
+                                                            }
+                                                        }
+                                                        else{
+                                                            if(copy.includes(i)) {
+                                                                copy = myStyle.filter((element)=>{
+                                                                    console.log(element);
+                                                                    return element !== i;
+                                                                });
+                                                                setMyStyle(copy);
+                                                            }
+                                                            else setMyStyle([...myStyle, i]);
+                                                            
+                                                        }
+                                                        console.log(myStyle);
+                                                    }}
+                                                >{myStyleData[i].value}</button>
+                                            )
+                                        })
+                                    }
+                                </div>
                             </div>
                         </div>
 
-                        <div className="SignupMyStyle">
-                            <div>본인의 성격을 골라주세요</div>
-                            <div className="SignupMyStyleList">
+                        <div className="Signup-interest">
+                            <div className="Signup-optional-column">본인의 관심사(취미)를 작성해주세요. (최대 3개)</div>
+                            <div className="Signup-interest-list-container">
+                                <div className="Signup-interest-list">
                                 {
-                                    myStyleData.map((d, i) => {
-                                        return (
-                                            <button
-                                                className={"SignupMyStyleItem" + (d.selected ? " active" : "")}
-                                                onClick={() => {
-                                                    let copy = [...selectedMyStyle];
-                                                    copy[i] = !copy[i];
-                                                    setSelectedMyStyle(copy);
-                                                    console.log(selectedMyStyle);
-
-                                                }}
-                                            >{myStyleData[i].value}</button>
-                                        )
-                                    })
-                                }
+                                        myInterestData.map((d, i) => {
+                                            return (
+                                                <button
+                                                    className={`Signup-interest-item${(myInterest.includes(i)) ? "Active" : ""}`}
+                                                    onClick={() => {
+                                                        let copy = [...myInterest];
+                                                        if(myInterest.length > 2){ 
+                                                            if(copy.includes(i)) {
+                                                                copy = myInterest.filter((element)=>{
+                                                                    console.log(element);
+                                                                    return element !== i;
+                                                                });
+                                                                setMyInterest(copy);
+                                                            }
+                                                        }
+                                                        else{
+                                                            if(copy.includes(i)) {
+                                                                copy = myInterest.filter((element)=>{
+                                                                    console.log(element);
+                                                                    return element !== i;
+                                                                });
+                                                                setMyInterest(copy);
+                                                            }
+                                                            else setMyInterest([...myInterest, i]);
+                                                            
+                                                        }
+                                                    }}
+                                                >{myInterestData[i].value}</button>
+                                            )
+                                        })
+                                    }
+                                </div>
                             </div>
-                        </div>
 
-                        <div className="SignupInterest">
-                            <div>본인의 관심사를 작성해주세요</div>
-                            <textarea className="SignupInterestInput" />
+                            
                         </div>
-                        <div className="SignupIntroduce">
-                            <div>메이트에게 자신을 소개해주세요</div>
-                            <textarea className="SignupIntroduceInput" />
+                        <div className="Signup-introduce">
+                            <div className="Signup-optional-column">메이트에게 자신을 소개해주세요</div>
+                            <div className="Signup-introduce-container">
+
+                            <textarea className="Signup-introduce-input" />
+                            </div>
                         </div>
                     </div>
 
-                    <button className="SignupButton"
-                        onClick={() => {
-                            axios.post('http://54.248.93.203:8080/user/sign-up', {
-                                id: id,
-                                password: pw,
-                                nickname: nickname,
-                                phone_number: phone,
-                                age: +date - year + 1,
-                                gender: "True",
-                                home: home,
-                                introduce: "자기소개"
-                                // "age":"25",
-                                // "gender":"True",
-                                // "home":"경기도",
-                                // "id":"arin1233",
-                                // "introduce":"안녕",
-                                // "nickname":"아린",
-                                // "password":"rin123",
-                                // "phone_number":"0107366"
-                            })
-                                .then((res) => {
-                                    console.log(res.data);
-                                    console.log(res.status);
+                    <div className="Signup-button-container">
+                        <button className="Signup-button"
+                            onClick={() => {
+                                axios.post('http://54.248.93.203:8080/user/sign-up', {
+                                    id: id,
+                                    password: pw,
+                                    nickname: nickname,
+                                    phone_number: phone,
+                                    age: +date - year + 1,
+                                    gender: "True",
+                                    home: home,
+                                    introduce: "자기소개"
                                 })
-                                .catch((err) => {
-                                    console.log(err);
-                                })
-                        }}
-                    >가입하기</button>
+                                    .then((res) => {
+                                        console.log(res.data);
+                                        console.log(res.status);
+                                    })
+                                    .catch((err) => {
+                                        console.log(err);
+                                    })
+                            }}
+                        >가입하기</button>
+                    </div>
+
                 </div>
 
-                <div>{selectedExhibitStyle}</div>
             </div>
         </div>
     )
