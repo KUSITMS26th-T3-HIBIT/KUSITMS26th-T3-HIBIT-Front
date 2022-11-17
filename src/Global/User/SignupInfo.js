@@ -1,46 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-
-const exhibitStyleData = [
-    {id: 0, value: "남는건 사진밖에 없지! 사진촬영파"},
-    {id: 1, value: "현재가 중요해! 단순관람파"},
-    {id: 2, value: "나는 이렇게 생각해! 소통관람파"},
-    {id: 3, value: "관람 할 땐 관람만! 관람우선파"}
-];
-
-const myStyleData = [
-    {id: 0, value: "지적인"},
-    {id: 1, value: "차분한"},
-    {id: 2, value: "유머있는"},
-    {id: 3, value: "낙천적인"},
-    {id: 4, value: "내향적인"},
-    {id: 5, value: "외향적인"},
-    {id: 6, value: "감상적인"},
-    {id: 7, value: "상냥한"},
-    {id: 8, value: "귀여운"},
-    {id: 9, value: "열정적인"},
-    {id: 10, value: "듬직한"},
-    {id: 11, value: "개성있는"}
-];
-
-const myInterestData = [
-    {id: 0, value: "드라마/영화 정주행"},
-    {id: 1, value: "여행"},
-    {id: 2, value: "맛집 탐방"},
-    {id: 3, value: "노래방 가기"},
-    {id: 4, value: "운동"},
-    {id: 5, value: "댄스"},
-    {id: 6, value: "자기계발"},
-    {id: 7, value: "환경"},
-    {id: 8, value: "독서"},
-    {id: 9, value: "쇼핑"},
-    {id: 10, value: "반려 동물/식물"},
-    {id: 11, value: "게임"},
-]
+import exhibitStyleData from "../Data/exhibit_style_data"
+import myStyleData from "../Data/my_style_data"
+import myInterestData from "../Data/my_interest_data"
+import { useNavigate } from "react-router-dom";
 
 let SignupInfo = () => {
-    let date = new Date().getFullYear();
     let regExp_pw = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,20}$/; // 비밀번호 정규표현식 : 문자, 숫자, 특수 문자 포함 8~20자
+    let navigate = useNavigate();
 
     /*기본 프로필*/
     const [id, setId] = useState('');
@@ -62,8 +29,8 @@ let SignupInfo = () => {
     const [emailSuffix, setEmailSuffix] = useState('@gmail.com');
     const [phone, setPhone] = useState('');
     const [phoneAuth, setPhoneAuth] = useState(''); // 휴대폰 인증 번호
-    const [isPhoneValid, setIsPhoneValid] = useState(false);
     const [selectedGender, setSelectedGender] = useState('');
+    const [introduce, setIntroduce] = useState('');
 
     /*추가 프로필*/
     const [exhibitStyle, setExhibitStyle] = useState(-1); // 전시 관람 스타일
@@ -470,7 +437,7 @@ let SignupInfo = () => {
                             <div className="Signup-optional-column">메이트에게 자신을 소개해주세요</div>
                             <div className="Signup-introduce-container">
 
-                            <textarea className="Signup-introduce-input" />
+                            <textarea className="Signup-introduce-input" value={introduce} onChange={(e)=>setIntroduce(e.target.value)}/>
                             </div>
                         </div>
                     </div>
@@ -478,19 +445,37 @@ let SignupInfo = () => {
                     <div className="Signup-button-container">
                         <button className="Signup-button"
                             onClick={() => {
+                                console.log('id', id);
+                                console.log('password', pw);
+                                console.log('nickname', nickname);
+                                console.log('phone_number', phone);
+                                console.log('birth', year + month + day);
+                                console.log('gender', gender);
+                                console.log('home', home);
+                                console.log('introduce', introduce);
+                                console.log('style', exhibitStyle);
+                                console.log('personality', myStyle);
+                                console.log('hobby', myInterest);
+
                                 axios.post('http://54.248.93.203:8080/user/sign-up', {
                                     id: id,
                                     password: pw,
                                     nickname: nickname,
                                     phone_number: phone,
-                                    age: +date - year + 1,
-                                    gender: "True",
+                                    birth: year + month + day,
+                                    gender: gender,
                                     home: home,
-                                    introduce: "자기소개"
+                                    email: email,
+                                    introduce: introduce,
+                                    style: exhibitStyle,
+                                    personality: myStyle,
+                                    hobby: myInterest
                                 })
                                     .then((res) => {
                                         console.log(res.data);
                                         console.log(res.status);
+                                        alert("회원가입이 완료되었습니다.");
+                                        navigate('/');
                                     })
                                     .catch((err) => {
                                         console.log(err);

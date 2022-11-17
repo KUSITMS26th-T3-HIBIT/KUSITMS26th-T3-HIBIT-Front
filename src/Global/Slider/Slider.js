@@ -16,28 +16,30 @@ let SliderImg = () => {
       };
 
     return (
-        <div className='Slider'>
-            <Slider {...settings} className='SliderBanner'>
-                <div 
-                    className='SliderBtn'
-                    onClick={()=>{
-                        navigate('/serviceInfo');
-                    }}
-                >
-                    <img className='SliderImg' src='/banner1.png' />
-                </div>
-                <div 
-                    className='SliderBtn'
-                    onClick={()=>{
-                        navigate('/community');
-                    }}
-                >
-                    <img className='SliderImg' src='/banner2.png' />
-                </div>
-                <div className='SliderBtn'>
-                    <img className='SliderImg' src='/banner3.png' />
-                </div>
-            </Slider>
+        <div className='Slider-wrapper'>
+            <div className='Slider'>
+                <Slider {...settings} className='SliderBanner'>
+                    <div
+                        className='SliderBtn'
+                        onClick={() => {
+                            navigate('/serviceInfo');
+                        }}
+                    >
+                        <img className='SliderImg' src='/banner1.png' />
+                    </div>
+                    <div
+                        className='SliderBtn'
+                        onClick={() => {
+                            navigate('/community');
+                        }}
+                    >
+                        <img className='SliderImg' src='/banner2.png' />
+                    </div>
+                    <div className='SliderBtn'>
+                        <img className='SliderImg' src='/banner3.png' />
+                    </div>
+                </Slider>
+            </div>
         </div>
     )
 }

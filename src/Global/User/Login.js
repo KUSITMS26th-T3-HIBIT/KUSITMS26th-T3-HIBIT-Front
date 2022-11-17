@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { login } from "../../redux/token";
 
 axios.defaults.baseURL = "http://54.248.93.203:8080";
 axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem('accessToken')}`
@@ -11,9 +13,11 @@ let Login = () => {
     let [pw, setPw] = useState('');
     let [accessToken, setAccessToken] = useState('');
 
+    const dispatch = useDispatch();
+
     return (
         <div className="LoginSection">
-            <img 
+            <img
                 className="LoginHibitIcon" 
                 src="/hibit_logo_c.png"
                 onClick={()=>navigate('/')}
@@ -59,7 +63,9 @@ let Login = () => {
                         console.log(res)
                         console.log(res.data);
                         console.log(res.status);
+                        dispatch(login({token: res.data, isLogin: true}));
                         navigate('/');
+                        window.location.reload('/');
                     })
                     .catch((err)=>{
                         console.log(err);
