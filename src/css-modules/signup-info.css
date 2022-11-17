@@ -39,8 +39,8 @@
 
 .Signup-require-profile, .Signup-optional-profile{
     display: flex;
-    border: 2px solid;
-    border-radius: 1em;
+    border: 4px solid;
+    border-radius: 2em;
     border-color: #797979;
     margin: 5px;
     padding: 5px;
@@ -53,6 +53,7 @@
 .Signup-column{
     width: 174px;
     margin-left: 80px;
+    font-size: 20px;
 }
 
 .Signup-input-form{
@@ -270,6 +271,8 @@
 }
 
 
+
+/**** Optional Information ****/
 .Signup-optianal-title{
     margin-top: 80px;
     font-weight: bold;
@@ -277,31 +280,185 @@
     font-size: 30px;
 }
 
-
-.SignupExhibitStyleList{
-    display: grid;
-    grid-template-columns: 400px 400px;
+/* Common component */
+.Signup-optional-column{
+    margin-top: 40px;
+    margin-left: 110px;
+    font-size: 25px;
+    font-weight: bold;
 }
-.SignupExhibitStlyeItem { 
+
+/* Exhibit Style */
+.Signup-exhibit-style-list-container{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+.Signup-exhibit-style{
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+}
+.Signup-exhibit-style-list{
+    display: grid;
+    grid-template-columns: 660px 660px;
+    grid-template-rows: 114px 114px;
+}
+.Signup-exhibit-stlye-item { 
+    position: relative;
     border: solid;
     border-width: 1px;
     cursor: pointer;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 120px;
+    border: 2px solid;
+    border-color: #797979;
+    border-radius: 0.5em;
+    font-size: 20px;
+    margin: 20px;
+}
+.Signup-exhibit-stlye-itemActive{
+    position: relative;
+    background-color: #7E5DEB;
+    color: white;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 120px;
+    border: 2px solid;
+    border-color: #797979;
+    border-radius: 0.5em;
+    font-size: 20px;
+    margin: 20px;
+    cursor: pointer;
+}
+.Signup-exhibit-style-img{
+    position: absolute;
+    top: 0px;
+    right: 70px;
 }
 
-.SignupExhibitStlyeItem active { 
+
+/* My Style */
+.Signup-my-style-list-container{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+.Signup-my-style-list{
+    display: grid;
+    grid-template-columns: 310px 310px 310px 310px;
+    grid-template-rows: 114px 114px 114px;
+}
+.Signup-my-style-item{
     border: solid;
     border-width: 1px;
     cursor: pointer;
-    background: red;
-
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid;
+    border-color: #797979;
+    border-radius: 0.5em;
+    font-size: 20px;
+    margin: 20px;
+}
+.Signup-my-style-itemActive{
+    background-color: #7E5DEB;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid;
+    border-color: #797979;
+    border-radius: 0.5em;
+    font-size: 20px;
+    margin: 20px;
+    cursor: pointer;
 }
 
-.SignupMyStyleList{
+
+/* My Interest */
+.Signup-interest-list-container{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+.Signup-interest-list{
     display: grid;
-    grid-template-columns: 100px 100px 100px 100px;
+    grid-template-columns: 310px 310px 310px 310px;
+    grid-template-rows: 114px 114px 114px;
 }
-
-.SignupMyStyleItem{
+.Signup-interest-item{
     border: solid;
     border-width: 1px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid;
+    border-color: #797979;
+    border-radius: 0.5em;
+    font-size: 20px;
+    margin: 20px;
+}
+.Signup-interest-itemActive{
+    background-color: #7E5DEB;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid;
+    border-color: #797979;
+    border-radius: 0.5em;
+    font-size: 20px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+/* Introduce */
+.Signup-introduce-container{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+.Signup-introduce{
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+}
+.Signup-introduce-input {
+    width: 80%;
+    height: 160px;
+    resize: none;
+    border: 2px solid;
+    border-color: #797979;
+    border-radius: 0.5em;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+
+
+/* Signup Button*/
+.Signup-button-container{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+.Signup-button{
+    width: 1100px;
+    height: 100px;
+    background-color: #7E5DEB;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid;
+    border-color: #797979;
+    border-radius: 0.5em;
+    font-size: 20px;
+    margin: 20px;
+    cursor: pointer;
 }
