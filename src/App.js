@@ -1,6 +1,6 @@
 import './App.css';
 import Main from './Global/Main/Main';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route} from 'react-router-dom';
 import ServiceInfo from './ServiceInfo/ServiceInfo';
 import MatchingMain from './Matching/MatchingMain';
 import ExhibitReview from './Community/ExhibitReview';
@@ -13,6 +13,7 @@ import CreateMatch from './Matching/Match/CreateMatch';
 import MatchDetail from './Matching_Detail/MatchDetail';
 import UserGreeting from './Global/Nav/UserGreeting';
 import GuestGreeting from './Global/Nav/GuestGreeting';
+import MatchNewPost from './Matching/MatchNewPost';
 
 function App() {
   const isNull = (val) => (val===undefined || val===null) ? true : false;
@@ -26,6 +27,7 @@ function App() {
           {isNull(token) && <GuestGreeting hasToken={!isNull(token)}/>}
           {!isNull(token) && <UserGreeting hasToken={!isNull(token)}/>}
         </div>
+        <div width="0px"></div>
 
         {/* <div className='Footer-container'>
           <img className='footer-img' src='/footer.png' />
@@ -35,16 +37,18 @@ function App() {
           <Route path='/' element={<Main />} />
           <Route path='/service' element={<ServiceInfo />} />
           <Route path='/match' element={<MatchingMain />} />
-          <Route path='/match/publish' element={<CreateMatch />} />
+          {/* <Route path='/match/publish' element={<CreateMatch />} /> */}
           <Route path='/community' element={<ExhibitReview />} />
           <Route path='/exhibitinfo' element={<ExhibitInfo />} />
           <Route path='/match/detail' element={<MatchDetail />} />
-
+          <Route path='/match/newpost' element={<MatchNewPost/>}/>
+          
           <Route path='/mypage' element={<Mypage />} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup_agree' element={<SignupAgreement />} />
           <Route path='/signup_info' element={<SignupInfo />} />
         </Routes>
+        
       </div>
 
     </div>
