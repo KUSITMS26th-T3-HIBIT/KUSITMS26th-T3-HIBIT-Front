@@ -9,6 +9,6 @@ export const tokenSlice = createSlice({
         }
     }
 });
-export const {login} = tokenSlice.actions;
+export const {login} = tokenSlice.actions; //액션생성함수
 export default tokenSlice.reducer;
 

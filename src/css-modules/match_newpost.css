@@ -1,0 +1,265 @@
+.MatchNewPost-background-gray{
+  position: relative;
+  top:120px;
+  width:100vw;
+  height:150vh;
+  background-color: #585858
+}
+.MatchNewPost-background-white{
+position: relative;
+width:45%;
+height: 1220px;
+top:12%;
+
+margin: auto;
+background-color: white;
+border-radius:16px;
+display: flex;
+align-content: center;
+}
+.MatchNewPost-gridbox{
+  /* margin-top: 20px; */
+  margin: auto;
+  width:80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column ;
+  justify-content: space-around;
+}
+
+.MatchNewPost-gridbox span{
+  color:#797979;
+  font-weight: 800;
+}
+
+.MatchNewPost-gridbox-line1{
+  width:100%;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-top:40px;
+}
+
+.MatchNewPost-gridbox-line1 div>span{
+  color:#797979;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: right;
+  position: relative;
+  left: 92%;
+}
+
+.MatchNewPost-gridbox-line1 input{
+  box-sizing: border-box;
+  font-size:20px;
+  width: 520px;
+  height: 40px; 
+  border-radius: 10px;
+  border: 2px solid #797979;
+  /* margin-left:20px; */
+}
+
+.MatchNewPost-gridbox-line2{
+  width:100%;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.MatchNewPost-gridbox-line2 select{
+  box-sizing: border-box;
+  width: 520px;
+  height: 40px; 
+  border-radius: 10px;
+  border: 2px solid #797979;
+}
+.MatchNewPost-gridbox-line2 option{ 
+  position: absolute;
+  /* top:400px */
+}
+
+
+.MatchNewPost-gridbox-line3{
+  width:100%;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.MatchNewPost-gridbox-line3-inner{
+  display:flex;
+}
+.MatchNewPost-gridbox-line3-inner div{
+  border-radius: 6px;
+  /* box-sizing: border-box; */
+  border: 2px solid #797979 ;
+  width: 154px;
+  height: 50px;
+  box-sizing: border-box;
+  margin-left: 30px;
+  font: 14px;
+  font-weight: 500;
+  color: #797979;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+/* // onclick 이벤트 */
+.MatchNewPost-gridbox-line3-inner div.onclick{
+  background-color: #5E1EC7;
+  opacity: 0.79;
+  color:#ffffff;
+}
+
+
+.MatchNewPost-gridbox-line4{
+  width:100%;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  /* justify-content: ; */
+}
+
+.MatchNewPost-gridbox-line4-inner{
+  /* padding: 0 50px; */
+}
+
+.MatchNewPost-gridbox-line4 input{
+  width: 192px;
+  border: 2px solid #797979;
+  height: 40px;
+  font-size: 16px;
+  color: #797979;
+  font-weight: 400;
+  border-radius: 6px;
+  padding: 0 20px;
+} 
+.MatchNewPost-gridbox-line4-inner span{
+  margin: 0 20px;
+} 
+
+.MatchNewPost-gridbox-line5{
+  width:100%;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.MatchNewPost-gridbox-line5 input{
+  box-sizing: border-box;
+  width: 520px;
+  height: 40px;
+  border-radius: 6px;
+  border: 2px solid #797979;
+  overflow: hidden;
+}
+
+.MatchNewPost-gridbox-line6{
+  width:100%;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.MatchNewPost-gridbox-line6 textarea{
+  box-sizing: border-box;
+  width:520px;
+  height: 120px;
+  border: 2px solid #797979;
+  border-radius: 6px;
+}
+
+.MatchNewPost-gridbox-line6 :nth-child(2){
+  position: relative;
+  left: 520px;
+  top:  36px;
+}
+
+.MatchNewPost-gridbox-line7{
+/* box-sizing: border-box; */
+  width:100%;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.MatchNewPost-gridbox-line7 textarea{
+  box-sizing: border-box;
+  width:520px;
+  height: 120px;
+  border: 2px solid #797979;
+  border-radius: 6px;
+}
+
+.MatchNewPost-gridbox-line7 :nth-child(2){
+  position: relative;
+  left: 540px;
+  top:  36px;
+}
+
+.MatchNewPost-gridbox-line8{
+  width:100%;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.MatchNewPost-gridbox-line9{
+  width:100%;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.MatchNewPost-gridbox-line9 div{
+  position: relative;
+  right: 360px;
+}
+
+.MatchNewPost-gridbox-line10{
+  display:flex;
+  justify-content: center;
+}
+.MatchNewPost-gridbox-line10-inner{
+  box-sizing: border-box;
+  position: relative;
+  left:28px;
+  display: flex;
+  width:400px;
+  height:60px;
+  background-color: #5E1EC7;
+  opacity: 0.79;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+}
+.MatchNewPost-gridbox-line10-inner span{
+  color:white;
+  font-weight: 800;
+  font-size: 18px;
+  
+}
+
+
+/* 화살표버튼 */
+.MatchNewPost-pageupbutton-circle{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border:2px solid #5E1EC7;
+  display: flex;
+  position: relative;
+  left:106%;
+  top:4%;
+  background-color: #FFFFFF;
+
+}
+.MatchNewPost-pageupbutton-arrow{
+  margin:auto;
+  width:25px;
+  height: 25px;
+  border-top: 3px solid #5E1EC7;
+  border-left: 3px solid #5E1EC7; 
+  transform: rotate(45deg);
+  margin-top: 20px;
+}
