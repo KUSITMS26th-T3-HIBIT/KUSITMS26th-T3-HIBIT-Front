@@ -1,11 +1,14 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { login } from "../../redux/token";
-// 로그인 상태
+
 const UserGreeting = () => {
     let navigate = useNavigate();
     let dispatch = useDispatch();
+    axios.defaults.headers.common['Authorization'] = `${localStorage.getItem('accessToken')}`
+
 
     return (
         <div className="nav-user-section">
@@ -15,7 +18,21 @@ const UserGreeting = () => {
                     <img className='nav-user-hibit-logo' src='/hibit_logo_w.png' onClick={() => { navigate('/') }} />
                     <div className='nav-user-left-menus'>
                         <div className='nav-user-item' onClick={() => { navigate('/service') }}>서비스 소개</div>
-                        <div className='nav-user-item' onClick={() => { navigate('/match') }}>매칭</div>
+                        <div 
+                            className='nav-user-item' 
+                            onClick={() => {
+                                // axios.get(`/matching/list`)
+                                //     .then((res)=>{
+                                //         console.log(res);
+                                //         console.log(res.data);
+                                //     })
+                                //     .catch((err)=>{
+                                //         console.log(err);
+                                //     })
+
+                                navigate('/match'); 
+                            }}
+                        >매칭</div>
                         <div className='nav-user-item' onClick={() => { navigate('/community') }}>커뮤니티</div>
                         <div className='nav-user-item' onClick={() => { navigate('/exhibitinfo') }}>전시회 정보</div>
                     </div>

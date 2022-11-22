@@ -32,13 +32,29 @@ align-content: center;
   font-weight: 800;
 }
 
-.MatchNewPost-gridbox-line1{
+.MatchNewPost-gridbox-line0{
   width:100%;
   display:flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
   margin-top:40px;
+}
+.MatchNewPost-gridbox-line1{
+  width:100%;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.MatchNewPost-gridbox-line0 div>span{
+  color:#797979;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: right;
+  position: relative;
+  left: 92%;
 }
 
 .MatchNewPost-gridbox-line1 div>span{
@@ -48,6 +64,16 @@ align-content: center;
   text-align: right;
   position: relative;
   left: 92%;
+}
+
+.MatchNewPost-gridbox-line0 input{
+  box-sizing: border-box;
+  font-size:20px;
+  width: 520px;
+  height: 40px; 
+  border-radius: 10px;
+  border: 2px solid #797979;
+  /* margin-left:20px; */
 }
 
 .MatchNewPost-gridbox-line1 input{
@@ -90,7 +116,7 @@ align-content: center;
 .MatchNewPost-gridbox-line3-inner{
   display:flex;
 }
-.MatchNewPost-gridbox-line3-inner div{
+.MatchNewPost-gridbox-line3-item{
   border-radius: 6px;
   /* box-sizing: border-box; */
   border: 2px solid #797979 ;
@@ -106,6 +132,26 @@ align-content: center;
   align-items: center;
   
 }
+
+.MatchNewPost-gridbox-line3-itemActive{
+  border-radius: 6px;
+  /* box-sizing: border-box; */
+  border: 2px solid #797979 ;
+  width: 154px;
+  height: 50px;
+  box-sizing: border-box;
+  margin-left: 30px;
+  font: 14px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #5E1EC7;
+  opacity: 0.79;
+  color:#ffffff;
+}
+
 
 /* // onclick 이벤트 */
 .MatchNewPost-gridbox-line3-inner div.onclick{
@@ -165,6 +211,7 @@ align-content: center;
 }
 .MatchNewPost-gridbox-line6 textarea{
   box-sizing: border-box;
+  resize: none;
   width:520px;
   height: 120px;
   border: 2px solid #797979;
@@ -186,6 +233,7 @@ align-content: center;
 }
 .MatchNewPost-gridbox-line7 textarea{
   box-sizing: border-box;
+  resize: none;
   width:520px;
   height: 120px;
   border: 2px solid #797979;

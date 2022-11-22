@@ -10,24 +10,25 @@ let MatchingMain = () => {
 
 
     return (
-        <div className='MatchMain'>
+        <div className='match-main-section'>
             <SliderImg></SliderImg>
-            <div className='searchInput'>
-                <img className='searchInput_ui' src='/searchInput.png'/>
-                <input 
-                    className='searchInput_input'
-                    placeholder='원하는 매칭을 검색 해 보세요' 
-                />
-                <img
-                    onClick={(e) => {
-                        setSearchInput(e.target.value);
-                        navigate('/match/search');
-                        <Route path='/match/search' element={<SearchMatching searchInput={searchInput} />} />
-                    }}
-                    className='searchInput_icon'
-                    src='/searchicon.png' 
-                />
+            <div className='match-main-search-container'>
+                <div className='match-main-search'>
+                    <input
+                        className='match-main-search-input'
+                        placeholder='원하는 매칭 키워드를 검색 해 보세요!'
+                    />
+                    <img
+                        onClick={(e) => {
+                            setSearchInput(e.target.value);
+                            navigate('/match/search');
+                            <Route path='/match/search' element={<SearchMatching searchInput={searchInput} />} />
+                        }}
+                        className='searchInput_icon'
+                        src='/searchicon.png'
+                    />
 
+                </div>
             </div>
 
             <MatchList></MatchList>
