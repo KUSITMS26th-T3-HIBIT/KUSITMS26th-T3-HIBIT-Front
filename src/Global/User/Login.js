@@ -4,9 +4,6 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { login } from "../../redux/token";
 
-axios.defaults.baseURL = "http://54.248.93.203:8080";
-axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem('accessToken')}`
-
 let Login = () => {
     let navigate = useNavigate();
     let [id, setId] = useState('');
@@ -57,6 +54,7 @@ let Login = () => {
                     })
                     .then((res)=>{
                         localStorage.setItem('accessToken', res.data);
+                        axios.defaults.headers.common['Authorization'] = `${localStorage.getItem('accessToken')}`
                         console.log(res.status);
                         dispatch(login({token: res.data, isLogin: true}));
                         navigate('/');
