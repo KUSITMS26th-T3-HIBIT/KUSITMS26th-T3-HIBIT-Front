@@ -12,11 +12,15 @@
 
 @import url('./css-modules/match_detail.css');
 
+@import url('./css-modules/match_newpost.css');
+
+@import url('./css-modules/match_evaluate.css');
 
 body{
   padding:0;
   height: 100vh;
   margin:0;
+  font-family: 'SUIT';
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -34,3 +38,6 @@ h1,h2,h3,h4,h5,h6{
   position: absolute;
   bottom: 0px;
 }
+
+
+

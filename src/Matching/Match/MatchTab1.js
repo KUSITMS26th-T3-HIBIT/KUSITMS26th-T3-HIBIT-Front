@@ -9,7 +9,7 @@ const MatchTab1 = () => {
                     className="MatchTab1-createBtnImg"
                     src="/createMatchBtn.png"
                     onClick={()=>{
-                        navigate('/match/publish');
+                        navigate('/match/newpost');
                     }}
                 />
             </div>

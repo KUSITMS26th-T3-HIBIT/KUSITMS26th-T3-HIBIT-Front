@@ -1,8 +1,10 @@
 //매칭디테일페이지 전체 컴포넌트
 
 import {useEffect, useState} from 'react';
-import { MatchDetailContents1 } from "./MatchDetailContents1";
+import MatchDetailContents1  from "./MatchDetailContents1";
 import MatchDetailContents2 from './MatchDetailContents2'
+import MatchDetailContents3 from './MatchDetailContents3';
+import {MatchListComponent} from './MatchDetailContents3';
 
 
 const TopNavBarItem =({title})=>{  
@@ -60,6 +62,7 @@ function MatchDetail() {
       </div>
       <MatchDetailContents1 tapIdx={tapIdx}/>
       <MatchDetailContents2 tapIdx={tapIdx}/>
+      <MatchDetailContents3 tapIdx={tapIdx}/>
 
           </div>
     </>

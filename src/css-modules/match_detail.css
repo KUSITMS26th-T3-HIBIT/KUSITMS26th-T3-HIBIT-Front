@@ -15,13 +15,10 @@
   z-index: 10;
 }
 
-
-
-
 .matchDetail-topNavBar-outer{
   display:flex;
   /* margin-top: 120px; */
-  height:308px;
+  height:232px;
   width:100vw;
   background-color: #5E1EC7;
   opacity: 0.79;
@@ -34,7 +31,7 @@
 .matchDetail-topNavBar-inner{
   display:flex;
   margin:auto;
-  width:80%;
+  width:70%;
   display:flex;
   justify-content:space-around
 }
@@ -51,11 +48,12 @@
 }
 .topNavBarItem{
   width:100%;
+  position: relative;
+  left: 80px;
 }
 .topNavBarItem > div.under-line {
   width:100%;
   height:7px;
-
   background-color: #5E1EC7;
   position: relative;
   top:53px;
@@ -233,12 +231,9 @@ border-radius: 40.8px;
   top:12px;
 }
 
+
+
 /* 메이트정보(2페이지) css */
-
-
-
-
-
 
 
 
@@ -370,3 +365,187 @@ display: grid;
 .matchDetail-c2box-notice div:last-of-type{
   justify-self: center;
 }
+
+
+
+
+/* 참여자정보 3페이지 css */
+
+
+
+
+
+
+
+
+
+.MatchDetailContents3-background{
+  background-color: #F8F9F4;
+  width:100vw;
+  height: 300px;
+}
+.MatchDetailContents3-profile-outline{
+  display: flex;
+  width:60%;
+  height: 100%;
+  margin: auto;
+  align-items: center;
+}
+.MatchDetailContents3-profile{
+  display: flex;
+  justify-content: start;
+  width:50%;
+  justify-content: space-between;
+}
+.MatchDetailContents3-profile > div:first-of-type{
+  width:180px;
+  height: 180px;
+  background-color: #797979;
+  border-radius: 40%;
+}
+
+.MatchDetailContents3-profile-inner-right{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap:32px;
+  position: relative;
+  right:100px;
+}
+/* 사용자이미지박스 */
+.MatchDetailContents3-profile-inner-right div:first-of-type{
+  width:111px;
+  height: 44px;
+  background-color: #FFC942;
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 24px;
+  display: flex;
+  color:#ffffff;
+
+}
+.MatchDetailContents3-profile-inner-right div:first-of-type > div{
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.MatchDetailContents3-profile-inner-right div:nth-of-type(2){
+  display: flex;
+  color:#797979;
+  font-weight: 800;
+  gap:10px;
+}
+.MatchDetailContents3-profile-inner-right div:nth-of-type(2) > span:first-of-type{
+  font-size: 30px;
+  color: #232323;
+  font-weight: 700;
+}
+.MatchDetailContents3-profile-inner-right div:nth-of-type(2) > span:nth-of-type(2){
+  position: relative;
+  color: #797979;
+  font-size: 20px;
+  font-weight: 500;
+  top:10px;
+}
+
+.matchListComponent-outline{
+  margin: auto;
+  width:60%;
+  height: 150px;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #797979;
+}
+
+.matchListComponent-box-left{
+  display: flex;
+  justify-content: space-evenly;
+  gap:28px;
+  align-items: center;
+}
+.matchListComponent-box-left-userimg{
+  width:72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: #797979;
+}
+.matchListComponent-box-left-nickname{
+  display: flex;
+  align-items: center;
+  color:#797979;
+  font-weight: 700;
+  font-size:32px;
+}
+.matchListComponent-box-left-matchstate{
+  display: flex;
+  align-items: center;
+  color: #797979;
+  width:137px;
+  height: 40px;
+  border-radius: 100px;
+  border: 2px solid #797979;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.matchListComponent-box-right{
+  display: flex;
+  justify-content:space-evenly;
+  gap:20px;
+}
+
+
+ /* font-weight 700->800 hover 
+ bold:700 , extraBold:800 */
+.matchListComponent-box-right-item1{
+  box-sizing: border-box;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 12px 36px;
+  border: 2px solid #797979;
+  opacity: 0.79;
+  border-radius: 130px;
+}
+.matchListComponent-box-right-item1:hover{
+  background-color: #FFC942;
+  color:white;
+  font-weight: 800;
+}
+.matchListComponent-box-right-item2{
+  box-sizing: border-box;
+  font-size: 24px;
+  font-weight:bold;
+  padding: 12px 36px;
+  border: 2px solid #797979;
+  opacity: 0.79;
+  border-radius: 130px;
+}
+.matchListComponent-box-right-item2:hover{
+  background-color: #5E1EC7;
+  color:white;
+  font-weight: 800;
+  
+}
+
+.matchListComponent-box-right-item3{
+  all: unset;
+  box-sizing: border-box;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 12px 36px;
+  border: 2px solid #797979;
+  opacity: 0.79;
+  border-radius: 130px;
+}
+.matchListComponent-box-right-item3:hover{
+  background-color: #9A11E7;
+  color:white;
+  font-weight: 800;
+}
+
+
+
