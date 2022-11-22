@@ -3,12 +3,11 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { login } from "../../redux/token";
-// 로그인 상태
+
 const UserGreeting = () => {
     let navigate = useNavigate();
     let dispatch = useDispatch();
-    axios.defaults.baseURL = "http://54.248.93.203:8080";
-    axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem('accessToken')}`
+    axios.defaults.headers.common['Authorization'] = `${localStorage.getItem('accessToken')}`
 
 
     return (
@@ -21,17 +20,15 @@ const UserGreeting = () => {
                         <div className='nav-user-item' onClick={() => { navigate('/service') }}>서비스 소개</div>
                         <div 
                             className='nav-user-item' 
-                            onClick={() => { 
-                                axios.get(`/matching/list`, {
-                                    params: {deleteYn: "N"}
-                                })
-                                .then((res)=>{
-                                    console.log(res);
-                                    console.log(res.data);
-                                })
-                                .catch((err)=>{
-                                    console.log(err);
-                                })
+                            onClick={() => {
+                                // axios.get(`/matching/list`)
+                                //     .then((res)=>{
+                                //         console.log(res);
+                                //         console.log(res.data);
+                                //     })
+                                //     .catch((err)=>{
+                                //         console.log(err);
+                                //     })
 
                                 navigate('/match'); 
                             }}

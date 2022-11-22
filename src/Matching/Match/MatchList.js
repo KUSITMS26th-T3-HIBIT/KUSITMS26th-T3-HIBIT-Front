@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import MatchTab1 from "./MatchTab1";
 // 조회순, 제목순, 관람스타일 순 정렬
 // -> 어차피 GET 해야 함
@@ -12,30 +13,37 @@ let MatchList = () => {
     let [exhibitStyle, setExhibitStyle] = useState(0);
     let [tabidx, setTabidx] = useState(0); // [전체 보기], [모집중인 게시글], [내가 신청한 게시글]
 
+    let navigate = useNavigate();
+
+
+
     useEffect(()=>{
         setPostCnt(posts.length);
     }, [posts]);
 
-    // axios.get(`url 넣자`)
-    //     .then((res)=>{
-    //         console.log(res.data);
-    //         let copy = [...res.data];
-    //         setPosts(copy);
-    //     })
-    //     .catch((err)=>{
-    //         console.log(`Data 가져오기 실패 ${err}`);
-    //         // 에러처리 화면구성 로직 필요
-    //     })
+    useEffect(()=>{
+        axios.get(`/matching/list`)
+            .then((res)=>{
+                console.log(res.data);
+                setPosts(res.data);
+            })
+            .catch((err)=>{
+                console.log(err);
+                alert('데이터 로딩 실패. 잠시 후에 접속 해 주세요.');
+                navigate('/');
+            })
+    }, [])
+
     return (
         <div className="matchList-section">
             <div>총 {postCnt}개의 게시글에서 취향이 맞는 메이트를 찾고 있어요!</div>
             <button className="matchList-lookup" onClick={() => {
-                axios.get('url 넣자')
-                    .then((res)=>{
-                        console.log(res.data);
-                        let copy = [...res.data];
-                        setPosts(copy);
-                    })
+                // axios.get('url 넣자')
+                //     .then((res)=>{
+                //         console.log(res.data);
+                //         let copy = [...res.data];
+                //         setPosts(copy);
+                //     })
             }}>조회순</button>
 
             <select className="matchList-person" value={numPeople} onChange={(e) => setNumPeople(e.target.value)}>
