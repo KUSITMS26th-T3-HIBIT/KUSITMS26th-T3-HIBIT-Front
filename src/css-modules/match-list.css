@@ -1,0 +1,131 @@
+/* 돋보기 아이콘 */
+.searchInput_icon {
+    z-index: 2;
+    margin-left: auto;
+}
+  
+.matchList-main-tablist{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.matchList-container{
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.matchList-section{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.matchList-header{
+    display: inline-flex;
+    background-color: #5E1EC7;
+    color: white;
+    height: 100px;
+    align-items: center;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+}
+.matchList-header-title{
+    padding-left: 5%;
+}
+.matchList-header-filter{
+    margin-left: auto;
+    padding: 2%;
+}
+.matchList-header-filter-lookup{
+    width: 90px;
+    height: 40px;
+    border-radius: 2em;
+    border-color: white;
+    background: #5E1EC7;
+    color: white;
+    font-size: 16px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.matchList-header-filter-person{
+    width: 120px;
+    height: 40px;
+    text-align: center;
+    border-radius: 2em;
+    border-color: white;
+    background: #5E1EC7;
+    color: white;
+    font-size: 16px;
+    margin-right: 20px;
+    border: solid 2px white;
+    cursor: pointer;
+}
+.matchList-header-filter-style{
+    width: 140px;
+    height: 40px;
+    text-align: center;
+    border-radius: 2em;
+    border-color: white;
+    background: #5E1EC7;
+    color: white;
+    font-size: 16px;
+    margin-right: 20px;
+    border: solid 2px white;
+    cursor: pointer;
+}
+
+.matchList-main-tablist{
+    display: grid;
+    grid-template-columns: 33% 35% 32%;
+    margin-top: 30px;
+}
+.matchList-main-tab-btn{
+    font-weight: bold;
+    border: none;
+    background: white;
+    font-size: 20px;
+    color: #232323;
+}
+.matchList-main-tab-btn-Active{
+    font-weight: bold;
+    border: none;
+    background: white;
+    font-size: 20px;
+    color: #5E1EC7;
+}
+.matchList-main-tab-hr{
+    
+}
+.matchList-main-tab-hr-Active{
+    border-color: #5E1EC7;
+    border: solid 2px #5E1EC7;
+}
+
+
+
+
+
+
+.MatchTab-container{
+    display: grid;
+    grid-template-columns: 330px 330px 330px;
+    grid-template-rows: repeat(auto-fill, 290px);
+}
+  
+.MatchTab-createBtnImg{
+    cursor: pointer;
+    width: 300px;
+    height: 264px;
+}
+  
+.MatchTab-createBtn{
+    margin: 20px;
+}
+  
+.MatchTab-item{
+    cursor: pointer;
+    border-radius: 1em;
+    border: 1px solid;
+    margin: 20px;
+    width: 300px;
+    height: 264px;
+}
