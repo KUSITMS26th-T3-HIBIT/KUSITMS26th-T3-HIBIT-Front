@@ -158,16 +158,21 @@ const MatchNewPost = () => {
             <div className="MatchNewPost-gridbox-line10">
               <div className="MatchNewPost-gridbox-line10-inner">
                 <span>발행하기</span>
-              </div>
-            </div>
-
-            {/* //화살표버튼  */}
-            <div
+              
+                <div
               onClick={() => navigate("/match")}
               className="MatchNewPost-pageupbutton-circle"
             >
               <div className="MatchNewPost-pageupbutton-arrow"></div>
+
             </div>
+              </div>
+
+            {/* //화살표버튼  */}
+            
+
+            </div>
+
           </div>
         </div>
       </div>

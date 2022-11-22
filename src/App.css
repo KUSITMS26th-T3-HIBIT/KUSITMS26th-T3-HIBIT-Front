@@ -14,10 +14,13 @@
 
 @import url('./css-modules/match_newpost.css');
 
+@import url('./css-modules/match_evaluate.css');
+
 body{
   padding:0;
   height: 100vh;
   margin:0;
+  font-family: 'SUIT';
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -38,29 +41,3 @@ h1,h2,h3,h4,h5,h6{
 
 
 
-
-
-
-
-.MatchDetailContents3-background{
-  background-color: #F8F9F4;
-  width:100vw;
-  height: 300px;
-}
-.MatchDetailContents3-profile-outline{
-  display: flex;
-  width:60%;
-  margin: auto;
-  /* align-items: center; */
-}
-.MatchDetailContents3-profile{
-  display: flex;
-  justify-content: start;
-  width:50%;
-  justify-content: space-between;
-}
-.MatchDetailContents3-profile > :first-of-type{
-  width:160px;
-  height: 160px;
-  background-color: red;
-}
