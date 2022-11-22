@@ -16,16 +16,16 @@ let MatchList = () => {
         setPostCnt(posts.length);
     }, [posts]);
 
-    axios.get(`url 넣자`)
-        .then((res)=>{
-            console.log(res.data);
-            let copy = [...res.data];
-            setPosts(copy);
-        })
-        .catch((err)=>{
-            console.log(`Data 가져오기 실패 ${err}`);
-            // 에러처리 화면구성 로직 필요
-        })
+    // axios.get(`url 넣자`)
+    //     .then((res)=>{
+    //         console.log(res.data);
+    //         let copy = [...res.data];
+    //         setPosts(copy);
+    //     })
+    //     .catch((err)=>{
+    //         console.log(`Data 가져오기 실패 ${err}`);
+    //         // 에러처리 화면구성 로직 필요
+    //     })
     return (
         <div className="matchList-section">
             <div>총 {postCnt}개의 게시글에서 취향이 맞는 메이트를 찾고 있어요!</div>
