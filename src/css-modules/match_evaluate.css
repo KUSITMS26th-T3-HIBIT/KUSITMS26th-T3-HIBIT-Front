@@ -1,8 +1,7 @@
 /* 페이지상단: 메이트정보 */
-/* *{
+*{
   font-family: 'SUIT';
-  text-align: center;
-} */
+}
 .matchEstimate-info{
   position: relative;
   box-sizing: border-box;
@@ -396,9 +395,9 @@
 }
 
 
-
-
-
+.matchEstimate-theOther-contents3-left{
+  text-align: center;
+}
 
 
 .matchEstimate-theOther-contents3-left > div:first-of-type{
@@ -464,10 +463,6 @@
   position: relative;
   top:150px;
   left:75%;
-  /* bottom:1001px; */
-  /* l:106%; */
-  /* top:14%; */
-  /* right:500px; */
   background-color: #FFFFFF;
 }
 
@@ -479,6 +474,4 @@
   border-left: 3px solid #5E1EC7; 
   transform: rotate(45deg);
   margin-top: 30px;
-  /* position: relative; */
-  /* right:570px;  */
 }
