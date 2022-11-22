@@ -3,8 +3,7 @@
 import React from "react";
 import MatchDetailWanted from "./MatchDetailWanted";
 import Slider from "./MatchSlider";
-// import purpleheart from '/Purple heart.png';
-export const MatchDetailContents1 = ({ tapIdx }) => {
+ const MatchDetailContents1 = ({ tapIdx }) => {
   let displayOption;
   if(tapIdx == 1){
     displayOption=''
@@ -56,14 +55,11 @@ export const MatchDetailContents1 = ({ tapIdx }) => {
           <img src="/Purpleheart.png" width="30px" height="30px" alt="purple heart"/>
           <span>심리적 외로움이 있으며 소통과 공감의 욕구가 뭐시기</span>
           </div>
-          
-          
-          
-          
-          
+        
         </div>  
 
       </div>
     </div>
   );
 };
+export default MatchDetailContents1;
