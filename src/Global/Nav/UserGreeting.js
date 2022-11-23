@@ -20,18 +20,7 @@ const UserGreeting = () => {
                         <div className='nav-user-item' onClick={() => { navigate('/service') }}>서비스 소개</div>
                         <div 
                             className='nav-user-item' 
-                            onClick={() => {
-                                // axios.get(`/matching/list`)
-                                //     .then((res)=>{
-                                //         console.log(res);
-                                //         console.log(res.data);
-                                //     })
-                                //     .catch((err)=>{
-                                //         console.log(err);
-                                //     })
-
-                                navigate('/match'); 
-                            }}
+                            onClick={() => {navigate('/match');}}
                         >매칭</div>
                         <div className='nav-user-item' onClick={() => { navigate('/community') }}>커뮤니티</div>
                         <div className='nav-user-item' onClick={() => { navigate('/exhibitinfo') }}>전시회 정보</div>
