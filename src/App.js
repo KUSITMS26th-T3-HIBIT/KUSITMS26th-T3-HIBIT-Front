@@ -15,6 +15,7 @@ import GuestGreeting from './Global/Nav/GuestGreeting';
 import MatchNewPost from './Matching/MatchNewPost';
 import MatchEvaluate from './Matching/MatchEvaluate';
 import axios from 'axios';
+import EditMypage from './Global/User/Mypage/EditMypage';
 
 function App() {
   const isNull = (val) => (val===undefined || val===null) ? true : false;
@@ -45,6 +46,7 @@ function App() {
           <Route path='/match/eval' element={<MatchEvaluate/>}/>
           
           <Route path='/mypage' element={<Mypage />} />
+          <Route path='/mypage/edit' element={<EditMypage />} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup_agree' element={<SignupAgreement />} />
           <Route path='/signup_info' element={<SignupInfo />} />

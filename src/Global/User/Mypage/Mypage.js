@@ -10,6 +10,8 @@ let Mypage = () => {
     let [posts, setPosts] = useState([]);
     let [community, setCommunity] = useState([]);
 
+    let navigate = useNavigate();
+
     const chooseTab = () => {
         switch(tabidx) {
             case 0:
@@ -48,6 +50,7 @@ let Mypage = () => {
                             <img
                                 className="mypage-info-edit"
                                 src="/myprofile-edit.png"
+                                onClick={()=>navigate('/mypage/edit')}
                             />
                         </div>
                         <div className="mypage-info-right">
