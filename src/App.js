@@ -19,7 +19,6 @@ import axios from 'axios';
 function App() {
   const isNull = (val) => (val===undefined || val===null) ? true : false;
   let token = localStorage.getItem('accessToken');
-  
   axios.defaults.baseURL = "http://54.248.93.203:8080";
   return (
     <div className="App">

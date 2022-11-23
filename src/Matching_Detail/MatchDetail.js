@@ -1,10 +1,12 @@
 //매칭디테일페이지 전체 컴포넌트
 
+import axios from 'axios';
 import {useEffect, useState} from 'react';
 import MatchDetailContents1  from "./MatchDetailContents1";
 import MatchDetailContents2 from './MatchDetailContents2'
 import MatchDetailContents3 from './MatchDetailContents3';
 import {MatchListComponent} from './MatchDetailContents3';
+import { useParams } from 'react-router-dom';
 
 
 const TopNavBarItem =({title})=>{  
@@ -14,31 +16,72 @@ const TopNavBarItem =({title})=>{
     <div className="under-line"></div>
   </div>)
 }
+
+
+
+
 //같은 js파일에 컴포넌트로 빼서 관리하기
 function MatchDetail() {
   let [active1,setActive1]=useState('');
   let [active2,setActive2]=useState('');
   let [active3,setActive3]=useState('');
   let [tapIdx,setTapIdx]=useState(1);
-
+  let [fetchedData1,setFetchedData1] =useState('');
+  let [fetchedData2,setFetchedData2] =useState('');
+  let useparam = useParams();
+  let idParam =useparam.id;
+  
+  
   const onClick1 =()=>{
     console.log(active1)
     setActive1('_activate');
     setTimeout(()=>{setActive2('')})
     setTimeout(()=>{setActive3('')})
     setTimeout(()=>{setTapIdx(1)})
+    //1st data fetching ~ 상세페이지 렌더링과동시에
+    matchInfoApi()
   }
   const onClick2 =()=>{
     setActive1('');
     setTimeout(()=>{setActive2('_activate')})
     setTimeout(()=>{setActive3('')})
     setTimeout(()=>{setTapIdx(2)})
+    mateInfoApi()
   }
   const onClick3 =()=>{
     setActive1('');
     setTimeout(()=>{setActive2('')})
     setTimeout(()=>{setActive3('_activate')})
     setTimeout(()=>{setTapIdx(3)})
+  }
+
+  //모집게시글(1) data 패칭 api
+const matchInfoApi = async ()=>{
+  try{
+    // const res = await axios.get(`/matching/${idx:게시글넘버}`)
+    // const res = await axios.get(`/matching/${idParam}`)
+    const res = await axios.get('/matching/2')
+    console.log(res.data);
+    setFetchedData1(res.data);
+  }catch(err){
+    console.log(err.message);
+  }
+}
+console.log(idParam);
+// console.log(fetchedData1.id);
+console.log(fetchedData2);
+
+  //메이트정보(2) data 패칭 api
+  const mateInfoApi= async ()=>{
+    try{
+      // const res = await axios.get(`/matching/${idx:유저idx}/mate`)
+      const res = await axios.get(`/matching/${idParam}/mate`)
+      // const res = await axios.get(`/matching//mate`)
+      console.log(res.data);
+      setFetchedData2(res.data);
+    }catch(err){
+      console.log(err.message);
+    }
   }
 
   useEffect(onClick1,[]);
@@ -60,8 +103,8 @@ function MatchDetail() {
           </div>
         </div>
       </div>
-      <MatchDetailContents1 tapIdx={tapIdx}/>
-      <MatchDetailContents2 tapIdx={tapIdx}/>
+      <MatchDetailContents1 fetchedData1={fetchedData1} tapIdx={tapIdx}/>
+      <MatchDetailContents2 fetchedData1={fetchedData1} fetchedData2={fetchedData2} tapIdx={tapIdx}/>
       <MatchDetailContents3 tapIdx={tapIdx}/>
 
           </div>
