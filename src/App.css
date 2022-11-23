@@ -18,6 +18,8 @@
 
 @import url('./css-modules/match-list.css');
 
+@import url('./css-modules/match-tab.css');
+
 body{
   padding:0;
   height: 100vh;

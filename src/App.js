@@ -9,7 +9,6 @@ import Mypage from './Global/User/Mypage/Mypage';
 import Login from './Global/User/Login';
 import SignupAgreement from './Global/User/SignupAgreement';
 import SignupInfo from './Global/User/SignupInfo';
-import CreateMatch from './Matching/Match/CreateMatch';
 import MatchDetail from './Matching_Detail/MatchDetail';
 import UserGreeting from './Global/Nav/UserGreeting';
 import GuestGreeting from './Global/Nav/GuestGreeting';
@@ -39,10 +38,9 @@ function App() {
           <Route path='/' element={<Main />} />
           <Route path='/service' element={<ServiceInfo />} />
           <Route path='/match' element={<MatchingMain />} />
-          {/* <Route path='/match/publish' element={<CreateMatch />} /> */}
           <Route path='/community' element={<ExhibitReview />} />
           <Route path='/exhibitinfo' element={<ExhibitInfo />} />
-          <Route path='/match/detail' element={<MatchDetail />} />
+          <Route path='/match/detail/:id' element={<MatchDetail />} />
           <Route path='/match/newpost' element={<MatchNewPost/>}/>
           <Route path='/match/eval' element={<MatchEvaluate/>}/>
           

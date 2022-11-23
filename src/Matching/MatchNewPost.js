@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ItemsCarousel from "react-items-carousel";
@@ -18,7 +18,7 @@ const MatchNewPost = () => {
 
   let [title, setTitle] = useState('');
   let [exhibitName, setExhibitName] = useState('');
-  let [category, setCategory] = useState('');
+  let [area, setArea] = useState('');
   let [personNum, setPersonNum] = useState(0);
   let [startDate, setStartDate] = useState('');
   let [endDate, setEndDate] = useState('');
@@ -34,6 +34,10 @@ const MatchNewPost = () => {
   const chevronWidth = 10;
   const imgState = [1, 2, 3, 4];
   const ItemsCarouselChoose = () => {};
+
+  useEffect(()=>{
+    console.log(area);
+  }, [area]);
 
   return (
     <>
@@ -68,8 +72,39 @@ const MatchNewPost = () => {
             </div>
 
             <div className="MatchNewPost-gridbox-line2">
-              <span>전시회 카테고리</span>
-              <select onChange={(e)=> setCategory(+e.target.value)}>
+              <span>관람 지역</span>
+              <select 
+                className="MatchNewPost-gridbox-line2-select" 
+                name='city' 
+                onChange={(e) => { setArea(e.target.value) }}
+              >
+                <option value='강남구'>강남구</option>
+                <option value='강동구'>강동구</option>
+                <option value='강서구'>강서구</option>
+                <option value='강북구'>강북구</option>
+                <option value='관악구'>관악구</option>
+                <option value='광진구'>광진구</option>
+                <option value='구로구'>구로구</option>
+                <option value='금천구'>금천구</option>
+                <option value='노원구'>노원구</option>
+                <option value='동대문구'>동대문구</option>
+                <option value='도봉구'>도봉구</option>
+                <option value='동작구'>동작구</option>
+                <option value='마포구'>마포구</option>
+                <option value='서대문구'>서대문구</option>
+                <option value='성동구'>성동구</option>
+                <option value='성북구'>성북구</option>
+                <option value='서초구'>서초구</option>
+                <option value='송파구'>송파구</option>
+                <option value='영등포구'>영등포구</option>
+                <option value='용산구'>용산구</option>
+                <option value='양천구'>양천구</option>
+                <option value='은평구'>은평구</option>
+                <option value='종로구'>종로구</option>
+                <option value='중구'>중구</option>
+                <option value='중랑구'>중랑구</option>
+              </select>
+              {/* <select onChange={(e)=> setCategory(+e.target.value)}>
                 {
                   exhibit_category_data.map((d)=>{
                     return (
@@ -77,7 +112,7 @@ const MatchNewPost = () => {
                     )
                   })
                 }
-              </select>
+              </select> */}
             </div>
 
             <div className="MatchNewPost-gridbox-line3">
@@ -206,7 +241,7 @@ const MatchNewPost = () => {
                   title: title,
                   exhibition: exhibitName,
                   content: recruitText,
-                  category: category,
+                  area: area,
                   number: personNum,
                   start_date: startDate,
                   finish_date: endDate,
@@ -229,14 +264,14 @@ const MatchNewPost = () => {
             <div className="MatchNewPost-gridbox-line10">
               <div className="MatchNewPost-gridbox-line10-inner">
                 <span>발행하기</span>
-                <div
+                {/* <div
                   className="MatchNewPost-pageupbutton-circle"
                   onClick={() => {
                     axios.post('/matching/post', {
                       title: title,
                       exhibition: exhibitName,
                       content: recruitText,
-                      category: category,
+                      area: area,
                       number: personNum,
                       start_date: startDate,
                       finish_date: endDate,
@@ -257,7 +292,7 @@ const MatchNewPost = () => {
                   }}
                 >
                 <div className="MatchNewPost-pageupbutton-arrow"></div>
-              </div>
+              </div> */}
             </div>{/* //화살표버튼  */}</div>
           </div>
         </div>

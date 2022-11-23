@@ -19,12 +19,12 @@ let MatchingMain = () => {
                         placeholder='원하는 매칭 키워드를 검색 해 보세요!'
                     />
                     <img
+                        className='match-main-search-input-icon'
                         onClick={(e) => {
                             setSearchInput(e.target.value);
                             navigate('/match/search');
                             <Route path='/match/search' element={<SearchMatching searchInput={searchInput} />} />
                         }}
-                        className='searchInput_icon'
                         src='/searchicon.png'
                     />
 

@@ -55,7 +55,7 @@ let Login = () => {
                     .then((res)=>{
                         localStorage.setItem('accessToken', res.data);
                         axios.defaults.headers.common['Authorization'] = `${localStorage.getItem('accessToken')}`
-                        console.log(res.status);
+                        console.log(res);
                         dispatch(login({token: res.data, isLogin: true}));
                         navigate('/');
                         window.location.reload('/');
