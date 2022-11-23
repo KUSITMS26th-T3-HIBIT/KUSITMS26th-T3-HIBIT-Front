@@ -1,24 +1,20 @@
 @import url('./css-modules/main.css');
-
 @import url('./css-modules/navbar.css');
 
-@import url('./css-modules/match.css');
 
 @import url('./css-modules/login.css');
-
 @import url('./css-modules/signup-agreement.css');
-
 @import url('./css-modules/signup-info.css');
 
+@import url('./css-modules/match.css');
 @import url('./css-modules/match_detail.css');
-
 @import url('./css-modules/match_newpost.css');
-
 @import url('./css-modules/match_evaluate.css');
-
 @import url('./css-modules/match-list.css');
-
 @import url('./css-modules/match-tab.css');
+
+@import url('./css-modules/mypage.css');
+@import url('./css-modules/mypage-tab.css');
 
 body{
   padding:0;

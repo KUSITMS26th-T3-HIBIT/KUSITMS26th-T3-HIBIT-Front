@@ -1,0 +1,136 @@
+
+
+.mypage-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    background-color: #5E1EC7;
+    color: white;
+    height: 200px;
+    font-size: 22px;
+    font-weight: bold;
+}
+.mypage-header-title{
+    margin-left: 400px;
+    margin-bottom: 32px;
+}
+
+.mypage-info-container{
+    display: inline-flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.mypage-info-row{
+    display: flex;
+    width: 57%;
+    flex-direction: row;
+    align-items: center;
+}
+
+.mypage-info-left{
+    display: flex;
+    margin-top: 100px;
+    margin-left: 100px;
+    position: relative;
+
+}
+.mypage-info-img{
+    width: 385px;
+    height: 400px;
+}
+.mypage-info-edit{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    bottom: 0px;
+    right: 0px;
+    cursor: pointer;
+}
+
+.mypage-info-right{
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
+}
+.mypage-info-hi{
+    font-size: 24px;
+}
+.mypage-info-match{
+    display: flex;
+    flex-direction: row;
+    margin-top: 124px;
+}
+.mypage-info-match-cnt, .mypage-info-temperature{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 100px;
+}
+.mypage-info-match-cnt-num, .mypage-info-tempeature-num{
+    color: #5E1EC7;
+    font-size: 25px;
+    font-weight: bold;
+}
+.mypage-info-match-cnt-text, .mypage-info-temperature-text{
+    margin-top: 10px;
+    color: #797979;
+    font-size: 18px;
+}
+
+
+.mypage-post-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+.mypage-post-section{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+.mypage-post-title{
+    margin-right: auto;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #5E1EC7;
+}
+.mypage-post-tablist{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    background-color: #5E1EC7;
+    color: white;
+    width: 1120px;
+    height: 100px;
+    align-items: center;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+}
+
+.mypage-post-tab-btn{
+    font-weight: bold;
+    border: none;
+    font-size: 20px;
+    color: white;
+    background: none;
+    cursor: pointer;
+    margin-left: 30px;
+}
+.mypage-post-tab-btn-Active{
+    font-weight: bold;
+    border: none;
+    background: none;
+    font-size: 20px;
+    color: #FFCC4A;
+    cursor: pointer;
+    margin-left: 30px;
+}
+.mypage-post-tab-hr{
+    border: solid 1px #5E1EC7
+}
+.mypage-post-tab-hr-Active{
+    border-color: #FFCC4A;
+    border: solid 3px #FFCC4A;
+}
