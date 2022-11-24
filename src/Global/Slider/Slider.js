@@ -22,7 +22,8 @@ let SliderImg = () => {
                     <div
                         className='SliderBtn'
                         onClick={() => {
-                            navigate('/serviceInfo');
+                            navigate('/');
+                            window.scrollTo(0, 2600);
                         }}
                     >
                         <img className='SliderImg' src='/banner1.png' />
@@ -37,6 +38,14 @@ let SliderImg = () => {
                     </div>
                     <div className='SliderBtn'>
                         <img className='SliderImg' src='/banner3.png' />
+                    </div>
+                    <div
+                        className='SliderBtn'
+                        onClick={() => {
+                            navigate('/match');
+                        }}
+                    >
+                        <img className='SliderImg' src='/banner4.png' />
                     </div>
                 </Slider>
             </div>
