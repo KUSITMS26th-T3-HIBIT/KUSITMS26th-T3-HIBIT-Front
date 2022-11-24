@@ -2,7 +2,6 @@ import './App.css';
 import Main from './Global/Main/Main';
 import { Routes, Route} from 'react-router-dom';
 import MatchingMain from './Matching/MatchingMain';
-import ExhibitInfo from './ExhibitInfo/ExhibitInfo';
 import Mypage from './Global/User/Mypage/Mypage';
 import Login from './Global/User/Login';
 import SignupAgreement from './Global/User/SignupAgreement';
@@ -15,6 +14,7 @@ import MatchEvaluate from './Matching/MatchEvaluate';
 import axios from 'axios';
 import EditMypage from './Global/User/Mypage/EditMypage';
 import CommunityMain from './Community/CommunityMain';
+import ExhibitInfoMain from './ExhibitInfo/ExhibitInfoMain';
 
 function App() {
   const isNull = (val) => (val===undefined || val===null) ? true : false;
@@ -37,7 +37,7 @@ function App() {
           <Route path='/' element={<Main />} />
           <Route path='/match' element={<MatchingMain />} />
           <Route path='/community' element={<CommunityMain />} />
-          <Route path='/exhibitinfo' element={<ExhibitInfo />} />
+          <Route path='/exhibitinfo' element={<ExhibitInfoMain />} />
           <Route path='/match/detail/:id' element={<MatchDetail />} />
           <Route path='/match/newpost' element={<MatchNewPost/>}/>
           <Route path='/match/eval' element={<MatchEvaluate/>}/>
