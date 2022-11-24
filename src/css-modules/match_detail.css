@@ -452,7 +452,7 @@ display: grid;
 
 .matchListComponent-outline{
   margin: auto;
-  width:60%;
+  width:55%;
   height: 150px;
   display:flex;
   justify-content: space-between;

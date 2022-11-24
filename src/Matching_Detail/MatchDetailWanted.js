@@ -2,18 +2,18 @@
 
 import React from "react";
 import { useNavigate } from "react-router-dom";
-const MatchDetailWanted = () => {
+const MatchDetailWanted = ({fetchedData1}) => {
   let navigate =useNavigate();
   return (
     <div className="matchDetail-content-rightbottom-outer">
       <div className="matchDetail-content-rightbottom-left">
 
           <h1>관람 일정</h1>
-          <h2>0000.00.00~0000.00.00</h2>
+          <h2>{fetchedData1.start_date||'2000.00.01'}~{fetchedData1.finish_date||'2000.00.02'}</h2>
           <h1>모집 마감</h1>
-          <h2>0000.00.00</h2>
+          <h2>{fetchedData1.finish_date||'0000.00.00'}</h2>
           <h1>모집 정원</h1>
-          <h2>4명</h2>
+          <h2>{fetchedData1.number}</h2>
 
       </div>
 

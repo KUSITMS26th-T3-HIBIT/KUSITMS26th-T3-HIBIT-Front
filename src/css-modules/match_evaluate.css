@@ -3,6 +3,7 @@
   font-family: 'SUIT';
 }
 .matchEstimate-info{
+  scale:1;
   position: relative;
   box-sizing: border-box;
   width:58%;
@@ -42,6 +43,7 @@
   padding-bottom: 38px;
 }
 .matchEstimate-info-contentsbox-leftImg{
+  scale:0.9;
   width: 362px;
   height: 362px;
   background-color: #797979;
@@ -52,6 +54,7 @@
 }
 
 .matchEstimate-info-contentsbox-right{
+  scale:0.9;
   display:flex;
   position: relative;
   bottom:20px;
