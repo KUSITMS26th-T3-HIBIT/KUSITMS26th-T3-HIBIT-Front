@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { login } from "../../redux/token";
+import jwt from 'jwt-decode';
 
 let Login = () => {
     let navigate = useNavigate();
@@ -56,6 +57,8 @@ let Login = () => {
                         localStorage.setItem('accessToken', res.data);
                         axios.defaults.headers.common['Authorization'] = `${localStorage.getItem('accessToken')}`
                         console.log(res);
+                        console.log(jwt(res.data).sub);
+                        localStorage.setItem('id', jwt(res.data).sub);
                         dispatch(login({token: res.data, isLogin: true}));
                         navigate('/');
                         window.location.reload('/');
