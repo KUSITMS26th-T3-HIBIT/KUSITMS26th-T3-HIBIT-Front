@@ -17,7 +17,7 @@ const UserGreeting = () => {
                 <div className='nav-user-left-section'>
                     <img className='nav-user-hibit-logo' src='/hibit_logo_w.png' onClick={() => { navigate('/') }} />
                     <div className='nav-user-left-menus'>
-                        <div className='nav-user-item' onClick={() => { navigate('/service') }}>서비스 소개</div>
+                        <div className='nav-user-item' onClick={() => {  navigate('/'); window.scrollTo(0, 2600); }}>서비스 소개</div>
                         <div 
                             className='nav-user-item' 
                             onClick={() => {navigate('/match');}}

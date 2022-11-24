@@ -1,7 +1,6 @@
 import './App.css';
 import Main from './Global/Main/Main';
 import { Routes, Route} from 'react-router-dom';
-import ServiceInfo from './ServiceInfo/ServiceInfo';
 import MatchingMain from './Matching/MatchingMain';
 import ExhibitReview from './Community/ExhibitReview';
 import ExhibitInfo from './ExhibitInfo/ExhibitInfo';
@@ -36,7 +35,6 @@ function App() {
 
         <Routes>
           <Route path='/' element={<Main />} />
-          <Route path='/service' element={<ServiceInfo />} />
           <Route path='/match' element={<MatchingMain />} />
           <Route path='/community' element={<ExhibitReview />} />
           <Route path='/exhibitinfo' element={<ExhibitInfo />} />
