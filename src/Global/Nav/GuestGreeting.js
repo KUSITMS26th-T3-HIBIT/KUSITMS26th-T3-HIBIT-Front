@@ -10,14 +10,15 @@ const GuestGreeting = ({hasToken}) => {
                 <div className='nav-guest-left-section'>
                     <img className='nav-guest-hibit-logo' src='/hibit_logo_w.png' onClick={() => { navigate('/') }} />
                     <div className='nav-guest-left-menus'>
-                        <div className='nav-guest-item' onClick={() => { navigate('/service') }}>서비스 소개</div>
+                        <div className='nav-guest-item' onClick={() => { navigate('/'); window.scrollTo(0, 2600); }}>서비스 소개</div>
                         <div 
                             className='nav-guest-item'
                             onClick={() => {
                                 if(hasToken) navigate('/match');
                                 else {
                                     alert('로그인이 필요한 서비스입니다');
-                                    navigate('login');
+                                    navigate('/login');
+                                    window.scrollTo(0,0);
                                 }
                             }}
                         >매칭</div>
@@ -28,7 +29,7 @@ const GuestGreeting = ({hasToken}) => {
 
                 <div className="nav-guest-right-section">
                     <img className='nav-guest-share-icon' src='/share.png' onClick={() => { }} />
-                    <img className='nav-guest-login-btn' src='/login.png' onClick={() => { navigate('/login'); }} />
+                    <img className='nav-guest-login-btn' src='/login.png' onClick={() => { navigate('/login'); window.scrollTo(0,0);}} />
                 </div>
             </div>
         </div>
@@ -37,4 +38,3 @@ const GuestGreeting = ({hasToken}) => {
 }
 
 export default GuestGreeting;
-// 공유 아이콘, 로그인 버튼

@@ -1,0 +1,42 @@
+/* CommunityMain.js 관련 css*/
+.Slider {
+    width: 100%;
+    height: 55%;
+}
+  
+.community-main-search-input-icon {
+    position: absolute;
+    display: flex;
+    top: 16px;
+    left: 70%;
+    z-index: 2;
+}
+  
+  /* 검색 input box */
+.community-main-search-container{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+}
+.community-main-search{
+    width: 100%;
+    height: 80px;
+    display: inline-flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: center;
+}
+.community-main-search-input { 
+    position: relative;
+    width: 50%;
+    height: 60px;
+    padding-left: 30px;
+    border-radius: 3em;
+    border: solid 4px;
+    border-color: #FFCC4A;
+    color: #FFCC4A;
+    font-size: 15px;
+  
+}
+  
+  

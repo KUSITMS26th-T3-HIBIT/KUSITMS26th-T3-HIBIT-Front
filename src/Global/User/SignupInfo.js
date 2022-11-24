@@ -79,8 +79,8 @@ let SignupInfo = () => {
                     />
                 </div>
 
-                <div className="Signup-title">기본 프로필</div>
                 <div className="Signup-require-profile-container">
+                    <div className="Signup-title-require">기본 프로필</div>
                     <div className="Signup-require-profile">
                         <div className="Signup-input-form">
                             
@@ -121,7 +121,68 @@ let SignupInfo = () => {
                                         // 중복 검사 get 요청
                                     }}
                                 />
+                                
                             </div>
+
+                            <hr className="Signup-hr"/>
+
+                            <div className="Signup-pw">
+                                <div className="Signup-pw-row">
+                                    <div className="Signup-column">비밀번호</div>
+                                    <div className="Signup-row-col">
+                                        <input
+                                            className="Signup-pw-input"
+                                            type="password"
+                                            value={pw}
+                                            placeholder="비밀번호 입력 (문자, 숫자, 특수 문자 포함 8~20자)"
+                                            onChange={(e) => {
+                                                console.log('pw', e.target.value);
+                                                setPw(e.target.value);
+                                            }}
+                                        />
+                                        {
+                                            !isPw && <div>비밀번호는 문자, 숫자, 특수문자를 포함 8~20자여야 합니다.</div>
+                                        }
+                                    </div>
+                                    
+                                </div>
+                                <div className="Signup-pw-re-row">
+                                    <div className="Signup-column"></div>
+                                    <div className="Signup-row-col">
+                                        <input
+                                            className="Signup-pw-re-input"
+                                            type="password"
+                                            value={repw}
+                                            placeholder="비밀번호 재입력 (문자, 숫자, 특수 문자 포함 8~20자)"
+                                            onChange={(e) => {
+                                                console.log('repw', e.target.value);
+                                                setRepw(e.target.value);
+                                            }}
+                                        />
+                                        {
+                                            repw.length > 0 && !isRePw && <div className="Signup-pw-not-equal">비밀번호가 일치하지 않습니다.</div>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr className="Signup-hr"/>
+
+                            <div className="Signup-name-gender-row">
+                                <div className="Signup-name">
+                                    <div className="Signup-column">이름</div>
+                                    <input
+                                        className="Signup-name-input"
+                                        value={name}
+                                        placeholder="이름 입력"
+                                        onChange={(e) => setName(e.target.value)}
+                                    />
+                                </div>
+                                
+                            </div>
+
+                            <hr className="Signup-hr"/>
+
                             <div className="Signup-nickname">
                                 <div className="Signup-column">닉네임</div>
                                 <input
@@ -159,74 +220,27 @@ let SignupInfo = () => {
                                 />
                             </div>
                             
-                            <div className="Signup-pw">
-                                <div className="Signup-pw-row">
-                                    <div className="Signup-column">비밀번호</div>
-                                    <div className="Signup-row-col">
-                                        <input
-                                            className="Signup-pw-input"
-                                            type="password"
-                                            value={pw}
-                                            placeholder="비밀번호 입력 (문자, 숫자, 특수 문자 포함 8~20자)"
-                                            onChange={(e) => {
-                                                console.log('pw', e.target.value);
-                                                setPw(e.target.value);
-                                            }}
-                                        />
-                                        {
-                                            !isPw && <div>비밀번호는 문자, 숫자, 특수문자를 포함 8~20자여야 합니다.</div>
-                                        }
-                                    </div>
-                                    
-                                </div>
-                                <div className="Signup-pw-re-row">
-                                    <div className="Signup-column">비밀번호 재입력</div>
-                                    <div className="Signup-row-col">
-                                        <input
-                                            className="Signup-pw-re-input"
-                                            type="password"
-                                            value={repw}
-                                            placeholder="비밀번호 재입력 (문자, 숫자, 특수 문자 포함 8~20자)"
-                                            onChange={(e) => {
-                                                console.log('repw', e.target.value);
-                                                setRepw(e.target.value);
-                                            }}
-                                        />
-                                        {
-                                            repw.length > 0 && !isRePw && <div className="Signup-pw-not-equal">비밀번호가 일치하지 않습니다.</div>
-                                        }
-                                    </div>
-                                </div>
+                            <hr className="Signup-hr"/>
+
+                            <div
+                                className="Signup-gender"
+                                onChange={(e) => setSelectedGender(e.target.value)}>
+                                <div className="Signup-column">성별</div>
+                                <select
+                                    className="Signup-selected-gender"
+                                    onChange={(e) => {
+                                        if (e.target.value === 'male')
+                                            setGender(true);
+                                        else
+                                            setGender(false);
+                                    }}
+                                >
+                                    <option key='male' value='male'>남자</option>
+                                    <option key='female' value='female'>여자</option>
+                                </select>
                             </div>
 
-                            <div className="Signup-name-gender-row">
-                                <div className="Signup-name">
-                                    <div className="Signup-column">이름</div>
-                                    <input
-                                        className="Signup-name-input"
-                                        value={name}
-                                        placeholder="이름 입력"
-                                        onChange={(e) => setName(e.target.value)}
-                                    />
-                                </div>
-                                <div
-                                    className="Signup-gender"
-                                    onChange={(e) => setSelectedGender(e.target.value)}>
-                                    <div className="Signup-column">성별</div>
-                                    <select 
-                                        className="Signup-selected-gender"
-                                        onChange={(e) => {
-                                            if (e.target.value === 'male')
-                                                setGender(true);
-                                            else
-                                                setGender(false);
-                                        }}
-                                    >
-                                        <option key='male' value='male'>남자</option>
-                                        <option key='female' value='female'>여자</option>
-                                    </select>
-                                </div>
-                            </div>
+                            <hr className="Signup-hr"/>
 
                             <div className="Signup-birth">
                                 <div className="Signup-column">생년월일</div>
@@ -234,28 +248,30 @@ let SignupInfo = () => {
                                     <input
                                         className="Signup-birth-year"
                                         type='number'
-                                        placeholder="연도(ex. 2022)"
+                                        placeholder="년 (4자)"
                                         onChange={(e) => setYear(e.target.value)}
                                     />
                                     <input
                                         className="Signup-birth-month"
                                         type='number'
-                                        placeholder="월"
+                                        placeholder="월 (2자)"
                                         onChange={(e) => setMonth(e.target.value)}
                                     />
                                     <input
                                         className="Signup-birth-day"
                                         type='number'
-                                        placeholder="일"
+                                        placeholder="일 (2자)"
                                         onChange={(e) => setDay(e.target.value)}
                                     />
                                 </div>
                             </div>
 
+                            <hr className="Signup-hr"/>
+
                             <div className="Signup-home">
                                 <div className="Signup-column">주소</div>
                                 <select className="Signup-home-prefix" name='city' onChange={(e)=>{setHomePrefix(e.target.value)}}>
-                                    <option value='전체'>전체</option>
+                                    <option value=''>시/도</option> 
                                     <option value='서울'>서울특별시</option>
                                     <option value='부산'>부산광역시</option>
                                     <option value='대구'>대구광역시</option>
@@ -274,6 +290,7 @@ let SignupInfo = () => {
                                     <option value='제주'>제주도</option>
                                 </select>
                                 <select className="Signup-home-suffix" name='gu' onChange={(e)=>{setHomeSuffix(e.target.value)}}>
+                                    <option value=''>시/군/구</option>
                                     <option value='강남구'>강남구</option>
                                     <option value='강동구'>강동구</option>
                                     <option value='강서구'>강서구</option>
@@ -303,6 +320,8 @@ let SignupInfo = () => {
                                 
                             </div>
 
+                            <hr className="Signup-hr"/>
+
                             <div className="Signup-email">
                                 <div className="Signup-column">이메일</div>
                                 <div>
@@ -323,6 +342,8 @@ let SignupInfo = () => {
                                     </select>
                                 </div>
                             </div>
+
+                            <hr className="Signup-hr"/>
 
                             <div className="Signup-phone">
                                 <div className="Signup-column">휴대폰 번호</div>
@@ -374,10 +395,6 @@ let SignupInfo = () => {
                                                         setExhibitStyle(i);
                                                     }}
                                                 >{exhibitStyleData[i].value}
-                                                    <img 
-                                                        className="Signup-exhibit-style-img"
-                                                        src={`/exhibitStyle${i+1}.png`}
-                                                    />
                                                 </button>
                                             )
                                         })

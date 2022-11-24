@@ -16,6 +16,10 @@
 @import url('./css-modules/mypage.css');
 @import url('./css-modules/mypage-tab.css');
 
+@import url('./css-modules/community.css');
+@import url('./css-modules/community-list.css');
+@import url('./css-modules/community-tab.css');
+
 body{
   padding:0;
   height: 100vh;
