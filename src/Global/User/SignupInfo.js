@@ -61,49 +61,29 @@ let SignupInfo = () => {
 
     return (
         <div className="Signup-info-container">
+            <div className="Signup-info-header">
+                <div className="Signup-info-header-title">
+                    회원 정보 입력
+                </div>
+            </div>
             <div className="Signup-info-section">
-                <img className="Signup-hibit-logo" src="/hibit_logo_c.png" />
+                <div className="Signup-info-profile-img">
+                    <img
+                        className="Signup-info-img"
+                        src="/myprofile.png"
+                    />
+                    <img
+                        className="Signup-info-add"
+                        src="/AddImgBtn.png"
+                        onClick={() => navigate()}
+                    />
+                </div>
 
                 <div className="Signup-title">기본 프로필</div>
                 <div className="Signup-require-profile-container">
                     <div className="Signup-require-profile">
                         <div className="Signup-input-form">
-                            <div className="Signup-nickname">
-                                <div className="Signup-column">닉네임</div>
-                                <input
-                                    className="Signup-nickname-input"
-                                    value={nickname}
-                                    placeholder="닉네임 입력 (6~20자)"
-                                    onChange={(e) => setNickname(e.target.value)}
-                                />
-                                <img
-                                    className="Signup-nickname-check"
-                                    src="/duplicate.png"
-                                    onClick={() => {
-                                        console.log('nickname', nickname);
-                                        axios.get(`user/sign-up/exists/${nickname}`, {
-                                            params: {nickname: nickname}
-                                        })
-                                        .then((res)=>{
-                                            console.log('response', res);
-                                            console.log('data', res.data);
-                                            console.log('status', res.data.result);
-                                            if(res.data.result === 'FAIL'){
-                                                alert('이미 존재하는 닉네임이거나, 유효하지 않은 닉네임입니다.');
-                                            }
-                                            else{
-                                                alert('사용 가능한 닉네임입니다.');
-                                            }
-                                        })
-                                        .catch((err)=>{
-                                            console.log('err', err);
-                                            console.log('status', err.response.status);
-                                            alert('서버와 통신이 원활하지 않습니다.\n잠시 후에 시도 해 주세요.');
-                                        });
-                                        // 중복 검사 get 요청
-                                    }}
-                                />
-                            </div>
+                            
 
                             <div className="Signup-id">
                                 <div className="Signup-column">아이디</div>
@@ -142,7 +122,43 @@ let SignupInfo = () => {
                                     }}
                                 />
                             </div>
-
+                            <div className="Signup-nickname">
+                                <div className="Signup-column">닉네임</div>
+                                <input
+                                    className="Signup-nickname-input"
+                                    value={nickname}
+                                    placeholder="닉네임 입력 (6~20자)"
+                                    onChange={(e) => setNickname(e.target.value)}
+                                />
+                                <img
+                                    className="Signup-nickname-check"
+                                    src="/duplicate.png"
+                                    onClick={() => {
+                                        console.log('nickname', nickname);
+                                        axios.get(`user/sign-up/exists/${nickname}`, {
+                                            params: {nickname: nickname}
+                                        })
+                                        .then((res)=>{
+                                            console.log('response', res);
+                                            console.log('data', res.data);
+                                            console.log('status', res.data.result);
+                                            if(res.data.result === 'FAIL'){
+                                                alert('이미 존재하는 닉네임이거나, 유효하지 않은 닉네임입니다.');
+                                            }
+                                            else{
+                                                alert('사용 가능한 닉네임입니다.');
+                                            }
+                                        })
+                                        .catch((err)=>{
+                                            console.log('err', err);
+                                            console.log('status', err.response.status);
+                                            alert('서버와 통신이 원활하지 않습니다.\n잠시 후에 시도 해 주세요.');
+                                        });
+                                        // 중복 검사 get 요청
+                                    }}
+                                />
+                            </div>
+                            
                             <div className="Signup-pw">
                                 <div className="Signup-pw-row">
                                     <div className="Signup-column">비밀번호</div>

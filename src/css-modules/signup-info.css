@@ -3,23 +3,41 @@
 
 /* Structure */
 .Signup-info-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     background: #F8F9F4;
 }
-
 .Signup-info-section{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 1520px;
 }
-
-.Signup-hibit-logo{
-    width: 365px;
-    height: 80px;
-    padding-top: 180px;
+.Signup-info-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    background-color: #5E1EC7;
+    color: white;
+    height: 200px;
+    font-size: 22px;
+    font-weight: bold;
+}
+.Signup-info-header-title{
+    margin-left: 400px;
+    margin-bottom: 30px;
+}
+.Signup-info-profile-img{
+    margin-top: 100px;
+    position: relative;
+}
+.Signup-info-img{
+    width: 288px;
+    height: 300px;
+}
+.Signup-info-add{
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    bottom: 0px;
+    right: 0px;
     cursor: pointer;
 }
 
@@ -33,7 +51,7 @@
 }
 
 .Signup-require-profile-container, .Signup-optional-profile-container {
-    width: 1520px;
+    width: 1120px;
     background: white;
 }
 
@@ -70,8 +88,8 @@
     margin-top: 40px;
 }
 .Signup-nickname-input, .Signup-id-input{
-    width: 740px;
-    height: 96px;
+    width: 640px;
+    height: 56px;
     border: 2px solid;
     border-color: #797979;
     border-radius: 1em;
@@ -79,9 +97,10 @@
     font-size: 20px;
 }
 .Signup-nickname-check, .Signup-id-check{
-    width: 325px;
-    height: 96px;
+    width: 200px;
+    height: 56px;
     margin-left: 40px;
+    margin-right: 30px;
     cursor: pointer;
 }
 
