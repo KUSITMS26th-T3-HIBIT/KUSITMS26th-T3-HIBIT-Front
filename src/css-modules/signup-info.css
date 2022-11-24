@@ -41,6 +41,20 @@
     cursor: pointer;
 }
 
+.Signup-hr{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #797979;
+    width: 1000px;
+}
+
+.Signup-title-require{
+    font-weight: bold;
+    color: #7E5DEB;
+    justify-content: flex-start;
+    font-size: 30px;
+    margin-top: 40px;
+}
 .Signup-title{
     display: flex;
     justify-content: flex-start;
@@ -69,8 +83,8 @@
 
 /* Common Component */
 .Signup-column{
-    width: 174px;
-    margin-left: 80px;
+    width: 200px;
+    margin-left: 50px;
     font-size: 20px;
 }
 
@@ -85,14 +99,13 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-top: 40px;
 }
 .Signup-nickname-input, .Signup-id-input{
-    width: 640px;
+    width: 500px;
     height: 56px;
     border: 2px solid;
     border-color: #797979;
-    border-radius: 1em;
+    border-radius: 0.5em;
     padding-left: 40px;
     font-size: 20px;
 }
@@ -118,18 +131,17 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-top: 40px;
 }
 .Signup-pw-not-equal{
     font-weight: bold;
     color: #7E5DEB;
 }
 .Signup-pw-input, .Signup-pw-re-input{
-    width: 1000px;
-    height: 96px;
+    width: 500px;
+    height: 56px;
     border: 2px solid;
     border-color: #797979;
-    border-radius: 1em;
+    border-radius: 0.5em;
     padding-left: 40px;
     font-size: 20px;
 }
@@ -146,14 +158,13 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-top: 40px;
 }
 .Signup-name-input{
     width: 500px;
-    height: 96px;
+    height: 56px;
     border: 2px solid;
     border-color: #797979;
-    border-radius: 1em;
+    border-radius: 0.5em;
     padding-left: 40px;
     font-size: 20px;
 }
@@ -164,14 +175,18 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-top: 40px;
 }
 .Signup-selected-gender{
-    width: 250px;
-    height: 96px;
+    width: 550px;
+    height: 56px;
+    border: 2px solid;
+    border-color: #797979;
     font-weight: bold;
-    text-align: center;
-    border-radius: 1em;
+    /* text-align: center; */
+    border-radius: 0.5em;
+    padding-left: 20px;
+    font-size: 20px;
+    color: #797979;
 }
 
 /* Birth */
@@ -179,15 +194,14 @@
     display: inline-flex;
     flex-direction: row;
     align-items: center;
-    margin-top: 40px;
 }
 .Signup-birth-grid{
     display: grid;
-    grid-template-columns: 350px 350px 350px;
+    grid-template-columns: 195px 195px 195px;
 }
 .Signup-birth-year, .Signup-birth-month, .Signup-birth-day{
-    height: 96px;
-    border-radius: 1em;
+    height: 56px;
+    border-radius: 0.5em;
     border: 2px solid;
     border-color: #797979;
     padding-left: 40px;
@@ -201,27 +215,28 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-top: 40px;
 }
 .Signup-home-prefix{
-    width: 500px;
-    height: 96px;
+    color: #797979;
+    width: 250px;
+    height: 56px;
     font-weight: bold;
     text-align: center;
     border: 2px solid;
     border-color: #797979;
-    border-radius: 1em;
+    border-radius: 0.5em;
     font-size: 20px;
 }
 .Signup-home-suffix{
-    width: 500px;
-    height: 90px;
+    color: #797979;
+    width: 250px;
+    height: 56px;
     margin-left: 50px;
     font-weight: bold;
     text-align: center;
     border: 2px solid;
     border-color: #797979;
-    border-radius: 1em;
+    border-radius: 0.5em;
     font-size: 20px;
 }
 
@@ -230,16 +245,15 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-top: 40px;
 }
 .Signup-email-input, .Signup-email-addr-select{
-    width: 500px;
-    height: 96px;
+    width: 245px;
+    height: 56px;
     font-weight: bold;
     text-align: center;
     border: 2px solid;
     border-color: #797979;
-    border-radius: 1em;
+    border-radius: 0.5em;
     font-size: 20px;
 }
 .Signup-at-symbol{
@@ -253,16 +267,15 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-top: 40px;
 }
 .Signup-phone-input{
-    width: 1000px;
-    height: 96px;
+    width: 540px;
+    height: 56px;
     font-weight: bold;
-    text-align: center;
     border: 2px solid;
+    padding-left: 20px;
     border-color: #797979;
-    border-radius: 1em;
+    border-radius: 0.5em;
     font-size: 20px;
 }
 
@@ -270,23 +283,27 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-top: 40px;
-    margin-bottom: 80px;
+    margin-bottom: 50px;
 }
 .Signup-phone-auth-input{
     margin-left: 254px;
     cursor: pointer;
-    width: 700px;
-    height: 96px;
+    width: 540px;
+    height: 56px;
     font-weight: bold;
-    text-align: center;
+    padding-left: 20px;
     border: 2px solid;
     border-color: #797979;
-    border-radius: 1em;
+    border-radius: 0.5em;
     font-size: 20px;
+    margin-top: 20px;
 }
 .Signup-phone-validate{
+    width: 200px;
+    height: 56px;
     margin-left: 40px;
+    margin-right: 40px;
+    cursor: pointer;
 }
 
 
@@ -321,8 +338,8 @@
 }
 .Signup-exhibit-style-list{
     display: grid;
-    grid-template-columns: 660px 660px;
-    grid-template-rows: 114px 114px;
+    grid-template-columns: 490px 490px;
+    grid-template-rows: 100px 100px;
 }
 .Signup-exhibit-stlye-item { 
     position: relative;
@@ -330,8 +347,8 @@
     border-width: 1px;
     cursor: pointer;
     font-weight: bold;
-    text-align: left;
-    padding-left: 120px;
+    text-align: center;
+
     border: 2px solid;
     border-color: #797979;
     border-radius: 0.5em;
@@ -343,19 +360,14 @@
     background-color: #7E5DEB;
     color: white;
     font-weight: bold;
-    text-align: left;
-    padding-left: 120px;
+    text-align: center;
+
     border: 2px solid;
     border-color: #797979;
     border-radius: 0.5em;
     font-size: 20px;
     margin: 20px;
     cursor: pointer;
-}
-.Signup-exhibit-style-img{
-    position: absolute;
-    top: 0px;
-    right: 70px;
 }
 
 
@@ -368,8 +380,8 @@
 }
 .Signup-my-style-list{
     display: grid;
-    grid-template-columns: 310px 310px 310px 310px;
-    grid-template-rows: 114px 114px 114px;
+    grid-template-columns: 242px 242px 242px 242px;
+    grid-template-rows: 100px 100px 100px;
 }
 .Signup-my-style-item{
     border: solid;
@@ -406,8 +418,8 @@
 }
 .Signup-interest-list{
     display: grid;
-    grid-template-columns: 310px 310px 310px 310px;
-    grid-template-rows: 114px 114px 114px;
+    grid-template-columns: 242px 242px 242px 242px;
+    grid-template-rows: 100px 100px 100px;
 }
 .Signup-interest-item{
     border: solid;
@@ -447,7 +459,7 @@
     justify-items: flex-start;
 }
 .Signup-introduce-input {
-    width: 80%;
+    width: 940px;
     height: 160px;
     resize: none;
     border: 2px solid;
@@ -455,6 +467,7 @@
     border-radius: 0.5em;
     font-size: 20px;
     font-weight: bold;
+    margin-top: 20px;
     margin-bottom: 30px;
 }
 
