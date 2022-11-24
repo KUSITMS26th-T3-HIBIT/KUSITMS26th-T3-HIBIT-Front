@@ -461,7 +461,7 @@ let SignupInfo = () => {
                                     id: id,
                                     password: pw,
                                     nickname: nickname,
-                                    // name: name,
+                                    name: name,
                                     phone_number: phone,
                                     birth: year + month + day,
                                     gender: gender,

@@ -5,10 +5,17 @@ import React from "react";
 import myStyleData from "../Global/Data/my_style_data";
 import exhibitStyleData from "../Global/Data/exhibit_style_data";
 import myInterestData from "../Global/Data/my_interest_data";
+import axios from 'axios';
 
 
 // import matchDetailUserImage from "/Group 396.png";
-const MatchDetailContents2 = ({tapIdx,fetchedData1,fetchedData2}) => {
+const MatchDetailContents2 = ({tapIdx,fetchedData1,fetchedData2,idParam}) => {
+const matchApplication = async ()=>{     
+  let res = await axios.post(`/matching/${idParam}/application`,
+  {"matching_check": "W",
+  "evaluation_check": "W"})
+  console.log(res.data);
+}
 
   let displayOption;
   if (tapIdx == 2) {
@@ -17,11 +24,15 @@ const MatchDetailContents2 = ({tapIdx,fetchedData1,fetchedData2}) => {
     displayOption = "none";
   }
   // userId: replacement with '**'
-  // let userId =fetchedData2.id;
-  // let splitId =userId.split('');
-  // splitId[2]='*';
-  // splitId[3]='*';
-  // let joinId =splitId.join('');
+  let userId =fetchedData2.id||'userId';
+  let splitId =userId.split('');
+  splitId[2]='*';
+  splitId[3]='*';
+  let joinId =splitId.join('');
+  //성격
+  // console.log(fetchedData2.personality);
+  //관심사 
+  // console.log(fetchedData2.hobby);
 
 //전시관람스타일
 //   const exhibitStyleData = [
@@ -60,8 +71,6 @@ const MatchDetailContents2 = ({tapIdx,fetchedData1,fetchedData2}) => {
 //   {id: 10, value: "듬직한"},
 //   {id: 11, value: "개성있는"}
 // ];
-console.log(fetchedData2.style);
-console.log('1');
 
   return (<div style={{ display: displayOption }}>
     <div
@@ -73,34 +82,35 @@ console.log('1');
 
       <div className="matchDetail-contents2-box-rightside">
         <div className="matchDetail-c2box-rsline1">
-          <h2>{fetchedData2.home+' 거주'||'거주지'}</h2>
+          <h2>{'거주지'&&fetchedData2?.home+' 거주'}</h2>
           <h2>
             {/* 여자(T)/남자(F) */}
-            {(fetchedData2.gender? '여자' : '남자')||'성별'} 
+            {'성별'&&(fetchedData2?.gender? '여자' : '남자')} 
           </h2>
           <h2>
             {/* 대화 하면서 볼래요(전시관람스타일) */}
-            {/* {exhibitStyleData[fetchedData1.style].value||'(전시관람스타일)'} */}
+            {exhibitStyleData[fetchedData1?.style]?.value||'(전시관람스타일)'}
             </h2>
         </div>
         <div className="matchDetail-c2box-rsline2">
           {/* 회원가입폼-자기소개 */}
-          <h3>{fetchedData2.introduce||'자기소개글'}</h3>
+          <h3>{fetchedData2?.introduce||'자기소개글'}</h3>
           <h1>
-            {/* {joinId||'유저*ID'} */}
+            {fetchedData2?.nickname}
+            {'유저*ID'&&`(${joinId})`}
           </h1>
         </div>
         <div className="matchDetail-c2box-rsline3">
           <h3>성격</h3>
           <div>
-          {/* {(fetchedData2.hobby).map((i,idx)=><div key={idx}>{myStyleData[i].value+','}</div>)} */}
+          {(fetchedData2?.personality || [0,1,2]).map((i,idx)=> <div key={idx}>{myStyleData[i]?.value+','}</div>)}
           </div>
         </div>
         {/* nth-child(4) */}
         <div className="matchDetail-c2box-rsline4">
           <h3>관심사</h3>
           <div>
-          {/* {(fetchedData2.hobby).map((i,idx)=><div key={idx}>{myInterestData[i].value+','}</div>)} */}
+          {(fetchedData2?.hobby||[0,1,2]).map((i,idx)=><div key={idx}>{myInterestData[i].value+','}</div>)}
           </div>
         </div>
 
@@ -108,11 +118,11 @@ console.log('1');
         <div className="matchDetail-c2box-rsline5">
           <div className="matchDetail-temporature-button">
             <div>1메이트온도:</div>
-            {/* <div>2온도{fetchedData2.temperature}</div> */}
+            <div>2온도{fetchedData2?.temperature}</div>
             <div>3믿을 수 있는 메이트에요</div>
             <div>4온도프로그레스바</div>
           </div>
-          <button className="matchDetail-matching-button">
+          <button onClick={matchApplication} className="matchDetail-matching-button">
             <div>매칭신청하기</div>
             <div>매칭을 통해,</div>
             <div>손아이콘</div>

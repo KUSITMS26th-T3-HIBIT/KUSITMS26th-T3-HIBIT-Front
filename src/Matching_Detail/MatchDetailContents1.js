@@ -29,7 +29,7 @@ const MatchDetailContents1 = ({ tapIdx,fetchedData1 }) => {
                 {fetchedData1.area||''}
               </div>
               <div>
-                {/* {exhibitStyleData[fetchedData1.style].value||'' } */}
+                {exhibitStyleData[fetchedData1?.style]?.value||'' }
                 {/* 사용자 프로필정보: 대화 하면서 볼래요 */}
                 </div>
             </div>
