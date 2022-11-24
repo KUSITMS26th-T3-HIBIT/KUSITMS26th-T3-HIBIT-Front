@@ -59,7 +59,7 @@ let SignupAgreement = () => {
             <div className="SignupAgreeComponents">
                 <div className="SignupAgreeAll">
                     <input type="checkbox" id="all" checked={allCheck} onChange={allCheckEvent} />
-                    <label htmlFor="all-check">히빗 이용약관, 개인정보 수집 및 이용, 마케팅 활용 및 광고 수신(선택), SMS 수신(선택), 이메일 수신(선택)에 <strong>모두 동의</strong>합니다.</label>
+                    <label htmlFor="all-check">히빗 이용약관, 개인정보 수집 및 이용 및 선택 항목에 <strong>모두 동의</strong>합니다.</label>
                 </div>
                 <div className="SignupProvision">
                     <input type="checkbox" id="provision" checked={provisionCheck} onChange={provisionCheckEvent}/>
@@ -76,7 +76,7 @@ let SignupAgreement = () => {
                 <div className="SignupMarketing">
                     <input type="checkbox" id="marketing" checked={marketingCheck} onChange={marketingCheckEvent}/>
                     <label htmlFor="marketing">마케팅 이용 동의 <span>(선택)</span></label>
-                    <textarea className="Signup-contents" defaultValue={marketing} disabled></textarea>
+                    <textarea className="Signup-contents-marketing" defaultValue={marketing} disabled></textarea>
                 </div>
                 
                 <div className="SignupSNS">

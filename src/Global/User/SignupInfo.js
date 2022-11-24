@@ -57,53 +57,33 @@ let SignupInfo = () => {
 
     useEffect(()=>{
         setHome(homePrefix + " " + homeSuffix); // 주소 (시/도) + (구/군)
-    }, [homePrefix, homeSuffix])
+    }, [homePrefix, homeSuffix]);
 
     return (
         <div className="Signup-info-container">
+            <div className="Signup-info-header">
+                <div className="Signup-info-header-title">
+                    회원 정보 입력
+                </div>
+            </div>
             <div className="Signup-info-section">
-                <img className="Signup-hibit-logo" src="/hibit_logo_c.png" />
+                <div className="Signup-info-profile-img">
+                    <img
+                        className="Signup-info-img"
+                        src="/myprofile.png"
+                    />
+                    <img
+                        className="Signup-info-add"
+                        src="/AddImgBtn.png"
+                        onClick={() => navigate()}
+                    />
+                </div>
 
                 <div className="Signup-title">기본 프로필</div>
                 <div className="Signup-require-profile-container">
                     <div className="Signup-require-profile">
                         <div className="Signup-input-form">
-                            <div className="Signup-nickname">
-                                <div className="Signup-column">닉네임</div>
-                                <input
-                                    className="Signup-nickname-input"
-                                    value={nickname}
-                                    placeholder="닉네임 입력 (6~20자)"
-                                    onChange={(e) => setNickname(e.target.value)}
-                                />
-                                <img
-                                    className="Signup-nickname-check"
-                                    src="/duplicate.png"
-                                    onClick={() => {
-                                        console.log('nickname', nickname);
-                                        axios.get(`user/sign-up/exists/${nickname}`, {
-                                            params: {nickname: nickname}
-                                        })
-                                        .then((res)=>{
-                                            console.log('response', res);
-                                            console.log('data', res.data);
-                                            console.log('status', res.data.result);
-                                            if(res.data.result === 'FAIL'){
-                                                alert('이미 존재하는 닉네임이거나, 유효하지 않은 닉네임입니다.');
-                                            }
-                                            else{
-                                                alert('사용 가능한 닉네임입니다.');
-                                            }
-                                        })
-                                        .catch((err)=>{
-                                            console.log('err', err);
-                                            console.log('status', err.response.status);
-                                            alert('서버와 통신이 원활하지 않습니다.\n잠시 후에 시도 해 주세요.');
-                                        });
-                                        // 중복 검사 get 요청
-                                    }}
-                                />
-                            </div>
+                            
 
                             <div className="Signup-id">
                                 <div className="Signup-column">아이디</div>
@@ -142,7 +122,43 @@ let SignupInfo = () => {
                                     }}
                                 />
                             </div>
-
+                            <div className="Signup-nickname">
+                                <div className="Signup-column">닉네임</div>
+                                <input
+                                    className="Signup-nickname-input"
+                                    value={nickname}
+                                    placeholder="닉네임 입력 (6~20자)"
+                                    onChange={(e) => setNickname(e.target.value)}
+                                />
+                                <img
+                                    className="Signup-nickname-check"
+                                    src="/duplicate.png"
+                                    onClick={() => {
+                                        console.log('nickname', nickname);
+                                        axios.get(`user/sign-up/exists/${nickname}`, {
+                                            params: {nickname: nickname}
+                                        })
+                                        .then((res)=>{
+                                            console.log('response', res);
+                                            console.log('data', res.data);
+                                            console.log('status', res.data.result);
+                                            if(res.data.result === 'FAIL'){
+                                                alert('이미 존재하는 닉네임이거나, 유효하지 않은 닉네임입니다.');
+                                            }
+                                            else{
+                                                alert('사용 가능한 닉네임입니다.');
+                                            }
+                                        })
+                                        .catch((err)=>{
+                                            console.log('err', err);
+                                            console.log('status', err.response.status);
+                                            alert('서버와 통신이 원활하지 않습니다.\n잠시 후에 시도 해 주세요.');
+                                        });
+                                        // 중복 검사 get 요청
+                                    }}
+                                />
+                            </div>
+                            
                             <div className="Signup-pw">
                                 <div className="Signup-pw-row">
                                     <div className="Signup-column">비밀번호</div>
@@ -257,13 +273,33 @@ let SignupInfo = () => {
                                     <option value='경남'>경상남도</option>
                                     <option value='제주'>제주도</option>
                                 </select>
-                                
-                                <input
-                                    className="Signup-home-suffix"
-                                    value={homeSuffix}
-                                    placeholder="구 / 군"
-                                    onChange={(e) => setHomeSuffix(e.target.value)}
-                                />
+                                <select className="Signup-home-suffix" name='gu' onChange={(e)=>{setHomeSuffix(e.target.value)}}>
+                                    <option value='강남구'>강남구</option>
+                                    <option value='강동구'>강동구</option>
+                                    <option value='강서구'>강서구</option>
+                                    <option value='강북구'>강북구</option>
+                                    <option value='관악구'>관악구</option>
+                                    <option value='광진구'>광진구</option>
+                                    <option value='구로구'>구로구</option>
+                                    <option value='금천구'>금천구</option>
+                                    <option value='노원구'>노원구</option>
+                                    <option value='동대문구'>동대문구</option>
+                                    <option value='도봉구'>도봉구</option>
+                                    <option value='동작구'>동작구</option>
+                                    <option value='마포구'>마포구</option>
+                                    <option value='서대문구'>서대문구</option>
+                                    <option value='성동구'>성동구</option>
+                                    <option value='성북구'>성북구</option>
+                                    <option value='서초구'>서초구</option>
+                                    <option value='송파구'>송파구</option>
+                                    <option value='영등포구'>영등포구</option>
+                                    <option value='용산구'>용산구</option>
+                                    <option value='양천구'>양천구</option>
+                                    <option value='은평구'>은평구</option>
+                                    <option value='종로구'>종로구</option>
+                                    <option value='중구'>중구</option>
+                                    <option value='중랑구'>중랑구</option>
+                                </select>
                                 
                             </div>
 
