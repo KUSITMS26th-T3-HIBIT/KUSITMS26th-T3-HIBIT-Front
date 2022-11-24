@@ -1,0 +1,80 @@
+.ExhibitInfoTab-container{
+    display: grid;
+    grid-template-columns: 532px 532px;
+    grid-template-rows: repeat(auto-fill, 320px);
+
+}
+
+
+.ExhibitInfoTab-createBtn{
+    margin: 20px;
+}
+.ExhibitInfoTab-createBtnImg{
+    cursor: pointer;
+    width: 500px;
+    height: 300px;
+}
+  
+.ExhibitInfoTab-item{
+    cursor: pointer;
+    border: none;
+    margin: 20px;
+    width: 532px;
+    height: 320px;
+    position: relative;
+    
+}
+.ExhibitInfoTab-item-img{
+    /* position: relative; */
+    width: 500px;
+    height: 300px;
+    border-radius: 0.5em;
+    opacity: 1;
+}
+.ExhibitInfoTab-item-content{
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    color: white;
+}
+.ExhibitInfoTab-item-tags{
+    display: inline-flex;
+    margin-top: 40px;
+    margin-left: 30px;
+}
+.ExhibitInfoTab-item-tag-place{
+    text-align: center;
+    padding: 4px;
+    border: solid 1px;
+    border-radius: 1em;
+    border-color: white;
+    width: 100px;
+    font-size: 12px;
+    margin-right: 20px;
+}
+.ExhibitInfoTab-item-tag-style{
+    text-align: center;
+    padding: 4px;
+    border: solid 1px;
+    border-radius: 1em;
+    border-color: white;
+    width: 100px;
+    font-size: 12px;
+}
+.ExhibitInfoTab-item-exhibit-title{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 180px;
+    margin-left: 30px;
+    font-size: 16px;
+}
+.ExhibitInfoTab-item-exhibit-content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 240px;
+    margin-left: 30px;
+    font-size: 18px;
+}

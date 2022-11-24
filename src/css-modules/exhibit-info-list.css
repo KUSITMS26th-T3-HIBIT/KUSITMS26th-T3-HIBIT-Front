@@ -1,0 +1,77 @@
+/* 돋보기 아이콘 */
+.searchInput_icon {
+    z-index: 2;
+    margin-left: auto;
+}
+  
+.exhibit-info-section{
+    width: 57%;
+}
+.exhibit-info-main-tablist{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.exhibit-info-container{
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.exhibit-info-section{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.exhibit-info-header{
+    display: inline-flex;
+    background-color: #9A11E7;
+    color: white;
+    height: 100px;
+    align-items: center;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+}
+.exhibit-info-header-title{
+    padding-left: 5%;
+}
+.exhibit-info-header-filter{
+    margin-left: auto;
+    padding: 2%;
+}
+.exhibit-info-header-filter-lookup, .exhibit-info-header-filter-title{
+    width: 90px;
+    height: 40px;
+    border-radius: 2em;
+    border-color: white;
+    background: #9A11E7;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.exhibit-info-main-tablist{
+    display: grid;
+    grid-template-columns: 33% 35% 32%;
+    margin-top: 30px;
+}
+.exhibit-info-main-tab-btn{
+    font-weight: bold;
+    border: none;
+    background: white;
+    font-size: 20px;
+    color: #232323;
+}
+.exhibit-info-main-tab-btn-Active{
+    font-weight: bold;
+    border: none;
+    background: white;
+    font-size: 20px;
+    color: #9A11E7;
+}
+
+.exhibit-info-main-tab-hr-Active{
+    border-color: #9A11E7;
+    border: solid 2px #9A11E7;
+}

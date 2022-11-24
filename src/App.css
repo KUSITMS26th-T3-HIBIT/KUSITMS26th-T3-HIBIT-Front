@@ -20,6 +20,10 @@
 @import url('./css-modules/community-list.css');
 @import url('./css-modules/community-tab.css');
 
+@import url('./css-modules/exhibit-info.css');
+@import url('./css-modules/exhibit-info-list.css');
+@import url('./css-modules/exhibit-info-tab.css');
+
 body{
   padding:0;
   height: 100vh;

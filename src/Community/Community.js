@@ -9,8 +9,7 @@ let Community = () => {
     let [posts, setPosts] = useState([]);
     let [posting, setPosting] = useState([]);
     let [mypost, setMypost] = useState([]);
-    let [exhibitStyle, setExhibitStyle] = useState(0);
-    let [tabidx, setTabidx] = useState(0); // [전체 보기], [모집중인 게시글], [내가 신청한 게시글]
+    let [tabidx, setTabidx] = useState(0);
     
     const useidx = +localStorage.getItem('useIdx');
 
