@@ -13,6 +13,13 @@
   align-items: flex-start;
 }
 
+.mainImg, .main-bottom-img{
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
+
 .home-main-section{
   display:flex;
   width:100vw;

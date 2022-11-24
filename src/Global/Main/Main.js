@@ -6,7 +6,7 @@ function Main(){
   return (
     <div className='home-main-container'>
       <div className='main-img-wrapper'>
-        <img className='mainImg' width='1920' height='1080' src='/main.png' />
+        <img className='mainImg' src='/main.png' />
       </div>
       <div className='Slider-wrapper'>
         <SliderImg />
@@ -75,7 +75,7 @@ function Main(){
         </section>
         
         <div className='main-bottom-img-wrapper'>
-          <img src='/mainBottom.png' />
+          <img className='main-bottom-img' src='/mainBottom.png' />
         </div>
 
         <section className='home-bottom-section'>
