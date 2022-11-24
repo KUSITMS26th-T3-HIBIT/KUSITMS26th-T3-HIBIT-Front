@@ -1,0 +1,77 @@
+/* 돋보기 아이콘 */
+.searchInput_icon {
+    z-index: 2;
+    margin-left: auto;
+}
+  
+.community-section{
+    width: 57%;
+}
+.community-main-tablist{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.community-container{
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.community-section{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.community-header{
+    display: inline-flex;
+    background-color: #FFCC4A;
+    color: white;
+    height: 100px;
+    align-items: center;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+}
+.community-header-title{
+    padding-left: 5%;
+}
+.community-header-filter{
+    margin-left: auto;
+    padding: 2%;
+}
+.community-header-filter-lookup, .community-header-filter-title{
+    width: 90px;
+    height: 40px;
+    border-radius: 2em;
+    border-color: white;
+    background: #FFCC4A;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.community-main-tablist{
+    display: grid;
+    grid-template-columns: 33% 35% 32%;
+    margin-top: 30px;
+}
+.community-main-tab-btn{
+    font-weight: bold;
+    border: none;
+    background: white;
+    font-size: 20px;
+    color: #232323;
+}
+.community-main-tab-btn-Active{
+    font-weight: bold;
+    border: none;
+    background: white;
+    font-size: 20px;
+    color: #FFCC4A;
+}
+
+.community-main-tab-hr-Active{
+    border-color: #FFCC4A;
+    border: solid 2px #FFCC4A;
+}
