@@ -280,6 +280,9 @@ align-content: center;
   justify-content: center;
   align-items: center;
   border-radius: 12px;
+  color:white;
+  font-weight: 800;
+  font-size: 18px;
 }
 .MatchNewPost-gridbox-line10-inner span{
   color:white;

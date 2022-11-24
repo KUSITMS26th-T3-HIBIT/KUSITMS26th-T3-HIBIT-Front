@@ -78,6 +78,7 @@ const MatchNewPost = () => {
                 name='city' 
                 onChange={(e) => { setArea(e.target.value) }}
               >
+                <option value=''>----</option>
                 <option value='강남구'>강남구</option>
                 <option value='강동구'>강동구</option>
                 <option value='강서구'>강서구</option>
@@ -104,15 +105,6 @@ const MatchNewPost = () => {
                 <option value='중구'>중구</option>
                 <option value='중랑구'>중랑구</option>
               </select>
-              {/* <select onChange={(e)=> setCategory(+e.target.value)}>
-                {
-                  exhibit_category_data.map((d)=>{
-                    return (
-                      <option value={d.value}>{d.value}</option>
-                    )
-                  })
-                }
-              </select> */}
             </div>
 
             <div className="MatchNewPost-gridbox-line3">
@@ -235,65 +227,36 @@ const MatchNewPost = () => {
               />
             </div>
 
-            <button
-              onClick={() => {
-                axios.post('/matching/post', {
-                  title: title,
-                  exhibition: exhibitName,
-                  content: recruitText,
-                  area: area,
-                  number: personNum,
-                  start_date: startDate,
-                  finish_date: endDate,
-                  finish: false,
-                  openchat: openUrl,
-                  want: preferMate
-                })
-                  .then((res) => {
-                    console.log(res);
-                    console.log(res.data);
-                    console.log(res.status);
-                    alert('매칭 게시글이 작성되었습니다.');
-                    navigate("/match");
-                  })
-                  .catch((err) => {
-                    console.log(err);
-                  });
-              }}
-            >POST 보내기!</button>
             <div className="MatchNewPost-gridbox-line10">
-              <div className="MatchNewPost-gridbox-line10-inner">
-                <span>발행하기</span>
-                {/* <div
-                  className="MatchNewPost-pageupbutton-circle"
-                  onClick={() => {
-                    axios.post('/matching/post', {
-                      title: title,
-                      exhibition: exhibitName,
-                      content: recruitText,
-                      area: area,
-                      number: personNum,
-                      start_date: startDate,
-                      finish_date: endDate,
-                      finish: false,
-                      openchat: openUrl,
-                      want: preferMate
+              <button
+                className="MatchNewPost-gridbox-line10-inner"
+                onClick={() => {
+                  axios.post('/matching/post', {
+                    title: title,
+                    exhibition: exhibitName,
+                    content: recruitText,
+                    area: area,
+                    number: personNum,
+                    start_date: startDate,
+                    finish_date: endDate,
+                    finish: false,
+                    openchat: openUrl,
+                    want: preferMate
+                  })
+                    .then((res) => {
+                      console.log(res);
+                      console.log(res.data);
+                      console.log(res.status);
+                      alert('매칭 게시글이 작성되었습니다.');
+                      navigate("/match");
                     })
-                      .then((res) => {
-                        console.log(res);
-                        console.log(res.data);
-                        console.log(res.status);
-                        alert('매칭 게시글이 작성되었습니다.');
-                        navigate("/match");
-                      })
-                      .catch((err) => {
-                        console.log(err);
-                      });
-                  }}
-                >
-                <div className="MatchNewPost-pageupbutton-arrow"></div>
-              </div> */}
-            </div>{/* //화살표버튼  */}</div>
+                    .catch((err) => {
+                      console.log(err);
+                    });
+                }}
+              >발행하기</button>
+            </div>
+
           </div>
         </div>
       </div>
