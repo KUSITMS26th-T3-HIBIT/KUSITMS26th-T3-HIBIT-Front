@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useParams } from "react-router-dom";
 import ItemsCarousel from "react-items-carousel";
 import exhibit_category_data from "../Global/Data/exhibit_category_data";
 import person_num_type_data from "../Global/Data/person_num_type_data";

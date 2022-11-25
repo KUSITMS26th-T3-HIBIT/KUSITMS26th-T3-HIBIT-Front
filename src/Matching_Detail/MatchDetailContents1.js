@@ -4,7 +4,7 @@ import MatchDetailWanted from "./MatchDetailWanted";
 import Slider from "./MatchSlider";
 import exhibitStyleData from "../Global/Data/exhibit_style_data";
 import {useState} from 'react';
-const MatchDetailContents1 = ({ tapIdx,fetchedData1 }) => {
+const MatchDetailContents1 = ({ tapIdx,fetchedData1,matchApplication }) => {
   let displayOption;
   if(tapIdx == 1){
     displayOption=''
@@ -53,7 +53,9 @@ const MatchDetailContents1 = ({ tapIdx,fetchedData1 }) => {
               backgroundColor: "#EEEEEE",
             }}
           ></div>
-          <MatchDetailWanted fetchedData1={fetchedData1}/>
+          <MatchDetailWanted 
+          matchApplication={matchApplication}
+          fetchedData1={fetchedData1}/>
         </div>
       </div>
       <div className="matchDetail-notice-banner">

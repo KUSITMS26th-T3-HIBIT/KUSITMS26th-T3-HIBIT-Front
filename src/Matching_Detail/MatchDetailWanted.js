@@ -1,9 +1,7 @@
 //매칭디테일페이지1의 하단부: ~와함께하고싶어요
 
 import React from "react";
-import { useNavigate } from "react-router-dom";
-const MatchDetailWanted = ({fetchedData1}) => {
-  let navigate =useNavigate();
+const MatchDetailWanted = ({fetchedData1,matchApplication}) => {
   return (
     <div className="matchDetail-content-rightbottom-outer">
       <div className="matchDetail-content-rightbottom-left">
@@ -18,7 +16,7 @@ const MatchDetailWanted = ({fetchedData1}) => {
       </div>
 
       <div className="matchDetail-content-rightbottom-right">
-      <button onClick={()=>navigate('/')}>매칭 신청하기</button>
+      <button onClick={matchApplication}>매칭 신청하기</button>
       </div>
         
     </div>
