@@ -47,7 +47,7 @@ const MatchNewPost = () => {
             <div className="MatchNewPost-gridbox-line0">
               <span>제목</span>
               <div>
-                <span>{title.length}/20</span>
+                <span>{title.length}/50</span>
                 <input className="MatchNewPost-title-input"
                   value={title}
                   onChange={(e)=>{

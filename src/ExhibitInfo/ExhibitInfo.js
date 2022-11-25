@@ -32,17 +32,17 @@ let ExhibitInfo = () => {
         setPostCnt(posts.length);
     }, [posts]);
 
-    // useEffect(()=>{
-    //     axios.get(`/community/list`)
-    //         .then((res)=>{
-    //             console.log(res.data);
-    //             setPosts(res.data);
-    //         })
-    //         .catch((err)=>{
-    //             console.log(err);
-    //             alert('데이터 로딩 실패. 잠시 후에 접속 해 주세요.');
-    //         })
-    // }, []);
+    useEffect(()=>{
+        axios.get(`/info`)
+            .then((res)=>{
+                console.log(res.data);
+                setPosts(res.data);
+            })
+            .catch((err)=>{
+                console.log(err);
+                alert('데이터 로딩 실패. 잠시 후에 접속 해 주세요.');
+            })
+    }, []);
 
     useEffect(()=>{
         setPosting(posts.filter((d)=>d.finish===false));
