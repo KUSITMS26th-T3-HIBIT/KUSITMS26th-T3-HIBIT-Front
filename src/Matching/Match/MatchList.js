@@ -14,7 +14,7 @@ let MatchList = () => {
     let [exhibitStyle, setExhibitStyle] = useState(0);
     let [tabidx, setTabidx] = useState(0); // [전체 보기], [모집중인 게시글], [내가 신청한 게시글]
     
-    const useidx = +localStorage.getItem('useIdx');
+    const userid = +localStorage.getItem('id');
 
     let navigate = useNavigate();
 
@@ -25,7 +25,7 @@ let MatchList = () => {
             case 1:
                 return <MatchTab2 posts={posting}/>
             case 2:
-                return <MatchTab3 posts={posts}/>
+                return <MatchTab3 mypost={mypost}/>
             default:
                 return <MatchTab1 posts={posts}/>
         }
@@ -53,7 +53,7 @@ let MatchList = () => {
     }, [posts]);
 
     useEffect(()=>{
-        setMypost(posts.filter((d)=>d.user===useidx));
+        setMypost(posts.filter((d)=>d.user===userid));
     }, [posts]);
 
     return (

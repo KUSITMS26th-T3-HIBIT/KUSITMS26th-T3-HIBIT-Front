@@ -1,5 +1,8 @@
+import axios from "axios"
+import { useNavigate } from "react-router-dom"
 
 const AlarmTab1 = ({matchList}) => {
+    
     return (
         <div className="alarm-tab-container">
             <div className="alarm-tab">
@@ -15,7 +18,7 @@ const AlarmTab1 = ({matchList}) => {
                                         </div>
                                     </div>
                                     {
-                                        d.readed === "N" ? <OKButton/> : ""
+                                        d.readed === "N" ? <OKButton datum={d}/> : ""
                                     }
                                 </div>
                                 <hr className="alarm-tab-hr" />
@@ -29,12 +32,28 @@ const AlarmTab1 = ({matchList}) => {
     )
 }
 
-const OKButton = () => {
+const OKButton = ({datum}) => {
+    let navigate = useNavigate();
     return (
         <div className="alarm-tab-item-right">
             <button
                 className="alarm-tab-item-right-btn"
-                onClick={() => { }}
+                onClick={() => { 
+                    axios.put('/alarm/어쩌구', {
+                        // readed 값 Y로 바꿔서 request
+                    })
+                    .then((res)=>{
+                        console.log(res);
+                        console.log(res.data);
+                        console.log(res.status);
+                    })
+                    .catch((err)=>{
+                        console.log(err);
+                    });
+
+                    navigate(`/match/detail/${datum.id}`);
+                    
+                }}
             >확인하기</button>
         </div>
     )

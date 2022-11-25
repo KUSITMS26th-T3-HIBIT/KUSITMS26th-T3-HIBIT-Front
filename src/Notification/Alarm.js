@@ -9,15 +9,9 @@ const Alarm = () => {
     let [matchList, setMatchList] = useState([]);
     let [communityList, setCommunityList] = useState([]);
     let [tabidx, setTabidx] = useState(0); // [매칭], [커뮤니티]
+    let [nickname, setNickname] = useState('임시닉네임');
     
     let navigate = useNavigate();
-
-    let tmpdata = [
-        {id: 0, user:"공주", category: "M", content: "님이 매칭을 신청했습니다.", readed: "N", openchat: "https://openchat.."},
-        {id: 1, user:"2현떠", category: "C", content: "님이 댓글을 남겼습니다.", readed: "N", openchat: "https://openchat.."},
-        {id: 2, user:"시면준", category: "T", content: "매칭이 수락되었습니다.", readed: "N", openchat: "https://openchat.."},
-        {id: 3, user:"개죽이", category: "F", content: "매칭이 거절되었습니다.", readed: "Y", openchat: "https://openchat.."},
-    ]
 
     const chooseTab = () => {
         switch(tabidx) {
@@ -30,21 +24,29 @@ const Alarm = () => {
         }
     }
 
-    // useEffect(()=>{
-    //     axios.get(`/alarm/list`)
-    //         .then((res)=>{
-    //             console.log(res.data);
-    //             setAlarmList(res.data);
-    //         })
-    //         .catch((err)=>{
-    //             console.log(err);
-    //             // alert('데이터 로딩 실패');
-    //         })
-    // }, []);
+    useEffect(()=>{
+        axios.get(`/alarm/list`)
+            .then((res)=>{
+                console.log(res.data);
+                setAlarmList(res.data);
+            })
+            .catch((err)=>{
+                console.log(err);
+            })
+    }, []);
 
     useEffect(()=>{
-        setAlarmList(tmpdata);
-    }, []); // 임시 데이터로 테스트
+        axios.get(`/user/profile/${localStorage.getItem('id')}`)
+        .then((res)=>{
+            console.log(res);
+            console.log(res.data);
+            console.log(res.status);
+            setNickname(res.data.nickname);
+        })
+        .catch((err)=>{
+            console.log(err);
+        })
+    })
 
     useEffect(()=>{
         setMatchList(alarmList.filter((d)=> d.category !== "C"));
@@ -67,15 +69,20 @@ const Alarm = () => {
                         </div>
                         <div className="alarm-header-left-text">
                             <div className="alarm-header-left-id">
-                                {"mangolover"}
+                                {localStorage.getItem('id')}
                             </div>
                             <div className="alarm-header-left-nickname">
-                                {"망고피자"}
+                                {nickname}
                             </div>
                         </div>
                     </div>
                     <div className="alarm-header-right">
-                        <div className="alarm-header-right-mypage-btn">
+                        <div
+                            className="alarm-header-right-mypage-btn"
+                            onClick={()=>{
+                                navigate('/mypage');
+                            }}
+                        >
                             마이페이지 {'>'}
                         </div>
                     </div>
