@@ -9,13 +9,8 @@ import axios from 'axios';
 
 
 // import matchDetailUserImage from "/Group 396.png";
-const MatchDetailContents2 = ({tapIdx,fetchedData1,fetchedData2,idParam}) => {
-const matchApplication = async ()=>{     
-  let res = await axios.post(`/matching/${idParam}/application`,
-  {"matching_check": "W",
-  "evaluation_check": "W"})
-  console.log(res.data);
-}
+const MatchDetailContents2 = ({tapIdx,fetchedData1,fetchedData2,idParam,matchApplication}) => {
+
 
   let displayOption;
   if (tapIdx == 2) {
@@ -85,7 +80,7 @@ const matchApplication = async ()=>{
           <h2>{'거주지'&&fetchedData2?.home+' 거주'}</h2>
           <h2>
             {/* 여자(T)/남자(F) */}
-            {'성별'&&(fetchedData2?.gender? '여자' : '남자')} 
+            {'성별'&&(fetchedData2?.gender? '남자' : '여자')} 
           </h2>
           <h2>
             {/* 대화 하면서 볼래요(전시관람스타일) */}
