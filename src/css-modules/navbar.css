@@ -94,8 +94,10 @@
   margin-left: 30px;
   cursor: pointer;
 }
-
-
+.nav-user-modal{
+  border-radius: 2em;
+  clip-path: polygon(0 5%, 78% 5%, 82% 0, 86% 5%, 100% 5%, 100% 100%, 0 100%);
+}
 
 /* .NavRight_icon {
   display: flex;

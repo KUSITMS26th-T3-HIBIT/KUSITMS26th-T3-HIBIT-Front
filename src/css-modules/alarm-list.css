@@ -1,0 +1,100 @@
+
+.alarm-header{
+    display: inline-flex;
+}
+.alarm-header-left{
+    display: inline-flex;
+    align-items: center;
+    flex-direction: row;
+}
+.alarm-header-icon{
+    margin-top: 64px;
+    margin-left: 40px;
+    width: 100px;
+    height: 100px;
+}
+.alarm-header-left-text{
+    margin-top: 64px;
+    margin-left: 32px;
+    color: #797979;
+}
+.alarm-header-left-id{
+    font-size: 20px;
+}
+.alarm-header-left-nickname{
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 25px;
+}
+.alarm-header-right{
+    display: flex;
+    margin-left: auto;
+    align-items: flex-end;
+    margin-right: 40px;
+}
+.alarm-header-right-mypage-btn{
+    border: solid 1px #797979;
+    border-radius: 2em;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 7px;
+    padding-right: 7px;
+    color: #797979;
+}
+
+
+
+.alarm-main-tablist{
+    margin-left: 2px;
+    margin-right: 2px;
+}
+.alarm-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.alarm-section{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.alarm-header-filter-style{
+    width: 140px;
+    height: 40px;
+    text-align: center;
+    border-radius: 2em;
+    border-color: white;
+    background: #5E1EC7;
+    color: white;
+    font-size: 16px;
+    margin-right: 20px;
+    border: solid 2px white;
+    cursor: pointer;
+}
+
+.alarm-main-tablist{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-top: 30px;
+}
+.alarm-main-tab-btn{
+    font-weight: bold;
+    border: none;
+    background: white;
+    font-size: 20px;
+    color: #232323;
+}
+.alarm-main-tab-btn-Active{
+    font-weight: bold;
+    border: none;
+    background: white;
+    font-size: 20px;
+    color: #5E1EC7;
+}
+
+.alarm-main-tab-hr-Active{
+    border-color: #5E1EC7;
+    border: solid 2px #5E1EC7;
+}

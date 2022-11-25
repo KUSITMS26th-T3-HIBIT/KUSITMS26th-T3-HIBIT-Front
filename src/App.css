@@ -24,6 +24,9 @@
 @import url('./css-modules/exhibit-info-list.css');
 @import url('./css-modules/exhibit-info-tab.css');
 
+@import url('./css-modules/alarm-list.css');
+@import url('./css-modules/alarm-tab.css');
+
 body{
   padding:0;
   height: 100vh;

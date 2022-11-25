@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { login } from "../../redux/token";
 import Modal from "react-modal";
+import Alarm from "../../Notification/Alarm";
 
 const UserGreeting = () => {
     let navigate = useNavigate();
@@ -35,35 +36,29 @@ const UserGreeting = () => {
                         <div className='nav-user-mypage' onClick={() => { navigate('/mypage') }}>마이페이지</div>
                         <hr className='nav-user-vertical-line' />
                         <img className='nav-user-profile-icon' src='/profile_frame.png' onClick={() => setModalIsOpen(true)} />
-                        <Modal 
+                        <Modal className="nav-user-modal"
                             isOpen={modalIsOpen}
                             onRequestClose={()=>setModalIsOpen(false)}
                             style={{
                                 overlay: {
                                     position: 'fixed',
-                                    top: 0,
-                                    left: 0,
-                                    right: 0,
-                                    bottom: 0,
-                                    backgroundColor: '#5E1EC7',
-                                    opacity: 0.9
+                                    top: 0, left: 0, right: 0, bottom: 0,
+                                    backgroundColor: '#5E1EC7', opacity: 0.9
                                   },
                                   content: {
-                                    width: '300px',
-                                    height: '200px',
+                                    width: '640px', height: '508px', 
                                     position: 'absolute',
-                                    top: '130px',
-                                    left: '1400px',
-                                    border: '1px solid #ccc',
+                                    top: '120px', left: '1000px',
+                                    border: '1px solid #ccc', borderRadius: '4px',
                                     background: '#fff',
                                     overflow: 'auto',
                                     WebkitOverflowScrolling: 'touch',
-                                    borderRadius: '4px',
-                                    outline: 'none',
-                                    padding: '20px'
+                                    outline: 'none', padding: '20px'
                                   }
                             }}
-                        />
+                        >
+                            <Alarm></Alarm>
+                        </Modal>
                         <img
                             className='nav-user-logout-icon'
                             src='/logout.png'
