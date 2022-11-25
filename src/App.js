@@ -17,6 +17,7 @@ import CommunityMain from './Community/CommunityMain';
 import ExhibitInfoMain from './ExhibitInfo/ExhibitInfoMain';
 
 function App() {
+
   const isNull = (val) => (val===undefined || val===null) ? true : false;
   let token = localStorage.getItem('accessToken');
   axios.defaults.baseURL = "http://54.248.93.203:8080";
@@ -38,9 +39,9 @@ function App() {
           <Route path='/match' element={<MatchingMain />} />
           <Route path='/community' element={<CommunityMain />} />
           <Route path='/exhibitinfo' element={<ExhibitInfoMain />} />
-          <Route path='/match/detail/:id' element={<MatchDetail />} />
+          <Route path='/match/detail/:id' element={<MatchDetail/>} />
           <Route path='/match/newpost' element={<MatchNewPost/>}/>
-          <Route path='/match/eval' element={<MatchEvaluate/>}/>
+          <Route path='/match/eval/:id' element={<MatchEvaluate/>}/>
           
           <Route path='/mypage' element={<Mypage />} />
           <Route path='/mypage/edit' element={<EditMypage />} />
@@ -54,5 +55,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

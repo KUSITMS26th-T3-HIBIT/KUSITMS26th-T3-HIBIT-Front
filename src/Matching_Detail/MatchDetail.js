@@ -19,6 +19,8 @@ const TopNavBarItem = ({ title }) => {
 
 //같은 js파일에 컴포넌트로 빼서 관리하기
 function MatchDetail() {
+  let useparam = useParams();
+  let idParam = useparam.id;
   let [active1, setActive1] = useState("");
   let [active2, setActive2] = useState("");
   let [active3, setActive3] = useState("");
@@ -26,10 +28,21 @@ function MatchDetail() {
   let [fetchedData1, setFetchedData1] = useState("");
   let [fetchedData2, setFetchedData2] = useState("");
   let [fetchedData3, setFetchedData3] = useState("");
-  let useparam = useParams();
-  let idParam = useparam.id;
+ 
   let navigate = useNavigate();
   let [listDisplayOption, setListDisplayOption] = useState("none");
+
+  //매칭신청api =>컴포넌트 1,2에 하달 
+  const matchApplication = async ()=>{     
+    let res = await axios.post(`/matching/${idParam}/application`,
+    {"matching_check": "W",
+    "evaluation_check": "W"})
+    console.log(res.data);
+    if(res.data.result=="이미 신청한 글입니다.") {alert('이미 신청한 글입니다.')
+  }else if(res.data.result=="자신이 쓴 글은 신청할 수 없습니다."){
+    alert('본인이 작성한 게시글입니다.');
+  }else alert('매칭을 신청했습니다')
+  }
 
   const onClick1 = () => {
     setActive1("_activate");
@@ -111,8 +124,10 @@ function MatchDetail() {
         setListDisplayOption("none");
       }
       setFetchedData3(res.data);
-      if (res.data.result === "작성한 유저가 아닙니다.")
+      if (res.data.result === "작성한 유저가 아닙니다."){
         alert("해당 게시글 작성자가 아닙니다.");
+        navigate(`/match`);
+      }
     } catch (err) {
       console.log(err.message);
     }
@@ -137,14 +152,20 @@ function MatchDetail() {
             </div>
           </div>
         </div>
-        <MatchDetailContents1 fetchedData1={fetchedData1} tapIdx={tapIdx} />
-        <MatchDetailContents2
+        <MatchDetailContents1 
+          fetchedData1={fetchedData1}
+          tapIdx={tapIdx}
+          matchApplication={matchApplication} />
+
+        <MatchDetailContents2 
+          matchApplication={matchApplication}
           idParam={idParam}
           fetchedData1={fetchedData1}
           fetchedData2={fetchedData2}
           tapIdx={tapIdx}
         />
         <MatchDetailContents3
+           idParam={idParam}
           listDisplayOption={listDisplayOption}
           fetchedData2={fetchedData2}
           fetchedData3={fetchedData3}
