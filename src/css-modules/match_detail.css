@@ -88,14 +88,19 @@
 
 .matchDetail-midbox{
   display:flex;
-  margin: 124px 10% 0 10%;
+  justify-content: space-evenly;
+  margin: 125px 10% 0 9%;
+  scale:0.95;
 }
 .right-banner-box{
   margin-left: 52px;
-  width:100%;
+  width:600px;
   display:flex;
   justify-content: space-between;
   flex-direction: column;
+  position: relative;
+  right:100px;
+  top:10px;
 
 }
 .right-banner-box div{
@@ -114,6 +119,7 @@
 .right-banner-box-inner {
   height:100%;
   line-height: 100%;
+  position: relative;
 }
 .right-banner-box-inner > * {
   position: relative;
@@ -138,6 +144,8 @@
   width:100%;
   height:100px;
   justify-content: space-between;
+  position: relative;
+  right:20px;
   
 }
 .right-banner-box-inner div{
@@ -154,8 +162,9 @@
   display:grid;
   gap:1em;
   position: relative;
-  top:-60px;
+  top:-30px;
 }
+
 .matchDetail-midbox-rightmid >h1{
   font-weight: medium;
   font-size: 24px;
@@ -172,7 +181,7 @@ justify-self: start;
   gap: 1em;
   position: relative;
   top:-10px;
-  left:-166px;
+  left:-106px;
   font-size: 24px;
 }
 .matchDetail-content-rightbottom-left > h2{
@@ -180,37 +189,39 @@ justify-self: start;
   font-weight: medium;
 }
 .matchDetail-content-rightbottom-right > button{
-left:36%;
+left:40%;
 /* font-family: 'SUIT'; */
 font-style: normal;
 box-sizing: border-box;
 font-size: 24px;
 color:#FFFFFF;
 position: relative;
-width: 234px;
+width: 220px;
 height: 64px;
 background: linear-gradient(180deg, #915DEB 0%, #A25FF9 100%);
 border: 1px solid #000000;
 border-radius: 40.8px;
+bottom:16px;
 }
 
 .matchDetail-notice-banner{
   display:grid;
   grid-template-columns: 1fr 1fr;
   position: relative;
-  top:128px;
-  width:100vw;
+  top:120px;
+  width:100%;
   height: 724px;
   background-color: #F8F9F4;
 }
 .matchDetail-notice-banner-left{
   position: relative;
-  top:120px;
-  left:-40px;
+  display: flex;
+  top:140px;
+  left:80px;
   justify-self: center;
 }
 .matchDetail-notice-banner-left h1{
-  font-size:40px;
+  font-size:30px;
 }
 .matchDetail-notice-banner-right {
   display:flex;
@@ -218,8 +229,8 @@ border-radius: 40.8px;
   align-items: flex;
   position:relative;
   top:100px;
-  left:-100px;
-  font-size: 24px;
+  left:-10px;
+  font-size: 20px;
 }
 
 .matchDetail-notice-banner-right *{
@@ -236,16 +247,22 @@ border-radius: 40.8px;
 /* 메이트정보(2페이지) css */
 
 
-
+.matchDetail-contents2-box img{
+  position: relative;
+  top:50px;
+  right:50px;
+}
 .matchDetail-contents2-box{
+  scale:0.9;
   position: relative;
   top:133px;
   display:flex;
-  width:78%;
+  width:60%;
   margin: auto;
-  justify-content: space-between;
+  justify-content: space-around;
   font-family: 'SUIT';
   font-style: normal;
+  margin-bottom: 120px;
 }
 
 .matchDetail-contents2-box-rightside{
@@ -255,8 +272,6 @@ border-radius: 40.8px;
   /* width:724px; */
   /* left:-240px; */
   position: relative;
-  gap:1em;
-  
 }
 
 /* .matchDetail-contents2-box-rightside-
@@ -264,8 +279,10 @@ line1~5 */
 
 .matchDetail-c2box-rsline1{
   display: flex;
-  gap:20px;
-  margin-bottom: 8px;
+  gap:1em;
+  margin-bottom: 10px;
+  position: relative;
+  right:10px;
 }
 .matchDetail-c2box-rsline1 > h2{
   color:#5E1EC7;
@@ -277,7 +294,7 @@ line1~5 */
 }
 
 .matchDetail-c2box-rsline2 *{
-  margin-top:16px;
+  margin-top:10px;
   /* width:600px; */
 }
 .matchDetail-c2box-rsline2 > h3{
@@ -291,7 +308,7 @@ line1~5 */
 .matchDetail-c2box-rsline3{
   /* flex-wrap: wrap; */
   display:flex;
-  margin-top: 28px;
+  margin-top: 24px;
   font-size: 24px;
   gap:74px;
   justify-content: space-between;
@@ -315,7 +332,7 @@ line1~5 */
   font-size: 24px;
   gap:111px;
   justify-content: space-between;
-  height: 32px;
+  height: 28px;
   box-sizing: border-box;
 }
 .matchDetail-c2box-rsline4 > div{
@@ -325,31 +342,121 @@ line1~5 */
 }
 
 .matchDetail-c2box-rsline5{
-  margin-top:20px;
+  margin-top:57px;
   display: flex;
   /* justify-content: space-between; */
 }
+
+
+/* //메이트온도 버튼 */
+
+/* *{font-style: 'SUIT';} */
 .matchDetail-temporature-button{
   position: relative;
   opacity: 0.79;
-width: 423px;
-height: 194px;
-/* left: 872px; */
-/* top: 757px; */
-background: #F8F9F4;
-border-radius: 12px;
-display: grid;
+  width: 331px;
+  height: 200px;
+  right: 16px;px;
+  background: #F8F9F4;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.temp-button-line1{
+  display: flex;
+  gap:100px;
+  font-size:28px;
+  font-weight: 800;
+  color:#232323;
+  gap:50px;
+  margin:auto;
+  position: relative;
+  top:15px;
+  right:5px;
+}
+.temp-button-line1 > div:first-of-type{
+  /* margin:auto; */
+}
 
+.temp-button-line1 > div:nth-of-type(2){
+  color: #5E1EC7;
+  opacity: 0.79;
+}
+.temp-button-line2{
+  color: #5E1EC7;
+  opacity: 0.79;
+  font-size: 28px;
+  font-weight: 600;
+  margin:auto;
+  position: relative;
+  bottom:10px;
+}
+.temp-button-line2 > span{
+  font-weight: 800;
 
 }
+
+.temp-button-line3-bar{
+  width:261px;
+  height: 16px;
+  border: 2px solid #5E1EC7;
+  /* opacity: 0.79; */
+  border-radius: 50px;
+  position: relative;
+  left:28px;
+  bottom: 20px;
+}
+.temp-button-line3-bar-inner{
+  width:160px;
+  height: 16px;
+  border-radius: 50px;
+  background-color:#5E1EC7;
+}
+
+
+
+/* 2페이지 매칭신청버튼 */
 .matchDetail-matching-button{
-  width:423px;
-  height:194px;
+  width:331px;
+  height:200px;
   position: relative;
   background-color: #5E1EC7;
   border-radius: 12px;
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  opacity: 0.79;
+  right:16px;
 }
+.matching-button-line1{
+  display:flex;
+  flex-direction: column;
+  font-size: 24px;
+  font-weight: 800;
+  color:#FFFFFF;
+  position: relative;
+  left:30px;
+}
+
+.matching-button-line2{
+  display: flex;
+}
+
+.matching-button-line2-innerLeft{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 21px;
+  color: #FFFFFF;
+  font-weight: 600;
+  position: relative;
+  left:30px;
+}
+.matching-button-line2-RightIcon
+
+
+
 
 .matchDetail-c2box-notice{
   position: relative;
@@ -396,6 +503,8 @@ display: grid;
   justify-content: start;
   width:50%;
   justify-content: space-between;
+  position: relative;
+  left:70px;
 }
 .MatchDetailContents3-profile > div:first-of-type{
   width:180px;
@@ -407,7 +516,7 @@ display: grid;
 .MatchDetailContents3-profile-inner-right{
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  /* align-items: flex-start; */
   justify-content: center;
   gap:32px;
   position: relative;
@@ -452,7 +561,7 @@ display: grid;
 
 .matchListComponent-outline{
   margin: auto;
-  width:55%;
+  width:52%;
   height: 150px;
   display:flex;
   justify-content: space-between;
