@@ -33,7 +33,7 @@ function MatchDetail() {
   let [listDisplayOption, setListDisplayOption] = useState("none");
 
   //매칭신청api =>컴포넌트 1,2에 하달 
-  const matchApplication = async () => {
+  const matchApplication = async () => {try{
     let res = await axios.post(`/matching/${idParam}/application`,
       {
         "matching_check": "W",
@@ -45,6 +45,7 @@ function MatchDetail() {
     } else if (res.data.result == "자신이 쓴 글은 신청할 수 없습니다.") {
       alert('본인이 작성한 게시글입니다.');
     } else alert('매칭을 신청했습니다')
+  }catch(err){console.log(err.message)}
   }
 
   const onClick1 = () => {

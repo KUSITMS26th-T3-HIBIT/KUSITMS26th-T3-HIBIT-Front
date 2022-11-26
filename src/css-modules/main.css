@@ -11,6 +11,9 @@
   display:flex;
   flex-direction: column;
   align-items: flex-start;
+  font-size: 24px;
+  color:#ffffff;
+  font-weight: 700;
 }
 
 .mainImg, .main-bottom-img{
@@ -35,7 +38,7 @@
   width:720px;
   height:448px;
   border:3px solid rgb(211, 177, 177);
-  border-radius: 16px;
+  border-radius: 20px;
 }
 .home-main-section-routeimg{
   position: absolute;
@@ -44,14 +47,25 @@
   z-index: 2;
   display:flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  gap:20px;
 }
 .section-contents-left h1,pre{
   margin:80px;
   margin-right: 0px;
+  padding:10px;
+  font-size: 22px;
+  color:#ffffff;
+  font-weight: 800;
 }
 .home-main-contents-img{
-  margin-right: 70px;
+  margin-right: 40px;
+}
+.home-main-contents-img > div{
+  position: relative;
+  right:124px;
+  bottom:50px;
+  scale:0.8;
 }
 .home-bottom-section-review-down{
   display: flex;

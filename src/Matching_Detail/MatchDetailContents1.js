@@ -20,17 +20,19 @@ const MatchDetailContents1 = ({ tapIdx,fetchedData1,matchApplication }) => {
   return (
     <div style={{ display: displayOption}}>
       <div className="matchDetail-midbox">
-        <Slider />
+        <Slider/>
         <div className="right-banner-box">
           <div className="right-banner-box-inner-outer">
             <div className="right-banner-box-inner">
               <div>
+                서울 중구
                 {/* 사용자 프로필정보 : 서울/중구 */}
-                {fetchedData1.area||''}
+                {/* {fetchedData1.area||''} */}
               </div>
               <div>
-                {exhibitStyleData[fetchedData1?.style]?.value||'' }
+                {/* {exhibitStyleData[fetchedData1?.style]?.value||'' } */}
                 {/* 사용자 프로필정보: 대화 하면서 볼래요 */}
+                대화하면서 볼래요 
                 </div>
             </div>
             <div className="inner-rightside-clicknum ">조회수3</div>
@@ -48,9 +50,10 @@ const MatchDetailContents1 = ({ tapIdx,fetchedData1,matchApplication }) => {
           </div>
           <div
             style={{
-              width: "874px",
+              width: "650px",
               height: "3px",
               backgroundColor: "#EEEEEE",
+              marginBottom:'30px'
             }}
           ></div>
           <MatchDetailWanted 
@@ -58,7 +61,7 @@ const MatchDetailContents1 = ({ tapIdx,fetchedData1,matchApplication }) => {
           fetchedData1={fetchedData1}/>
         </div>
       </div>
-      <div className="matchDetail-notice-banner">
+      < div className="matchDetail-notice-banner">
         <div className="matchDetail-notice-banner-left">
         <img src="/Purpleheart.png" width="30px" height="30px" alt="purple heart"/>
           <h1>이런 메이트와 함께하고 싶어요
@@ -68,14 +71,17 @@ const MatchDetailContents1 = ({ tapIdx,fetchedData1,matchApplication }) => {
           <div>
           {/* <textarea width="650" height="100">{fetchedData1.want||'want'}</textarea> */}
           </div>
-          {/* <div>
+          <div>
           <img src="/Purpleheart.png" width="30px" height="30px" alt="purple heart"/>
-          <span>심리적 외로움이 있으며 소통과 공감의 욕구가 뭐시기</span>
+          <span>지친 일상에서 벗어나, 잠시나마 쉬어가는 시간이 되었으면 좋겠어요.</span>
+          <div>
+          </div><img src="/Purpleheart.png" width="30px" height="30px" alt="purple heart"/>
+          <span>편안하고 즐거운 분위기에서 전시 관람하고, 맛있는 것도 먹어요.</span>
           </div>
           <div>
           <img src="/Purpleheart.png" width="30px" height="30px" alt="purple heart"/>
-          <span>심리적 외로움이 있으며 소통과 공감의 욕구가 뭐시기</span>
-          </div> */}
+          <span>카페는 제가 책임질테니, 메뉴는 메이트님이 골라주시는 걸로! (^ㅡ^)V</span>
+          </div>
         </div>  
       </div>
     </div>

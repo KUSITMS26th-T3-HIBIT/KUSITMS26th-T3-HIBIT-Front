@@ -15,24 +15,29 @@ export const MatchListComponent = ({listDisplayOption, item,idParam}) => {
   const matchAccept = async () => {
     let isconFirm = window.confirm('매칭을 수락하시겠습니까?');
     if (isconFirm===true){
+    try{
     let res = await axios.put(`matching/${idParam}/participants?nickname=${item?.user}`,{
       "matching_check": "T",
       "evaluation_check": "W"
-    })
+    }) 
     setClickHidden('hidden');
     console.log(res.data);
+  }catch(err){console.log(err.messege)};
     } return;
   }
   const matchReject = async () => {
     let isconFirm = window.confirm('정말 매칭을 거절하시겠습니까?');
     if (isconFirm===true){
-    let res = await axios.put(`matching/${idParam}/participants?nickname=${item?.user}`,{
+    try{let res = await axios.put(`matching/${idParam}/participants?nickname=${item?.user}`,{
       "matching_check": "F",
       "evaluation_check": "W"
     })
     setClickHidden('hidden');
     //return "F"
-    console.log(res.data);}
+    console.log(res.data);
+  }catch(err){console.log(err.messege)}
+  }
+  
     // setTimeout(()=>console.log(isRejected));
   }
   
